@@ -1,0 +1,317 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"e",
+				"encrypt"
+			],
+			[
+				"__n",
+				"__number"
+			],
+			[
+				"Key",
+				"KeyboardInterrupt〔class〕"
+			],
+			[
+				"SOCK",
+				"SOCK_STREAM〔variable〕"
+			],
+			[
+				"AF",
+				"AF_INET〔variable〕"
+			],
+			[
+				"getLink",
+				"getLink2"
+			],
+			[
+				"rm",
+				"remove〔function〕"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "git",
+		"selected_items":
+		[
+			[
+				"git",
+				"Git: Commit"
+			],
+			[
+				"git pu",
+				"Git: Pull"
+			],
+			[
+				"git cu",
+				"Git: Custom Command"
+			],
+			[
+				"git ini",
+				"Git: Init"
+			],
+			[
+				"git init",
+				"Git: Init"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Install Package Control"
+			]
+		],
+		"width": 540.0
+	},
+	"console":
+	{
+		"height": 130.0,
+		"history":
+		[
+			"s",
+			"s = (['a' , 'b'])",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/MOoop/Documents/work/gitrep/python/test"
+	],
+	"file_history":
+	[
+		"/Users/MOoop/Documents/work/my/python/test/simple_searcher.py",
+		"/Users/MOoop/Documents/work/my/python/test/test.py",
+		"/Users/MOoop/Documents/work/my/python/test/gui_test.py",
+		"/Users/MOoop/Documents/work/my/python/test/zip_test.py",
+		"/Users/MOoop/Documents/work/my/python/test/wiki_scraping.py",
+		"/Users/MOoop/Documents/work/my/python/test/test_advanced.py",
+		"/Users/MOoop/Documents/work/my/python/test/sample.xml",
+		"/Users/MOoop/Documents/work/my/python/test/xmltest.py",
+		"/Users/MOoop/Documents/work/my/python/test/xml/etree/ElementTree.py",
+		"/Users/MOoop/Documents/work/my/python/test/advanced/exam-1.py",
+		"/Users/MOoop/Documents/work/my/python/test/Vector.py",
+		"/Users/MOoop/Documents/work/my/python/test/googlepython/whoisinfo.py",
+		"/Users/MOoop/Documents/work/my/python/test/test3.py",
+		"/Users/MOoop/Documents/work/my/python/test/advanced-1.py",
+		"/Users/MOoop/Documents/work/my/python/test/ComprehensionTest.py",
+		"/Users/MOoop/Documents/work/my/python/test/googlepython/MAESClipher.py",
+		"/Users/MOoop/Documents/work/my/python/test/googlepython/iplist.txt",
+		"/Users/MOoop/Documents/work/my/python/test/googlepython/exam_1.py",
+		"/Users/MOoop/Documents/work/my/python/test/test2.py",
+		"/Users/MOoop/Documents/work/my/python/test/stopWatch.py",
+		"/Users/MOoop/Documents/work/my/python/test/exam_6.py",
+		"/Users/MOoop/Documents/work/my/python/test/Flask_ex.py",
+		"/Users/MOoop/Documents/work/my/python/test/simple_chat_cli.py",
+		"/Users/MOoop/Documents/work/my/python/test/simple_chat.py",
+		"/Users/MOoop/Documents/work/my/python/test/simple_server.py",
+		"/Users/MOoop/Documents/work/my/python/test/simple_cli.py",
+		"/Users/MOoop/Documents/work/my/python/test/random_scraping.py",
+		"/Users/MOoop/Documents/work/my/python/test/random_scraping2.py",
+		"/Users/MOoop/Documents/work/my/python/test/crawler_tst.py",
+		"/Users/MOoop/Documents/work/my/python/test/example.csv",
+		"/Users/MOoop/Documents/work/my/python/test/example_2.csv",
+		"/Users/MOoop/Documents/work/my/python/test/example_1.csv",
+		"/Users/MOoop/Documents/work/my/python/test/report.py",
+		"/Users/MOoop/Documents/work/my/python/test/backupToZip.py",
+		"/Users/MOoop/Documents/work/my/python/test/pyc_compile.py",
+		"/Users/MOoop/Documents/work/my/python/test/pyc_compile.pyc",
+		"/Users/MOoop/Documents/work/my/python/util/mwebcrawler/webcrawler.py",
+		"/Users/MOoop/Documents/work/my/python/util/mfinder/msearch.py",
+		"/Users/MOoop/Documents/work/my/python/util/mfinder/mfinder.py",
+		"/Users/MOoop/Documents/work/my/python/test/RomeoAndJuliet.txt",
+		"/Users/MOoop/Documents/work/my/python/exam/regex_finder/regex_finder.py",
+		"/Users/MOoop/Documents/work/my/python/test/backUpToZip.py",
+		"/Users/MOoop/Documents/work/my/python/test/mcw.pyw",
+		"/Users/MOoop/Documents/work/my/python/test/txtfinder.py",
+		"/Users/MOoop/Documents/work/my/python/test/regex_finder.py",
+		"/Users/MOoop/Documents/work/my/python/test/nba.html",
+		"/Users/MOoop/Documents/work/my/python/test/sample_c.txt",
+		"/Users/MOoop/Documents/work/my/python/test/xferlog.py",
+		"/Users/MOoop/Documents/work/my/python/exam/rqg/Paper.py",
+		"/Users/MOoop/Documents/work/my/python/test/Paper.py",
+		"/Users/MOoop/Documents/work/my/python/test/randomQuizGenerator.py",
+		"/Users/MOoop/Documents/work/my/python/test/StateGenerator.py",
+		"/Users/MOoop/Documents/work/my/python/test/randomQuizGenerator",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/MStringUtils.py",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/Phonebook.py",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/Person.py",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/xferlog.py",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/xferlog2.py",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/ex4.py",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/test.py",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/MFileUtils.py",
+		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/config.py"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 35.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 155.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.git":
+	{
+		"height": 102.0
+	},
+	"output.sftp":
+	{
+		"height": 102.0
+	},
+	"pinned_build_system": "",
+	"project": "test.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 257.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

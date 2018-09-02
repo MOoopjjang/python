@@ -1,0 +1,26 @@
+<?xml version="1.0"?> 
+<data>
+	<!-- DEFAULT LOG  -->
+	<appender name="default">
+		<level value="INFO" />
+		<fmt value="YYYY-MM-dd" />
+		<dir value="/svc/" />
+		<fname value="catalina.log" />
+		<logcnt value="30" />
+		<logsize value="1" />
+	</appender>
+
+	<appender name="error">
+		<level value="INFO" />
+		<fmt value="YYYY-MM-dd" />
+		<dir value="/svc/" />
+		<fname value="error.log" />
+	</appender>
+
+	<appender name="del">
+		<level value="INFO" />
+		<fmt value="YYYY-MM-dd" />
+		<dir value="/svc/" />
+		<fname value="del.log" />
+	</appender>
+</data>
