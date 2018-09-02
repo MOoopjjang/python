@@ -26,6 +26,11 @@ class tmp:
 		return self
 
 
+		def __eq__( self  , target ):
+			print('__eq__ called!!!')
+			return target.n == self.n
+
+
 ###############################################################
 
 
@@ -149,6 +154,9 @@ def exam_tmp1():
 	t3 += t2
 	print('t3 a>>{}:{}'.format(id(t3) , t3))
 
+	t5 = tmp(1)
+	print('{}'.format(t1 == t5))
+
 
 
 
@@ -210,8 +218,8 @@ def main():
 	# exam_2to21()
 	# exam_2to23()
 
-	# exam_tmp1()
-	exam_ttt()
+	exam_tmp1()
+	# exam_ttt()
 
 
 	
