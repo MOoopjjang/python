@@ -21,8 +21,15 @@ def extLink( _session , _url ):
 
 	
 
-def intLink():
-	pass
+def intLink( _session , _url ):
+	res = _session.get('https://en.wikipedia.org'+_url , timeout = 3)
+	res.raise_for_status()
+	bsObj = bs4.BeautifulSoup(res.text , 'html.parser' )
+	inTags = bsObj.findAll('a' , {'href':re.compile('^\/wiki\/')})
+	return inTags
+
+
+	
 
 def findLink( postUrl ):
 	global pages
@@ -53,20 +60,27 @@ def wiki():
 
 	inputt = input(' 인물을 입력하세요 ::')
 	url = 'https://en.wikipedia.org/wiki/'+inputt
-	links = extLink( requests.session() , url )
+	extLinks = extLink( requests.session() , url )
+	inLinks = intLink( requests.session() , '/wiki/'+inputt )
+
 	
 	pageDict['ext'] = set()
 	pageDict['in'] = set()
 
-	if len(links) > 0:
-		filterLinks = [link for link in links if link.attrs['href'] not in pageDict['ext']]
+	# if len(extLinks) > 0:
+	# 	filterLinks = [link for link in extLinks if link.attrs['href'] not in pageDict['ext']]
+	# 	for fl in filterLinks:
+	# 		l = fl.attrs['href']
+	# 		pageDict['ext'].add(l)
+	# 		print('{}'.format(l))
+
+
+	if len(inLinks) > 0:
+		filterLinks = [link for link in inLinks if link.attrs['href'] not in pageDict['in']]
 		for fl in filterLinks:
 			l = fl.attrs['href']
-			pageDict['ext'].add(l)
-			print('{}'.format(l))
-
-
-
+			pageDict['in'].add(l)
+			print('in >> {}'.format(l))
 
 
 	
