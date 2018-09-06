@@ -9,6 +9,21 @@ import re
 
 pages = set()
 
+pageDict = {}
+
+def extLink( _session , _url ):
+	res = _session.get(_url , timeout = 3)
+	res.raise_for_status()
+	bsObj = bs4.BeautifulSoup(res.text , 'html.parser' )
+	# http나 https로 시작하고  wikipedia.org 문자열을 포함하지 않는다.
+	extATags = bsObj.findAll('a' , {'href':re.compile('^http[a-z]*.((?!wikipedia.org).)*$')})
+	return extATags
+
+	
+
+def intLink():
+	pass
+
 def findLink( postUrl ):
 	global pages
 
@@ -34,9 +49,24 @@ def findLink( postUrl ):
 
 
 def wiki():
+	global pageDict
+
 	inputt = input(' 인물을 입력하세요 ::')
-	url = '/wiki/'+inputt
-	links = findLink(url)
+	url = 'https://en.wikipedia.org/wiki/'+inputt
+	links = extLink( requests.session() , url )
+	
+	pageDict['ext'] = set()
+	pageDict['in'] = set()
+
+	if len(links) > 0:
+		filterLinks = [link for link in links if link.attrs['href'] not in pageDict['ext']]
+		for fl in filterLinks:
+			l = fl.attrs['href']
+			pageDict['ext'].add(l)
+			print('{}'.format(l))
+
+
+
 
 
 	
