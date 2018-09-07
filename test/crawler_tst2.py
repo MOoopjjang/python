@@ -9,81 +9,100 @@ import re
 
 pages = set()
 
-pageDict = {}
 
-def extLink( _session , _url ):
+######################################  Wiki start ######################################## 
+pageDict = {}
+BASE_WIKI = 'https://en.wikipedia.org'
+
+
+def splitUrl ( _url  , _index):
+	tmp_url = _url
+	tmp_rgx = re.compile('^(http|https):\/\/')
+	m = tmp_rgx.search(_url)
+	if m != None:tmp_url = _url.replace(m.group() , '')
+	return tmp_url.split('/')[_index]
+
+def getExtLink( _session , _url , _index ):
 	res = _session.get(_url , timeout = 3)
 	res.raise_for_status()
 	bsObj = bs4.BeautifulSoup(res.text , 'html.parser' )
 	# http나 https로 시작하고  wikipedia.org 문자열을 포함하지 않는다.
-	extATags = bsObj.findAll('a' , {'href':re.compile('^http[a-z]*.((?!wikipedia.org).)*$')})
-	return extATags
+	extATags = bsObj.findAll('a' , {'href':re.compile('^http[a-z]*.((?!'+splitUrl( _url , _index )+').)*$')})
+
+	retLinks = []
+	for e in extATags:
+		if e.attrs['href'] not in pageDict['ext']:
+			pageDict['ext'].add(e.attrs['href'])
+			retLinks.append(e)
+	return retLinks
 
 	
 
-def intLink( _session , _url ):
+def getInLink( _session , _url ):
 	res = _session.get('https://en.wikipedia.org'+_url , timeout = 3)
 	res.raise_for_status()
 	bsObj = bs4.BeautifulSoup(res.text , 'html.parser' )
 	inTags = bsObj.findAll('a' , {'href':re.compile('^\/wiki\/')})
-	return inTags
+
+	retLinks = []
+	for e in inTags:
+		if e.attrs['href'] not in pageDict['in']:
+			pageDict['in'].add(e.attrs['href'])
+			retLinks.append(e)
+
+	return retLinks
+
+
 
 
 	
+# def findLink( postUrl ):
+# 	global pages
 
-def findLink( postUrl ):
-	global pages
+# 	url = 'https://en.wikipedia.org'+postUrl
+# 	rgx = re.compile('^\/wiki\/')
+# 	session = requests.session()
+# 	res = session.get(url , timeout = 3)
+# 	res.raise_for_status()
+# 	bsObj = bs4.BeautifulSoup( res.text , 'html.parser' )
 
-	url = 'https://en.wikipedia.org'+postUrl
-	# print('url>> {}'.format(url))
-	rgx = re.compile('^\/wiki\/')
-	session = requests.session()
-	res = session.get(url , timeout = 3)
-	res.raise_for_status()
-	bsObj = bs4.BeautifulSoup( res.text , 'html.parser' )
+# 	title = bsObj.find('h1' , {'class':'firstHeading'}).get_text()
+# 	content = bsObj.find('div' , {'id':'bodyContent'})
+# 	print('title >> : {}'.format(title))
+# 	print('toc >> : {}'.format(content.find('div' , {'id':'toc'})))
 
-	title = bsObj.find('h1' , {'class':'firstHeading'}).get_text()
-	content = bsObj.find('div' , {'id':'bodyContent'})
-	print('title >> : {}'.format(title))
-	print('toc >> : {}'.format(content.find('div' , {'id':'toc'})))
-
-	for link in bsObj.find('div' , {'id':'bodyContent'}).findAll('a' , {'href':rgx}):
-		href = link.attrs['href']
-		if href not in pages:
-			print('{}'.format(href))
-			pages.add(href)
-			findLink(href)
+# 	for link in bsObj.find('div' , {'id':'bodyContent'}).findAll('a' , {'href':rgx}):
+# 		href = link.attrs['href']
+# 		if href not in pages:
+# 			print('{}'.format(href))
+# 			pages.add(href)
+# 			findLink(href)
 
 
 def wiki():
 	global pageDict
 
 	inputt = input(' 인물을 입력하세요 ::')
-	url = 'https://en.wikipedia.org/wiki/'+inputt
-	extLinks = extLink( requests.session() , url )
-	inLinks = intLink( requests.session() , '/wiki/'+inputt )
-
-	
+	url = BASE_WIKI + '/wiki/'+inputt
 	pageDict['ext'] = set()
 	pageDict['in'] = set()
+	extLinks = getExtLink( requests.session() , url , 1 )
+	inLinks = getInLink( requests.session() , '/wiki/'+inputt )
 
-	# if len(extLinks) > 0:
-	# 	filterLinks = [link for link in extLinks if link.attrs['href'] not in pageDict['ext']]
-	# 	for fl in filterLinks:
-	# 		l = fl.attrs['href']
-	# 		pageDict['ext'].add(l)
-	# 		print('{}'.format(l))
+	if len(extLinks) > 0:
+		for fl in extLinks:
+			l = fl.attrs['href']
+			print('{}'.format(l))
+			extLinks = getExtLink( requests.session() , url , 0 )
 
 
 	if len(inLinks) > 0:
-		filterLinks = [link for link in inLinks if link.attrs['href'] not in pageDict['in']]
-		for fl in filterLinks:
+		for fl in inLinks:
 			l = fl.attrs['href']
-			pageDict['in'].add(l)
 			print('in >> {}'.format(l))
 
 
-	
+######################################  Wiki end ######################################## 	
 
 
 
