@@ -64,12 +64,22 @@ def test2():
 		  LEFTMARGIN='0'
 	"""
 
-	print('{}'.format(text4))
+
+	text5 = """
+	var array = new Array()
+	...
+	if(array[0] === 'xferlog'){
+	   console.log('kkllkll')
+	}
+	"""
+
+	print('{}'.format(text5))
 
 
 	rgx = re.compile('[ns]a[^0-9]\.xls')  # text1
 	# rgx = re.compile('#[0-9A-Z]{6}') #text4
-	mo = rgx.findall(text1)
+	rgx = re.compile('array\[0\]')
+	mo = rgx.findall(text5)
 	if mo != None:print('{}'.format(mo))
 
 
