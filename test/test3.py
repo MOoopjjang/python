@@ -87,6 +87,21 @@ def t4():
 	print('{}'.format(hii))
 
 
+def smtp_test():
+	import smtplib
+	from email.mime.text import MIMEText
+
+	msg = MIMEText('The body of the email is here')
+
+	msg['Subject'] = 'An Email Alert'
+	msg['From'] = 'aaaa@naver.com'
+	msg['To'] = 'bbbb@gmail.com'
+
+	s = smtplib.SMTP( 'localhost' )
+	s.send_message( msg )
+	s.quit()
+
+
 
 def main():
 	# t1()
@@ -94,7 +109,8 @@ def main():
 
 	# t3()
 
-	t4()
+	# t4()
+	smtp_test()
 
 
 
