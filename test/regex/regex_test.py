@@ -119,6 +119,7 @@ def test2():
 	text11= """
 	The URL is http://www.forta.com/ , to connect
 	securely use https://www.forta.com/ instead.
+	hello kaodkfke 122soid httpss://www.ahah.com 98kd33
 	"""
 
 	text12 = """
@@ -128,7 +129,69 @@ def test2():
 	01-01-01
 	"""
 
-	print('{}'.format(text12))
+	text13 = """
+	This offer is not availale to customers
+	living in <B>AK</B> and <B>HI</B>
+	"""
+
+
+	text14 ="""
+	The cat scattered his food all over the room.
+	"""
+
+	text15 = """
+	<SCRIPT>
+		function doSpellCheck(form , field){
+           //Make sure note empty
+  		if(field.value == ''){
+    		return false;
+  		}
+           //Init
+  		var windowName='spellWindow';
+  		var spellCheckURL='spell.cfm?formname=comment&fieldname='+field.name;
+  
+           //Done
+  		return false;
+	}
+	</SCRIPT>
+	"""
+
+	text16 = """
+	Hello, my name is Ben&nbssp;Forta, and I am
+	the author of books on SQL, ColdFusion, WAP,
+	Windows&nbsp;&nbsp;2000, and other subjects.
+	"""
+
+	text17 = """
+	Ping hog,forta.com [12.159.46.200] with 32 bytes of data:
+	"""
+
+	text18 = """
+	<BODY>
+	<H1>Welcome to my Homepage</H1>
+	Content is diviede into two sections:<BR>
+	<H2>ColdFusion</H2>
+	Information about Macromedia ColdFusion.
+	<H2>Wireless</H2>
+	Information about Bluetooth, 802. 11, and more
+	<H2>This is not valid HTML</H3>
+	</BODY>
+	"""
+
+	text19 = """
+	This is a alock of of text,
+	serveral words here are are
+	repeated, and and they
+	should not be.
+	"""
+
+	text20 ="""
+	http://www.forta.com/
+	https://mail.forta.com/
+	ftp://ftp.forta.com/
+	"""
+
+	print('{}'.format(text20))
 
 
 	# rgx = re.compile('[ns]a[^0-9]\.xls')  # text1
@@ -139,9 +202,20 @@ def test2():
 	# rgx = re.compile('\w+[\w.]*@[\w\.]+\.\w+') #text8
 	# rgx = re.compile('https?://[\w.]+\.\w+/') #text11
 	# rgx = re.compile('#[\w\d]{6}') #text11
-	rgx = re.compile('\d{1,2}[-\/]\d{1,2}[-\/]\d{2,4}') #text12
-	mo = rgx.findall(text12)
+	# rgx = re.compile('\d{1,2}[-\/]\d{1,2}[-\/]\d{2,4}') #text12
+	# rgx = re.compile('<[Bb]>.*?<\/[Bb]>') #text13
+	# rgx = re.compile('\b (cat) \b') #text14
+	# rgx = re.compile('(&nbsp;){2,}') #text14
+	# rgx = re.compile('(\d{1,3}\.){3}\d{1,3}') #text17
+	# rgx = re.compile('<(H\d)>.*?<\/\1>') #text18
+	# rgx = re.compile('[ ]+(\w+)[ ]+\1') #text19
+	# rgx = re.compile('.+(?=:)') #text20
+	rgx = re.compile('.+(:)') #text20
+
+	mo = rgx.findall(text20)
+	# mo = rgx.search(text18)
 	if mo != None:print('{}'.format(mo))
+	# if mo != None:print('{}'.format(mo.group()))
 
 
 def main():
