@@ -12,34 +12,48 @@ import bs4
 from urllib.request import urlopen
 import re
 import logging
+import string
+import operator
 
 
-infoList = []
-pages = set()
+def cleanInput( input ):
+	input = re.sub('\n+',' ',input ).lower()
+	# print('>>{}'.format(input))
+	input = re.sub('\[[0-9]*\]' , '',input )
+	input = bytes( input , 'UTF-8')
+	input = input.decode('ascii' , 'ignore')
+	cleanInput = []
+	input = input.split(' ')
+	for item in input:
+		item = item.strip(string.punctuation)
+		if len(item) > 1 or (item.lower() == 'a' or item.lower() == 'i'):
+			cleanInput.append( item )
 
-def scraping(_purl):
-	global infoList
-	global pages
+	print('len >> {}'.format(len(cleanInput)))
+	return cleanInput
 
-	info = {}
-	html = urlopen('https://en.wikipedia.org'+_purl)
-	bsObj = bs4.BeautifulSoup(html , 'html.parser')
-	try:
-		print('edit url : {}'.format(bsObj.find('li' , {'id':'ca-edit'}).find('span').find('a').get('href')))
-		print('url : {}'.format('https://en.wikipedia.org'+_purl))
-		print('title :{}'.format(bsObj.find('h1' , {'id':'firstHeading'}).get_text()))
-		print('-'*100)
-	except:
-		pass
-	
-	for link in bsObj.findAll('a' , href = re.compile('^(/wiki/)')):
-		if link.get('href') != None and link.get('href') not in pages:
-			pages.add(link.get('href'))
-			scraping(link.get('href'))
+
+def ngrams( input , n ):
+	input = cleanInput( input )
+	output = {}
+	for i in range( len(input)-n+1 ):
+		# ngramTemp = ' '.join(input[i:i+n])
+		ngramTemp = ' '.join(input[i:i+n])
+		if ngramTemp not in output:
+			output[ ngramTemp ] = 0
+		output[ngramTemp] +=1
+	return output
 
 
 def main():
-	scraping('/wiki/Kevin_Mitnick')
+	content = str(urlopen('http://pythonscraping.com/files/inaugurationSpeech.txt').read() , 'utf-8')
+	ng = ngrams(content , 2)
+	sortedNGrams = sorted(ng.items() , key = operator.itemgetter(1) , reverse = True)
+	print(sortedNGrams)
+
+
+
+	
 
 
 
