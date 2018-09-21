@@ -31,11 +31,24 @@ def test3():
 	print('{}'.format(res.text))
 
 
+def test4():
+	import socks
+	import socket
+	import requests
+
+	socks.set_default_proxy(socks.SOCKS5 , 'localhost' , 9150 )
+	socket.socket = socks.socksocket
+	req = requests.get('http://icanhazip.com' , timeout = 10)
+	req.raise_for_status()
+	print('{}'.format(req.text))
+
+
 
 def main():
 	# test()
 	# test2()
-	test3()
+	# test3()
+	test4()
 	
 
 if __name__ == '__main__':
