@@ -21,10 +21,13 @@ from multiprocessing import Process
 
 
 
-class MCrawler():
+FREE_PROXY_URL = 'https://free-proxy-list.net/'
+LOCAL_IP_URL = 'https://httpbin.org/ip'
 
-	def __init__(self , lUrls = None , lSaveDirs = None , bMp = 0 , bZip = False , maxDepth = 0):
 
+
+class MCrawler:
+	def __init__(self , lUrls = None , lSaveDirs = None , bMp = 0 , bZip = False , maxDepth = 0 , proxy = False):
 		getLogger().info('__init__ called!!')
 		self.__lUrls = lUrls
 		self.__lSaveDirs = lSaveDirs
@@ -33,11 +36,49 @@ class MCrawler():
 		self.__bZip = bZip
 		self.__maxDepth = maxDepth
 		self.__nJobCount = 0
+		self.__proxies = self.__select_proxy__( self.__get_proxies__())
+		self.__isProxy = proxy
+
 
 	def __del__(self):
 		getLogger().info('__del__ called!!')
 		del self.__lUrls[:]
 		del self.__lSaveDirs[:]
+
+
+	def __get_proxies__( self ):
+		"""
+		https://free-proxy-list.net/ 에서 ip:port 목록을 리스트로 반환한다.
+		"""
+		res = requests.get(FREE_PROXY_URL , timeout = 3)
+		res.raise_for_status()
+
+		proxy_list = []
+		bsObj = bs4.BeautifulSoup(res.text , 'html.parser')
+		tbody = bsObj.find('table' , {'id':'proxylisttable'}).find('tbody')
+		for tr in tbody:
+			tds = tr.findAll('td')
+			proxy_list.append( ':'.join(map(lambda x:x.get_text() , tds[:2])))
+
+		return proxy_list
+
+
+
+	def __select_proxy__( self , proxy_list ):
+		for info in proxy_list:
+			try:
+				pinfo = {}
+				pinfo['http'] = 'http://'+info
+				pinfo['https'] = 'http://'+info
+
+				r = requests.get(LOCAL_IP_URL , proxies = pinfo , timeout = 3)
+				print(r.json())
+				return pinfo
+			except Exception as ex:
+				print('{}'.format(ex))
+
+
+
 
 
 	def __chkValid__(self):
@@ -50,7 +91,7 @@ class MCrawler():
 		now = getCurrentTime('%Y%m%d%H%M%S%f')
 		# default 
 		ext = '.jpg'
-		rex = re.compile(r'[.](jpg|gif|png|bmp)$')
+		rex = re.compile('\.(jpg|gif|png|bmp)$')
 		mo = rex.search(postName)
 		if mo != None:
 			ext = postName[-4:]
@@ -66,7 +107,8 @@ class MCrawler():
 		session = requests.session()
 		for downUrl in _list:
 			try:
-				downUrlRes = session.get(downUrl , timeout = 3)
+				if self.__isProxy:session.proxies = self.__proxies
+				downUrlRes = session.get(downUrl)
 				downUrlRes.raise_for_status()
 
 				# 파일이름 생성
@@ -118,12 +160,21 @@ class MCrawler():
 	def __crawring__(self , sUrl , sSaveDir , _maxDepth ,  _depth):
 		getLogger().info('pid -- {}:{}'.format(os.getpid(),sUrl))
 		try:
-			res = requests.get(sUrl)
+			session = requests.session()
+			## Proxy 설정이 있다면..
+			if self.__isProxy:
+				print('#'*100)
+				print('proxy ip :{}'.format(self.__proxies))
+				print('#'*100)
+				session.proxies = self.__proxies
+
+			res = session.get(sUrl)
 			res.raise_for_status()
+			getLogger().info('text :{}'.format(res.text))
 			soup = bs4.BeautifulSoup(res.text)
 			imgElms = soup.select('img')
 		
-			getLogger().debug('len :{}'.format(len(imgElms)))
+			getLogger().info('len :{}'.format(len(imgElms)))
 			validUrl = []
 			if len(imgElms) > 0:
 				for elm in imgElms:
@@ -136,7 +187,7 @@ class MCrawler():
 					rgx = re.compile('^[.]{1,2}')
 					mo = rgx.search(downUrl)
 					if mo != None:
-						rgx = re.compile(r'^http.+(com|net|edu|net)')
+						rgx = re.compile('^https?.+(com|net|edu|org)')
 						mo = rgx.search(sUrl)
 						if mo != None:downUrl = str(mo.group())+'/'+downUrl[2:]
 					elif downUrl.startswith('http') == False:downUrl = 'https:'+downUrl
@@ -178,8 +229,8 @@ class MCrawler():
 			if _maxDepth != 0 and _depth < _maxDepth:
 				_depth+=1
 				self.__nextDepth__(sUrl , soup, sSaveDir , _maxDepth , _depth )
-		except:
-			pass
+		except Exception as ex:
+			getLogger().info('{}'.format(ex))
 
 		
 

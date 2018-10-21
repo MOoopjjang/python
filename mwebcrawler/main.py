@@ -16,6 +16,8 @@
 #	>>> OptionParser 기능 추가
 # v0.8.0
 #	>>> Download시 병렬 다운로드 기능 지원 (Multi Processing)
+# v1.1.0
+#   >>> Proxy 서버 연동기능 추가 ( -p 옵션 )
 
 
 import bs4
@@ -61,7 +63,7 @@ def getOption():
 	global parser
 	usage = """ %prog [propertie file] [option]
 	ex) %prog wc.propertis 
-	ex) %prog wc.propertis -m [0,2,4,6,8,10] -z -d [0-3] -proxy
+	ex) %prog wc.propertis -m [0,2,4,6,8,10] -z -d [0-3] -p
 	"""
 
 	parser = OptionParser(usage = usage)
