@@ -18,6 +18,8 @@ import re
 from mglobal import init , getLogger , getCurrentTime , getDefCurrentTime
 import mzip
 from multiprocessing import Process
+import threading
+import concurrent.futures
 
 
 
@@ -158,7 +160,8 @@ class MCrawler:
 
 
 	def __crawring__(self , sUrl , sSaveDir , _maxDepth ,  _depth):
-		getLogger().info('pid -- {}:{}'.format(os.getpid(),sUrl))
+		# getLogger().info('pid -- {}:{}'.format(os.getpid(),sUrl))
+		getLogger().info('thread -- {}'.format(sUrl))
 		try:
 			session = requests.session()
 			## Proxy 설정이 있다면..
@@ -203,19 +206,21 @@ class MCrawler:
 					if len(validUrl) < nMPCount:
 						nMPCount = len(validUrl) -1
 
-					procs = []
+					threads = []
 					bit = int(len(validUrl)/nMPCount)
-					for index in range(0 , nMPCount):
-						start = index * bit
-						end = start + bit
-						if index == (nMPCount - 1):
-							end = len(validUrl)
-						p = Process(target = self.__download_image__ , args = (validUrl[start:end] , sSaveDir))
-						procs.append(p)
-						p.start()
 
-					for proc in procs:
-						proc.join()
+					with concurrent.futures.ThreadPoolExecutor( max_workers = nMPCount ) as te:
+						for index in range(0 , nMPCount):
+							start = index * bit
+							end = start + bit
+							if index == (nMPCount - 1):
+								end = len( validUrl )
+							th = te.submit(self.__download_image__ , validUrl[start:end] , sSaveDir)
+							threads.append( th )
+
+						for th in concurrent.futures.as_completed( threads ):
+							print('{}'.format(th.result()))
+
 				else:
 					self.__download_image__(validUrl , sSaveDir)
 					
@@ -232,26 +237,25 @@ class MCrawler:
 		except Exception as ex:
 			getLogger().info('{}'.format(ex))
 
-		
+		return '{} ==> complete'.format(sUrl)
 
-	def run(self):
+
+	def run( self ):
 		self.__chkValid__()
 
 		# -- Process Count
 		self.__nJobCount = len(self.__lUrls)
 
-		# -- Multi Processing
 		if self.__bMp > 1 and self.__nJobCount > 1:
-			for i in range(0,self.__nJobCount):
-				p = Process(target = self.__crawring__ , args = (self.__lUrls[i] , self.__lSaveDirs[i] , self.__maxDepth , 1))
-				self.__lProcs.append(p)
-				p.start()
+			with concurrent.futures.ProcessPoolExecutor( max_workers = self.__nJobCount ) as pe:
+				tResultList = []
+				for i in range(self.__nJobCount):
+					tResultList.append(pe.submit( self.__crawring__,self.__lUrls[i] , self.__lSaveDirs[i] , self.__maxDepth , 1 ))
 
-			for process in 	self.__lProcs:
-				process.join()
-        # -- Single Processing
+				for th in concurrent.futures.as_completed(tResultList):
+					print('{}'.format(th.result()))
 		else:
-			for i in range(0,self.__nJobCount):
+			for i in range( 0  , self.__nJobCount ):
 				self.__crawring__(self.__lUrls[i] , self.__lSaveDirs[i] , self.__maxDepth , 1)
 
 

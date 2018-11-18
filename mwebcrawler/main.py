@@ -18,6 +18,8 @@
 #	>>> Download시 병렬 다운로드 기능 지원 (Multi Processing)
 # v1.1.0
 #   >>> Proxy 서버 연동기능 추가 ( -p 옵션 )
+# v1.1.1
+#   >>> 병렬처리 방식 변경 
 
 
 import bs4
@@ -27,6 +29,7 @@ import os
 import mcrawler
 from mglobal import init , getLogger , getCurrentTime , getDefCurrentTime
 from optparse import OptionParser
+import timeit
 
 d = {}
 
@@ -111,6 +114,7 @@ def main():
 	getLogger().debug(d['urls'])
 	getLogger().debug('mp : {} , z:{} , d:{}'.format(getMPOption() , getZipOption() , getMaxDepth()))
 
+	stime = timeit.default_timer()
 	getLogger().info('-- Crawling ... start ::{}'.format(getDefCurrentTime()))
 
 	# RUN
@@ -118,6 +122,7 @@ def main():
 	crawler.run()
 
 	getLogger().info('-- Crawling ... end ::{}'.format(getDefCurrentTime()))
+	getLogger().info('-- Crawling ... time  ::{}'.format(timeit.default_timer() - stime ))
 
 
 if __name__ == '__main__':
