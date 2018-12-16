@@ -1,0 +1,8 @@
+{
+	"types":"rtor,rtoc,rtorp"
+	,"jobmodes":"compare,copy,delete"
+	,"srchosts":"localhost:6379"
+	,"tgthosts":"1.255.144.148:7000,1.255.144.148:7001,1.255.144.148:7002,1.255.144.149:7003,1.255.144.149:7004,1.255.144.149:7005"
+	,"srcpwd":""
+	,"tgtpwd":""
+}

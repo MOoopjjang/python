@@ -1,0 +1,18 @@
+
+
+#Java - MultiThreading
+consume time : 0
+result : 49482575
+CPU usage : 161.5234375%
+
+
+# Python - MultiThreading
+CPU usage : 33.3
+consume time : 18.585519100000003
+result : 49997677
+
+
+# python - MulitProcessing
+CPU usage : 99.6
+consume time : 7.8773492570000005
+result : 49988555
