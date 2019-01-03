@@ -36,20 +36,10 @@
 	"buffers":
 	[
 		{
-			"file": "MultiProcessing/08_asyncio-sleep-gather.py",
+			"file": "class/contains.py",
 			"settings":
 			{
-				"buffer_size": 353,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "class/class_tst1.py",
-			"settings":
-			{
-				"buffer_size": 351,
-				"encoding": "UTF-8",
+				"buffer_size": 1032,
 				"line_ending": "Unix"
 			}
 		}
@@ -135,16 +125,43 @@
 	[
 		"/Users/mooopjjang/Documents/work/gitrep/python/test",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/monitoring_2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/mp_performance_2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_4.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/pseudoprivate.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/employees.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/processor.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/uppercase.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/pizzashop.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/monitoring.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/map_filter_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/contains.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_3.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/privacy.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/squares.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/squares_yield.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/squares_nonyield.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/number.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/skipper.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/classtree.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/classtools.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/list_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex/regex_test.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/api_test.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/08_asyncio-sleep-gather.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/09_aiohttp-example.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/11_call-later-repeatedly.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/20_reconfig-process.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/04_hello-asyncio.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/06_asyncio-coroutine.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/mp_performance_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/mp_performance_2_result.txt",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/myworker.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/18_cotyledon.py",
@@ -156,7 +173,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/asyncio_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/exam-1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/manager.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/classtools.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/person.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/manager-composite.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/unittest_tst.py",
@@ -237,7 +253,7 @@
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 22.0
 	},
 	"find_in_files":
 	{
@@ -270,57 +286,30 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "MultiProcessing/08_asyncio-sleep-gather.py",
-					"semi_transient": false,
+					"file": "class/contains.py",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 353,
+						"buffer_size": 1032,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								352,
-								352
+								218,
+								218
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "class/class_tst1.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 351,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								305,
-								320
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -334,7 +323,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 22.0
 	},
 	"input":
 	{
@@ -383,7 +372,7 @@
 	"project": "test.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 40.0
 	},
 	"save_all_on_build": true,
 	"select_file":

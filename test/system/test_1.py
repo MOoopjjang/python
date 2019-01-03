@@ -14,6 +14,8 @@ def info():
 	print('processor >> {}'.format(platform.processor()))
 	print('CPU count >> {}'.format(multiprocessing.cpu_count()))
 
+	print('Mac : {}'.format(platform.mac_ver()))
+
 
 def socket_module_sample():
 	import socket
@@ -41,9 +43,9 @@ def connection():
 
 
 def main():
-	# info()
+	info()
 	# socket_module_sample()
-	connection()
+	# connection()
 
 
 if __name__ == '__main__':

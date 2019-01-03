@@ -19,7 +19,10 @@ cotyledon :: 오랜시간동한 실행되는 process를 생성하기 위해 만�
  -- child process중 하나가 crash될경우 자동으로 다시 실행해준다.   
 """
 
+
+
 class PrinterService( cotyledon.Service ):
+	name='printer'
 	def __init__( self , worker_id):
 		self._shutdown = threading.Event()
 		super(PrinterService , self).__init__(worker_id)
