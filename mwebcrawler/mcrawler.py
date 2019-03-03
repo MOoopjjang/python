@@ -21,6 +21,8 @@ from multiprocessing import Process
 import threading
 import concurrent.futures
 
+from mdecorator import start_end_loging
+
 
 
 FREE_PROXY_URL = 'https://free-proxy-list.net/'
@@ -41,11 +43,6 @@ class MCrawler:
 		self.__proxies = self.__select_proxy__( self.__get_proxies__())
 		self.__isProxy = proxy
 
-
-	def __del__(self):
-		getLogger().info('__del__ called!!')
-		del self.__lUrls[:]
-		del self.__lSaveDirs[:]
 
 
 	def __get_proxies__( self ):
@@ -83,7 +80,7 @@ class MCrawler:
 
 
 
-	def __chkValid__(self):
+	def __chkValid(self):
 		if 	len(self.__lUrls) == 0 or len(self.__lSaveDirs) == 0:
 			print('변수를 체크하세요.')
 			sys.exit(0)
@@ -103,8 +100,8 @@ class MCrawler:
 
 
 
-
-	def __download_image__(self , _list , sSaveDir):
+	@start_end_loging('[download]' , True )
+	def __download_image(self , _list , sSaveDir):
 		getLogger().info('-- pid:{} --  image download start'.format(os.getpid()))
 		session = requests.session()
 		for downUrl in _list:
@@ -156,10 +153,11 @@ class MCrawler:
 				getLogger().info('dir -- {}'.format(subDir))
 				print('-'*100)
 				
-				self.__crawring__(hrefl[index] , subDir , _maxDepth , _depth)
+				self.__crawring(hrefl[index] , subDir , _maxDepth , _depth)
 
 
-	def __crawring__(self , sUrl , sSaveDir , _maxDepth ,  _depth):
+	@start_end_loging('[__crawring]' , False )
+	def __crawring(self , sUrl , sSaveDir , _maxDepth ,  _depth):
 		# getLogger().info('pid -- {}:{}'.format(os.getpid(),sUrl))
 		getLogger().info('thread -- {}'.format(sUrl))
 		try:
@@ -215,14 +213,14 @@ class MCrawler:
 							end = start + bit
 							if index == (nMPCount - 1):
 								end = len( validUrl )
-							th = te.submit(self.__download_image__ , validUrl[start:end] , sSaveDir)
+							th = te.submit(self.__download_image , validUrl[start:end] , sSaveDir)
 							threads.append( th )
 
 						for th in concurrent.futures.as_completed( threads ):
 							print('{}'.format(th.result()))
 
 				else:
-					self.__download_image__(validUrl , sSaveDir)
+					self.__download_image(validUrl , sSaveDir)
 					
 
 				# Zip압축
@@ -241,7 +239,7 @@ class MCrawler:
 
 
 	def run( self ):
-		self.__chkValid__()
+		self.__chkValid()
 
 		# -- Process Count
 		self.__nJobCount = len(self.__lUrls)
@@ -250,13 +248,13 @@ class MCrawler:
 			with concurrent.futures.ProcessPoolExecutor( max_workers = self.__nJobCount ) as pe:
 				tResultList = []
 				for i in range(self.__nJobCount):
-					tResultList.append(pe.submit( self.__crawring__,self.__lUrls[i] , self.__lSaveDirs[i] , self.__maxDepth , 1 ))
+					tResultList.append(pe.submit( self.__crawring,self.__lUrls[i] , self.__lSaveDirs[i] , self.__maxDepth , 1 ))
 
 				for th in concurrent.futures.as_completed(tResultList):
 					print('{}'.format(th.result()))
 		else:
 			for i in range( 0  , self.__nJobCount ):
-				self.__crawring__(self.__lUrls[i] , self.__lSaveDirs[i] , self.__maxDepth , 1)
+				self.__crawring(self.__lUrls[i] , self.__lSaveDirs[i] , self.__maxDepth , 1)
 
 
 
