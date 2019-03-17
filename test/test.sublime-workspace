@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"position",
+				"positionals"
+			],
+			[
 				"e",
 				"encrypt"
 			],
@@ -36,10 +40,40 @@
 	"buffers":
 	[
 		{
-			"file": "class/contains.py",
+			"file": "async/asyncio_1.py",
 			"settings":
 			{
-				"buffer_size": 1032,
+				"buffer_size": 252,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "exercise_200/exercise_2.py",
+			"settings":
+			{
+				"buffer_size": 2070,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "#!python3\n#-*- coding:utf-8 -*-\n\n\n\nimport json\n\n\n\n# 에제 1\ndef trace( func ):\n\tprint('trace func %s'%func.__name__)\n\treturn func\n\n@trace\t\t\t\t\t\t\t\ndef sum(a,b,c):\t\t\t\t\t\t# sum = trace(sum)\t\t\t\t\t\n\treturn a+b+c\n\ndef main():\t\t\t\t\t\t\t\n\tss = sum(1,2,3)\t\t\t\t\t# ss = trace(sum)(1,2,3)\n\tprint('%d'%ss)\n\n\n\n\nif __name__ == '__main__':\n\tmain()",
+			"file": "exercise_200/test.py",
+			"file_size": 241,
+			"file_write_time": 131972038425536779,
+			"settings":
+			{
+				"buffer_size": 321,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "exercise_200/singleton_decorator.py",
+			"settings":
+			{
+				"buffer_size": 438,
+				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		}
@@ -124,22 +158,71 @@
 	"expanded_folders":
 	[
 		"/Users/mooopjjang/Documents/work/gitrep/python/test",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/system"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/async",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/custom",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/object_file_decorator.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/decorator1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/decorator_module.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/exercise_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/06_asyncio-coroutine.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/getattr-builtins.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/attribute_interceptor.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/exam_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/monitoring.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/property_1.pyt",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/rangetest.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/rangetest_test.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/028.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/rangetest.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/rangetest_test.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/access2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/decorator_tst2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/decorator_tst_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/etc.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/person.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/builtinsMixin.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/access1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/timerdeco.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/singleton.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/tracer.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/singleton.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/timerdeco.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/decorator1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/decorator_tst2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/decorator_tst_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/decorator.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/first_class_function.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/test_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/xmltest.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/zip_test.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/custom/mlist.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/setwrapper.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/typesubclass.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/bothmethods.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/deco_tst1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/slot_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/display/testmixin.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/display/listinherited.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/display/listtree.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/display/testmixin0.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_4.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/display/listinstance.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/display/__init__.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/monitoring_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/mp_performance_2.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_4.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/pseudoprivate.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/employees.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/processor.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/uppercase.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/pizzashop.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/monitoring.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/map_filter_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/contains.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_3.py",
@@ -154,14 +237,12 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/list_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex/regex_test.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/api_test.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/08_asyncio-sleep-gather.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/09_aiohttp-example.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/11_call-later-repeatedly.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/20_reconfig-process.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/04_hello-asyncio.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/06_asyncio-coroutine.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/mp_performance_2_result.txt",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/myworker.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/18_cotyledon.py",
@@ -173,7 +254,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/asyncio_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/exam-1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/manager.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/person.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/manager-composite.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/unittest_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/condition_tst.py",
@@ -213,47 +293,11 @@
 		"/Users/MOoop/Documents/work/my/python/test/simple_chat_cli.py",
 		"/Users/MOoop/Documents/work/my/python/test/simple_chat.py",
 		"/Users/MOoop/Documents/work/my/python/test/simple_server.py",
-		"/Users/MOoop/Documents/work/my/python/test/simple_cli.py",
-		"/Users/MOoop/Documents/work/my/python/test/random_scraping.py",
-		"/Users/MOoop/Documents/work/my/python/test/random_scraping2.py",
-		"/Users/MOoop/Documents/work/my/python/test/crawler_tst.py",
-		"/Users/MOoop/Documents/work/my/python/test/example.csv",
-		"/Users/MOoop/Documents/work/my/python/test/example_2.csv",
-		"/Users/MOoop/Documents/work/my/python/test/example_1.csv",
-		"/Users/MOoop/Documents/work/my/python/test/report.py",
-		"/Users/MOoop/Documents/work/my/python/test/backupToZip.py",
-		"/Users/MOoop/Documents/work/my/python/test/pyc_compile.py",
-		"/Users/MOoop/Documents/work/my/python/test/pyc_compile.pyc",
-		"/Users/MOoop/Documents/work/my/python/util/mwebcrawler/webcrawler.py",
-		"/Users/MOoop/Documents/work/my/python/util/mfinder/msearch.py",
-		"/Users/MOoop/Documents/work/my/python/util/mfinder/mfinder.py",
-		"/Users/MOoop/Documents/work/my/python/test/RomeoAndJuliet.txt",
-		"/Users/MOoop/Documents/work/my/python/exam/regex_finder/regex_finder.py",
-		"/Users/MOoop/Documents/work/my/python/test/backUpToZip.py",
-		"/Users/MOoop/Documents/work/my/python/test/mcw.pyw",
-		"/Users/MOoop/Documents/work/my/python/test/txtfinder.py",
-		"/Users/MOoop/Documents/work/my/python/test/regex_finder.py",
-		"/Users/MOoop/Documents/work/my/python/test/nba.html",
-		"/Users/MOoop/Documents/work/my/python/test/sample_c.txt",
-		"/Users/MOoop/Documents/work/my/python/test/xferlog.py",
-		"/Users/MOoop/Documents/work/my/python/exam/rqg/Paper.py",
-		"/Users/MOoop/Documents/work/my/python/test/Paper.py",
-		"/Users/MOoop/Documents/work/my/python/test/randomQuizGenerator.py",
-		"/Users/MOoop/Documents/work/my/python/test/StateGenerator.py",
-		"/Users/MOoop/Documents/work/my/python/test/randomQuizGenerator",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/MStringUtils.py",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/Phonebook.py",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/Person.py",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/xferlog.py",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/xferlog2.py",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/ex4.py",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/test.py",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/MFileUtils.py",
-		"/Users/MOoop/Documents/work/my/python/correction_info_make_v1/config.py"
+		"/Users/MOoop/Documents/work/my/python/test/simple_cli.py"
 	],
 	"find":
 	{
-		"height": 22.0
+		"height": 23.0
 	},
 	"find_in_files":
 	{
@@ -267,6 +311,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"_num = 1\n",
 			"consumer",
 			"tmp"
 		],
@@ -286,24 +331,52 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "class/contains.py",
-					"semi_transient": true,
+					"file": "async/asyncio_1.py",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1032,
+						"buffer_size": 252,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								218,
-								218
+								252,
+								252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "exercise_200/exercise_2.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2070,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1595,
+								1651
 							]
 						],
 						"settings":
@@ -317,13 +390,69 @@
 					},
 					"stack_index": 0,
 					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "exercise_200/test.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								321,
+								321
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "exercise_200/singleton_decorator.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 438,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								112,
+								112
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 22.0
+		"height": 23.0
 	},
 	"input":
 	{
@@ -372,7 +501,7 @@
 	"project": "test.sublime-project",
 	"replace":
 	{
-		"height": 40.0
+		"height": 42.0
 	},
 	"save_all_on_build": true,
 	"select_file":

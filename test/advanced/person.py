@@ -2,6 +2,7 @@
 #-*- coding:utf-8 -*-
 
 from classtools import AttrDisplay
+from rangetest import rangetest
 
 class Person ( AttrDisplay ):
 	def __init__( self , _name , _job = None , _pay = 0):
@@ -19,6 +20,12 @@ class Person ( AttrDisplay ):
 
 	def giveRaise( self , percent ):
 		self.pay = int( self.pay * (1 + percent ))
+
+	# def giveRaise( self , percent ):
+	# 	if percent < 0.0 or percent > 1.0:
+	# 		raise TypeError('percent invalid')
+	# 	self.pay = int( self.pay * (1 + percent ))
+
 
 
 if __name__ == '__main__':

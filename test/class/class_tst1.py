@@ -2,30 +2,66 @@
 #-*- coding:utf-8 -*-
 
 
-from abc import ABCMeta , abstractmethod
+class properties( object ):
+	def getage( self ):return 40
+	def setage( self , value ):
+		print('value : %d'%value)
+		self._age = value
+
+	age = property( getage , setage , None , None )
 
 
 
-class Super( metaclass = ABCMeta ):
-	def delegate( self ):
-		self.action()
-
-	@abstractmethod
-	def action( self ):
-		pass
+class A:
+	def act( self ):print('A')
 
 
+class B:
+	def act( self ):print('B')
 
-class Child( Super ):
-	def action( self ):
-		print(' action ')
+
+
+class C( B, A ):
+	def act( self ):
+		# super().act()
+		B.act( self )
+		A.act( self )
+
+
+class Callee:
+	# def __init__( self , *argvs  , **kargvs):
+	# 	# print('__init__ : %s -- %s'%(argvs , kargvs))
+	# 	self.argvs = argvs
+	# 	self.kargvs = kargvs 
+
+	def __call__( self  , *argvs , **kargvs):
+		print('Callee : %s -- %s '%(argvs , kargvs ))
+
 
 
 
 if __name__ == '__main__':
-	# s = Super()
-	# s.action()
+
+	# x = properties()
+	# print('x.age : %d'%x.age)
+	# x.age = 10
+	# print('x.age : %d'%x.age)
+	# print('x._age : %d'%x._age)
+	# x.job = 'trainer'
+	# print('x.job : %s'%x.job)
 
 
-	c = Child()
-	c.action()
+	# x = C()
+	# x.act()
+
+
+	c = Callee()
+	c(1,2,3)
+
+
+
+
+
+
+
+
