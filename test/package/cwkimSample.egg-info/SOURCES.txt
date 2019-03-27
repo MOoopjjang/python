@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+cwkimSample.egg-info/PKG-INFO
+cwkimSample.egg-info/SOURCES.txt
+cwkimSample.egg-info/dependency_links.txt
+cwkimSample.egg-info/requires.txt
+cwkimSample.egg-info/top_level.txt
+sample/__init__.py
+sample/sample_main.py

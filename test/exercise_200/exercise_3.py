@@ -27,6 +27,7 @@ class BillBoardManager:
 	def __init__( self  , _url ):
 		self._url = _url
 		self._html = None
+		self._jobj = None
 		
 
 	def requestInfo( self ):
@@ -35,7 +36,7 @@ class BillBoardManager:
 		self._html = res.text
 
 
-	@rfwd(mode = True)
+	@rfwd(mode = False)
 	def parsing( self ):
 		bsObj = bs4.BeautifulSoup(self._html , 'html.parser')
 		elm = bsObj.find('div' , {'class':'container chart-container container--xxlight-grey container--no-side-padding'})
@@ -54,8 +55,15 @@ class BillBoardManager:
 	def loadData( self , _path ):
 		import json
 		with open(_path , 'r') as fr:
-			jObj = json.load(fr)
-		return jObj
+			self._jobj = json.load(fr)
+		return self._jobj
+
+
+	def find(self , type , value ):
+		for k in self._jobj:
+			if self._jobj[k][type] == value:
+				return self._jobj[k]
+
 			
 
 
@@ -67,6 +75,8 @@ def main():
 	bbm.requestInfo()
 	bbm.parsing()
 	bbm.loadData('billboard.json')
+	r = bbm.find('data-title' , 'Girls Like You')
+	print('r : %s'%r)
 	
 
 
