@@ -1,0 +1,3 @@
+[url_get] duration time 103.09618727899999
+[mt_url_get] duration time 1.344798263
+[test_async_url_get] duration time 1.174736207
