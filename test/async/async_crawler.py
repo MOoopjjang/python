@@ -13,6 +13,8 @@ from urllib.request import Request, urlopen
 from urllib.request import URLError, HTTPError
 from urllib.parse import quote
 
+import requests
+
 
 
 
@@ -72,12 +74,24 @@ async def parsing(_text):
 async def search(keyword):
 	url = 'https://www.google.com/search?q=' + quote(
                 ' '.join(keyword)) + '&espv=2&biw=1366&bih=667&site=webhp&source=lnms&tbm=isch' + '&tbs=' + '&sa=X&ei=XosDVaCXD8TasATItgE&ved=0CAcQ_AUoAg'
-	headers = {}
-	headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
-	req = urllib.request.Request(url, headers=headers)
-	resp = urllib.request.urlopen(req)
-	respData = str(resp.read())
-	return respData
+	
+	"""
+	urllib version
+	"""
+	# headers = {}
+	# headers['User-Agent'] = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36"
+	# req = urllib.request.Request(url, headers=headers)
+	# resp = urllib.request.urlopen(req)
+	# respData = str(resp.read())
+	# return respData
+
+	"""
+	requests version
+	"""
+	header = {}
+	header['User-Agent'] = 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'
+	res = requests.get(url , headers = header )
+	return res.text
 
 
 async def main():	

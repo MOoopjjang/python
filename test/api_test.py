@@ -365,6 +365,12 @@ def testArray():
 	print('str bb : {}'.format(str(bb , encoding='utf-8')))
 
 
+def str_test():
+	print(r'hi\t hello')
+	print('hi\t hello')
+	spam = 'xferlog kknda kadlf'
+	print(spam[:7])
+
 def main():
 
 	init()
@@ -374,7 +380,9 @@ def main():
 
 	# testCharacter()
 
-	testArray()
+	# testArray()
+
+	str_test()
 
 	
 if __name__ == '__main__':

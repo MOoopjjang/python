@@ -4,34 +4,55 @@
 
 
 import os , sys
+import copy
 
 def main():
-	print('{}'.format([1,2,3]*3))
+	spam = ['xferlog' , 'kknda' , 'bhkim' , 'ejkim']
+	print(spam)
+	del spam[2]
+	print(spam)
 
-    # 다중할당기법
-	a = [1,2,3]
-	one , two , three = a
-	print('{} , {} , {}'.format(one , two , three))
-
-	# method -- index()
-	ar1 = ['xferlog' , 'kknda' , 'abc']
-	print('index -- {}'.format(ar1.index('kknda')))
-	# print('index -- {}'.format(ar1.index(1)))
-
-	#        -- insert
-	ar1.insert(2,'kcwda')
-	print('ar1 : {}'.format(ar1))
-
-	#        -- remove
-	ar1.remove('kcwda')
-	print('remove - ar1 : {}'.format(ar1))
+	if 'ejkim'  not in spam:
+		print('exist!')
 
 
-	t = tuple([1,2,3])
-	print('t : {}'.format(t))
+	a , b , c = spam
+	print(a+':'+b+':'+c)	
 
-	l = list((3,4,5))
-	print('l: {}'.format(l))
+	print(spam.index('kknda'))
+
+	spam.insert(2,'ccccc')
+	print(spam)
+
+	sssss = 'xferlog hi how are you?'
+	bhss = sssss.replace('kcwda' , 'bhkim')
+	print(sssss)
+	# ssl = list(sssss)
+	# ssl.replace('kcwda' , 'bhkim')
+	
+
+	print(bhss)
+
+	list_ss = list(sssss)
+	list_ss[:len('xferlog')] = 'bhkim'
+	convert_str = ''.join(list_ss)
+	print(convert_str)
+
+	t_l_s = tuple(list_ss)
+	print(t_l_s)
+	l_t_s = list(t_l_s[0:len('bhkim')])
+	print(l_t_s)
+
+	tt = ('xferlog',)
+	print(type(tt))
+
+	bl = ['kknda' , 'bhkim']
+	cl = copy.deepcopy(bl)
+	cl[0]='kkk'
+	print(bl)
+	print(cl)
+
+
 
 
 if __name__ == '__main__':
