@@ -11,15 +11,14 @@ class ConfigMgr:
 			raise Exception('_config_path is None!!!')
 		self._config_path = config_path
 
-		
-	def setConfigPath( self , new_config_path ):
-		self._config_path = new_config_path
-
-	def getConfig( self ):
+	def __iter__( self ):
 		with open(self._config_path , 'r') as fr:
 			for line in fr:
 				yield line.split('=')
 
+		
+	def setConfigPath( self , new_config_path ):
+		self._config_path = new_config_path
 
 
 

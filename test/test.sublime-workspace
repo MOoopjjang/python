@@ -40,37 +40,37 @@
 	"buffers":
 	[
 		{
-			"file": "syntax/list_tst.py",
+			"file": "tools/configmanager.py",
 			"settings":
 			{
-				"buffer_size": 2030,
+				"buffer_size": 699,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "syntax/zip_tst.py",
+			"file": "tools/sample.txt",
 			"settings":
 			{
-				"buffer_size": 320,
+				"buffer_size": 121,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "syntax/tst1.py",
+			"file": "tools/mifchecker.py",
 			"settings":
 			{
-				"buffer_size": 417,
+				"buffer_size": 604,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "syntax/ps_decorator.py",
+			"file": "tools/main.py",
 			"settings":
 			{
-				"buffer_size": 606,
+				"buffer_size": 244,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -161,10 +161,15 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/list_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/zip_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/ps_decorator.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/mp_performance_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/mp_performance_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/rangetest.py",
@@ -173,7 +178,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/netresultdecorator.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/request_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/dict_tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/list_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api_test.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex/regex_test.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_3.py",
@@ -253,7 +257,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/decorator_tst2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/decorator_tst_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/decorator.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/first_class_function.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/test_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/xmltest.py",
@@ -290,9 +293,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/api_test.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/08_asyncio-sleep-gather.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/09_aiohttp-example.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/11_call-later-repeatedly.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/20_reconfig-process.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/04_hello-asyncio.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/11_call-later-repeatedly.py"
 	],
 	"find":
 	{
@@ -367,54 +368,25 @@
 			[
 				{
 					"buffer": 0,
-					"file": "syntax/list_tst.py",
+					"file": "tools/configmanager.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2030,
+						"buffer_size": 699,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								851,
-								851
+								431,
+								62
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/Python/Python.sublime-syntax",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "syntax/zip_tst.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 320,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								278,
-								278
-							]
-						],
-						"settings":
-						{
-							"auto_name": "",
-							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -424,26 +396,53 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "syntax/tst1.py",
+					"buffer": 1,
+					"file": "tools/sample.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 417,
+						"buffer_size": 121,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								326,
-								326
+								107,
+								107
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "tools/mifchecker.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 604,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								101,
+								101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -454,25 +453,24 @@
 				},
 				{
 					"buffer": 3,
-					"file": "syntax/ps_decorator.py",
+					"file": "tools/main.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 606,
+						"buffer_size": 244,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								338,
-								325
+								244,
+								244
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

@@ -13,7 +13,7 @@ class IfChecker:
 
 
 	def run( self ):
-		for info in self._configMgr.getConfig():
+		for info in self._configMgr:
 			if info[0] == 'params':
 				self._param = info[1]
 			else:
@@ -24,8 +24,8 @@ class IfChecker:
 					if res.status_code == 200:
 						print('success ..{} '.format(info[1] ))
 					else:
-						print('error ..{} response : {}'.format(info[1] , res.status_code))
+						print('failed ..{} response : {}'.format(info[1] , res.status_code))
 				except:
-					print('error : '+info[1])
+					print('except : '+info[1])
 				
 
