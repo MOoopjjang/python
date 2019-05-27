@@ -25,10 +25,20 @@ def tst_1():
 	print('text \t hi')
 
 
+def tst( message , when = None):
+	from datetime import datetime
+	when = datetime.now() if when is None else when
+	print('%s , %s'%(message , when))
+
+
 if __name__ == '__main__':
 	# tst_1()
 
 	# func1(lambda x:x*x , 10)
-	retv = func2()
-	print(type(retv))
-	print(retv[0] , retv[1])
+	# retv = func2()
+	# print(type(retv))
+	# print(retv[0] , retv[1])
+
+	tst('hi')
+
+	tst('hi2' , '2019-x-x-x')
