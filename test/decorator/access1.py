@@ -11,35 +11,38 @@ Private은 onDecorator를 반환하고 , onDecorator는 onInstance를 반환하�
 각 onInstance의 인스턴스는 Doubler 인스턴스를 내장함.
 
 소스코드 이해도 :
-    0%
+    90%
 """
 
 
 traceMe = False
-def trace(*args):
+
+
+def trace( *args ):
 	if traceMe:print('['+' '.join(map(str , args))+']')
 
-def Private(*privates):
+
+def Privates( *privates ):
 	def onDecorator( aClass ):
 		class onInstance:
-			def __init__( self , *args , **kargs ):
-				self.wrapped = aClass(*args , **kargs)
+			def __init__( self , *args , **kargv ):
+				self.wrapped = aClass( *args , **kargv )
 
-			def __getattr__( self , attr ):
-				trace('get:' , attr )
-				if attr in privates:
-					raise TypeError('private attribute fetch: '+attr)
+			def __getattr__( self , attrname ):
+				trace('__getattr__ ' , attrname)
+				if attrname in privates:
+					raise TypeError('%s is private member'%attrname )
 				else:
-					return getattr(self.wrapped , attr)
+					return getattr(self.wrapped , attrname)
 
-			def __setattr__( self , attr , value ):
-				trace('set :',attr , value)
-				if attr == 'wrapped':
-					self.__dict__[attr] = value
-				elif attr in privates:
-					raise TypeError('private attribute change :'+attr)
+			def __setattr__( self , attrname , value ):
+				trace('__setattr__ ' , attrname , value)
+				if attrname == 'wrapped':
+					self.__dict__[attrname] = value
+				elif attrname in privates:
+					raise TypeError('%s is private member'%attrname )
 				else:
-					setattr(self.wrapped , attr , value )
+					setattr( self.wrapped , attrname , value )
 
 		return onInstance
 	return onDecorator
@@ -48,45 +51,23 @@ def Private(*privates):
 
 if __name__ == '__main__':
 	traceMe = True
+	@Privates('name' , 'age')     				# private 멤버로 'name' , 'age'를 지정한다. onDecorator를 반환
+	class Person:								
+		def __init__( self , name , age ):
+			self.name = name
+			self.age = age
 
-	@Private('data' , 'size')
-	class Doubler:
-		def __init__( self , label , start ):
-			self.label = label
-			self.data = start
-
-		def size( self ):
-			return len(self.data)
-
-		def double( self ):
-			for i in range(self.size()):
-				self.data[i] = self.data[i]*2
-
-		def display( self ):
-			print('%s => %s'%(self.label , self.data))
+		def getName( self ):return self.name
+		def getAge( self ):return self.age
 
 
-	X = Doubler('X is' , [1,2,3])
-	Y = Doubler('Y is' , [-10 , -20 , -30])
+
+	person = Person('cwkim' , 40)			# person =  [[  onDecorator(Person) -> onInstance('cwkim' , 40)  ]]
+	print('name : '+person.getName())		# __getattr__ -> getattr(self.wrapped , attrname)
+	print('age :'+person.age)				# __getattr__ -> ypeError('%s is private member'%attrname )
 
 
-	# 다음은 모두 성공
-	print(X.label)
-	X.display();X.double();X.display()
-	print(Y.label)
-	Y.display();Y.double()
-	Y.label = 'Spam'
-	Y.display()
 
-	# 다음은 모두 적절히 싪패함
-	"""
-	print(X.size())
-	print(X.data)
-	X.data = [1,1,1]
-	X.size = lambda S: 0
-	print(Y.data)
-	print(Y.size())
-	"""
 
 
 

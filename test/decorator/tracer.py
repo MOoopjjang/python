@@ -3,43 +3,37 @@
 
 
 
-class Tracer:
-	def __init__( self , aclass ):
-		self.aclass = aclass
+def Tracer( aClass ):
+	class Wrapped:
+		def __init__( self , *args , **kargv ):
+			self.fetches = 0
+			self.aClass = aClass( *args , **kargv )
 
-	def __call__(self , *args , **kargs ):
-		print('__call__')
-		self.wrapped = self.aclass( *args , **kargs )
-		return self
+		def __getattr__( self , attrname ):
+			print('{} fetches : {}'.format(attrname , self.fetches))
+			if attrname not in self.aClass.ATTRIBUTES:
+				raise TypeError(attrname)
+			else:
+				self.fetches += 1
+				return getattr(self.aClass  , attrname)
 
-
-	def __getattr__( self , attrname ):
-		print('%s'%attrname)
-		print('__getattr__')
-		return getattr( self.wrapped , attrname)
-
-
-
-@Tracer
-class Spam:
-	def display(self):
-		print('spam : ')
+	return Wrapped
 
 
 @Tracer
 class Person:
-	def __init__( self , name ):
-		self.name = name
-
+	ATTRIBUTES = ['_name' , '_age']
+	def __init__( self , _name , _age , _addr ):
+		self._name = _name
+		self._age = _age
+		self._addr = _addr
 
 
 
 if __name__ == '__main__':
-	# s = Spam()
-	# s.display()
+	p = Person('xferlog' , 10 , 'incheon')
 
+	print(p._name +':'+str(p._age))
 
-	bob = Person('bob')
-	jon = Person('jon')
+	print(p._addr)
 
-	print('bob : %s , jon : %s'%(bob.name , jon.name))
