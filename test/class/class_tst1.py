@@ -2,6 +2,8 @@
 #-*- coding:utf-8 -*-
 
 
+from aa import A
+
 class properties( object ):
 	def getage( self ):return 40
 	def setage( self , value ):
@@ -12,8 +14,8 @@ class properties( object ):
 
 
 
-class A:
-	def act( self ):print('A')
+# class A:
+# 	def act( self ):print('A')
 
 
 class B:
@@ -40,6 +42,7 @@ class Callee:
 
 
 
+
 if __name__ == '__main__':
 
 	# x = properties()
@@ -55,10 +58,12 @@ if __name__ == '__main__':
 	# x.act()
 
 
-	c = Callee()
-	c(1,2,3)
+	# c = Callee()
+	# c(1,2,3)
 
-
+	print(__name__)
+	a = A('xferlog')
+	print(a)
 
 
 

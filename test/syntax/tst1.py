@@ -31,6 +31,16 @@ def tst( message , when = None):
 	print('%s , %s'%(message , when))
 
 
+
+def tst_3():
+	import sys
+
+	sys.stdout = open('log.txt' , 'w')
+
+	print('xferlog')
+
+
+
 if __name__ == '__main__':
 	# tst_1()
 
@@ -39,6 +49,9 @@ if __name__ == '__main__':
 	# print(type(retv))
 	# print(retv[0] , retv[1])
 
-	tst('hi')
+	# tst('hi')
 
-	tst('hi2' , '2019-x-x-x')
+	# tst('hi2' , '2019-x-x-x')
+
+
+	tst_3();
