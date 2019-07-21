@@ -3,10 +3,7 @@
 
 
 
-import subprocess
-import time , datetime
-import cotyledon
-import threading
+
 
 
 
@@ -28,9 +25,18 @@ class SubService( cotyledon.Service ):
 
 
 def tst_1():
+	"""
+	cotyledon + subprocess.Popen 테스트
+	"""
+	import subprocess
+	import time , datetime
+	import cotyledon
+	import threading
+
 	manager = cotyledon.ServiceManager()
 	manager.add(SubService , 2)
 	manager.run()
+
 
 
 
