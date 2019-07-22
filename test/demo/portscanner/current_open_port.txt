@@ -1,0 +1,27 @@
+------------------------------localhost<<>>2019-07-23 00:15:17.529226------------------------------
+1161 : Microsoft OneNote - 192.168.0.7:50086 - ESTABLISHED
+1161 : Microsoft OneNote - 192.168.0.7:50088 - ESTABLISHED
+1161 : Microsoft OneNote - 192.168.0.7:49521 - ESTABLISHED
+1161 : Microsoft OneNote - 192.168.0.7:49522 - ESTABLISHED
+878 : com.docker.vpnkit - 0.0.0.0:3306 - LISTEN
+878 : com.docker.vpnkit - ::1:3306 - LISTEN
+583 : Google Chrome Helper - 192.168.0.7:49223 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+------------------------------localhost<<>>2019-07-23 00:17:17.545657------------------------------
+1161 : Microsoft OneNote - 192.168.0.7:49521 - ESTABLISHED
+1161 : Microsoft OneNote - 192.168.0.7:49522 - ESTABLISHED
+878 : com.docker.vpnkit - 0.0.0.0:3306 - LISTEN
+878 : com.docker.vpnkit - ::1:3306 - LISTEN
+583 : Google Chrome Helper - 192.168.0.7:49223 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+------------------------------localhost<<>>2019-07-23 00:19:17.560917------------------------------
+1161 : Microsoft OneNote - 192.168.0.7:50094 - ESTABLISHED
+1161 : Microsoft OneNote - 192.168.0.7:49521 - ESTABLISHED
+1161 : Microsoft OneNote - 192.168.0.7:49522 - ESTABLISHED
+878 : com.docker.vpnkit - 0.0.0.0:3306 - LISTEN
+878 : com.docker.vpnkit - ::1:3306 - LISTEN
+583 : Google Chrome Helper - 192.168.0.7:49223 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED

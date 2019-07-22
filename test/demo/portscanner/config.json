@@ -1,7 +1,7 @@
 {
 	"host":"localhost",
 	"scan_start":1,
-	"scan_end":10000,
+	"scan_end":100000,
 	"interval":2,
 	"log":"current_open_port.txt"
 }
