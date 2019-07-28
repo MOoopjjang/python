@@ -11,19 +11,7 @@ import subprocess
 
 
 """
-  ----   Port Scanner ----
-
-  기술 :
-    - cotyledon ( processor 관리 module )
-    - subprocess ( 다른 프로그램 실행 기능 )
-    - socket을 통한 port scan기능
-    - port를 통한 연결 process 정보 가져오기
-
-
-  기능 :
-   - open된 port와 연결된 program 이름
-   - port + process name을 log로 출력
-   - log를 화면에 process로 출력
+  Makey by MOoop
 
 """
 
@@ -70,17 +58,22 @@ class PortScanner( cotyledon.Service ):
 	def run( self ):
 		import psutil
 		while self._shutdown.is_set() != True:
-			fw = self.__getResultFile('localhost')
-			for info in psutil.net_connections():
-				if info.laddr != None and info.laddr[0] != '127.0.0.1' and ( info.status == 'LISTEN' or info.status == 'ESTABLISHED'):
-					info_str = '{} : {} - {}:{} - {}'.format(info.pid , psutil.Process(info.pid).name() , info.laddr[0] , info.laddr[1] , info.status )
-					print(info_str)
-					fw.write(info_str+'\n')
+			try:
+				fw = self.__getResultFile('localhost')
+				for info in psutil.net_connections():
+					if info.laddr != None and info.laddr[0] != '127.0.0.1' and ( info.status == 'LISTEN' or info.status == 'ESTABLISHED'):
+						info_str = '{} : {} - {}:{} - {}'.format(info.pid , psutil.Process(info.pid).name() , info.laddr[0] , info.laddr[1] , info.status )
+						print(info_str)
+						fw.write(info_str+'\n')
 
-			fw.close()
-			subprocess.Popen(['open' , self._config.get('log')])
-			sleepTime = self._config.get('interval') * 60
-			time.sleep(sleepTime)
+				fw.close()
+				subprocess.Popen(['open' , self._config.get('log')])
+				sleepTime = self._config.get('interval') * 60
+				time.sleep(sleepTime)
+			except KeyboardInterrupt:
+				print('KeyboardInterrupt')
+				self.terminate()
+			
 
 
 	def terminate( self ):

@@ -7,14 +7,13 @@ from operator import itemgetter
 
 
 def str_sort():
-	str_o = 'xferlogickaodfk'
-
-	s_str_o = sorted(str_o)
-	print(s_str_o)
-
-	sort_str_r = sorted( str_o , reverse = True )
-	print(sort_str_r)
-
+	sample1 = 'akcmakam12mcldkad9rmckadjf'
+	print('-------- sorted 3rd index ------------')
+	s_str1 = ''.join(sorted(sample1))
+	print(s_str1)
+	print('-------- sorted 3rd index ------------')
+	s_str1 = ''.join(sorted(sample1 , reverse = True))
+	print(s_str1)
 
 
 def list_tst():
@@ -27,28 +26,30 @@ def list_tst():
 
 
 	print('-------- sorted 3rd index ------------')
-	# for c in category.sort(key = itemgetter(3)):print(c)
-	category.sort(key = itemgetter(3))
-	for c in category:print(c)
+	category.sort(key = itemgetter(2))
+	print(category)
+	
 
 	print('-------- sorted 3rd index reverse ------------')
-	category.sort(key = itemgetter(3) , reverse = True)
-	for c in category:print(c)
+	category.sort(key = itemgetter(2) , reverse = True)
+	print(category)
+	
 
 	print('-------- sorted multiple index( 3 , 4) index reverse ------------')
-	category.sort( key = itemgetter( 3 , 4))
-	for c in category:print(c)
+	category.sort(key = itemgetter(3 , 4))
+	print(category)
+	
 
 
 def dict_tst():
-	sample_dict = {'a':10 , 'b':1 , 'f':100 , 'd':8 , 'g':50}
+	sample_dict = {1:'xferlog' , 2:'a' , 3:'kknda'}
+	print('-'*20+'-'*20)
+	a_sort_dict = sorted(sample_dict.items() , key = itemgetter(0))
+	print(a_sort_dict)
 
-	# print(dir(d))
-	key_asc = sorted(sample_dict.items() , key = itemgetter(0))
-	key_desc = sorted( sample_dict.items() , key = itemgetter( 0 ) , reverse = True )
-
-	value_asc = sorted( sample_dict.items() , key = itemgetter( 1 ))
-	value_desc = sorted( sample_dict.items() ,key = itemgetter( 1 ) , reverse = True)
+	print('-'*20+'-'*20)
+	d_sort_dict = sorted(sample_dict.items() , key = itemgetter(0) , reverse = True)
+	print(d_sort_dict)
 
 
 
@@ -56,6 +57,6 @@ def dict_tst():
 if __name__ == '__main__':
 	# dict_tst()
 
-	# list_tst()
+	list_tst()
 
-	str_sort()
+	# str_sort()

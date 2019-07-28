@@ -1,27 +1,153 @@
-------------------------------localhost<<>>2019-07-23 00:15:17.529226------------------------------
-1161 : Microsoft OneNote - 192.168.0.7:50086 - ESTABLISHED
-1161 : Microsoft OneNote - 192.168.0.7:50088 - ESTABLISHED
-1161 : Microsoft OneNote - 192.168.0.7:49521 - ESTABLISHED
-1161 : Microsoft OneNote - 192.168.0.7:49522 - ESTABLISHED
-878 : com.docker.vpnkit - 0.0.0.0:3306 - LISTEN
-878 : com.docker.vpnkit - ::1:3306 - LISTEN
-583 : Google Chrome Helper - 192.168.0.7:49223 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:41:13.816298------------------------------
+1341 : Microsoft OneNote - 192.168.0.7:49791 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49732 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49734 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49744 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49738 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49739 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49740 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49742 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49749 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49751 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49757 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49760 - ESTABLISHED
+696 : com.apple.geod - 192.168.0.7:49793 - ESTABLISHED
 76 : apsd - 192.168.0.7:49154 - ESTABLISHED
 76 : apsd - 192.168.0.7:49154 - ESTABLISHED
-------------------------------localhost<<>>2019-07-23 00:17:17.545657------------------------------
-1161 : Microsoft OneNote - 192.168.0.7:49521 - ESTABLISHED
-1161 : Microsoft OneNote - 192.168.0.7:49522 - ESTABLISHED
-878 : com.docker.vpnkit - 0.0.0.0:3306 - LISTEN
-878 : com.docker.vpnkit - ::1:3306 - LISTEN
-583 : Google Chrome Helper - 192.168.0.7:49223 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:43:13.835417------------------------------
+1341 : Microsoft OneNote - 192.168.0.7:49732 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49734 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49744 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49738 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49739 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49749 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49751 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49760 - ESTABLISHED
 76 : apsd - 192.168.0.7:49154 - ESTABLISHED
 76 : apsd - 192.168.0.7:49154 - ESTABLISHED
-------------------------------localhost<<>>2019-07-23 00:19:17.560917------------------------------
-1161 : Microsoft OneNote - 192.168.0.7:50094 - ESTABLISHED
-1161 : Microsoft OneNote - 192.168.0.7:49521 - ESTABLISHED
-1161 : Microsoft OneNote - 192.168.0.7:49522 - ESTABLISHED
-878 : com.docker.vpnkit - 0.0.0.0:3306 - LISTEN
-878 : com.docker.vpnkit - ::1:3306 - LISTEN
-583 : Google Chrome Helper - 192.168.0.7:49223 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:45:13.854981------------------------------
+1341 : Microsoft OneNote - 192.168.0.7:49807 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49796 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49802 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49732 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:47:13.899290------------------------------
+1341 : Microsoft OneNote - 192.168.0.7:49732 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:49:13.918640------------------------------
+1341 : Microsoft OneNote - 192.168.0.7:49732 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:51:13.936529------------------------------
+1661 : Evernote - 192.168.0.7:49832 - ESTABLISHED
+1661 : Evernote - 192.168.0.7:49861 - ESTABLISHED
+1661 : Evernote - 192.168.0.7:49867 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49821 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49828 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49865 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49839 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49873 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49868 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49844 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49878 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49876 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49880 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49874 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49879 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49871 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49877 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49872 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49875 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49884 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49881 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49882 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49883 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:53:13.995779------------------------------
+1661 : Evernote - 192.168.0.7:49832 - ESTABLISHED
+1661 : Evernote - 192.168.0.7:49932 - ESTABLISHED
+1661 : Evernote - 192.168.0.7:49934 - ESTABLISHED
+1661 : Evernote - 192.168.0.7:49936 - ESTABLISHED
+1661 : Evernote - 192.168.0.7:49867 - ESTABLISHED
+1661 : Evernote - 192.168.0.7:49928 - ESTABLISHED
+1661 : Evernote - 192.168.0.7:49929 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49886 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49828 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49865 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49922 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49893 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49868 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49878 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49876 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49907 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49871 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49898 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49872 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49875 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49899 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49918 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49903 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49901 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49896 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49902 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49919 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49909 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49912 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49914 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:55:14.039861------------------------------
+1661 : Evernote - 192.168.0.7:49867 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49942 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49961 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49958 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49865 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49938 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49922 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49893 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49868 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49871 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49872 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49875 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49899 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49939 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49918 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49902 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+76 : apsd - 192.168.0.7:49154 - ESTABLISHED
+------------------------------localhost<<>>2019-07-27 21:57:14.062356------------------------------
+1341 : Microsoft OneNote - 192.168.0.7:49971 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49958 - ESTABLISHED
+1341 : Microsoft OneNote - 192.168.0.7:49728 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49865 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49938 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49188 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49868 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49871 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49872 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49875 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49899 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49939 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49918 - ESTABLISHED
+705 : Google Chrome Helper - 192.168.0.7:49902 - ESTABLISHED
 76 : apsd - 192.168.0.7:49154 - ESTABLISHED
 76 : apsd - 192.168.0.7:49154 - ESTABLISHED
