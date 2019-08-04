@@ -3,44 +3,71 @@
 
 
 
+
+
 class Person:
-	def __init__( self , sex = 'male'  , name = None , age = None):
-		self._sex = sex
-		self._name = name
-		self._age = age
-
-	# def __str__( self ):
-	# 	return '[%s]:%s'%(self.__class__.__name__ , self.__getAttr())
-
-
-	def _getAttr( self ):
-		# l = None
-		l = [key+'='+str(self.__dict__[key]) for key in self.__dict__.keys()]
-		return ','.join(l)
+	count = 0
+	def __init__( self , human_race = 'white' ):
+		self._human_race = human_race
 
 	def __str__( self ):
-		return '[%s] : %s'%(self.__class__.__name__ , self._getAttr())
-
-	def toString(self):
-		return "Person"
-
-		
+		l = [k+'='+str(v) for k,v in self.__dict__.items()]
+		return ','.join(l)
 
 
-	# def __name( self ):
-	# 	return 'person'
 
 
 class Cwkim( Person ):
-	def __init__( self , **kargv):
-		Person.__init__( self , kargv['sex'] , kargv['name'] , kargv['age'])
-		self._job = kargv['job']
+	def __init__(self , human_race , name , age ):
+		Person.__init__(self , human_race )
+		self._name = name
+		self._age = age
 
-	def __str__( self ):
-		return '[%s]:%s'%(self.__class__.__name__ , Person._getAttr( self ))
 
-	def toString( self):
-		return "Cwkim"
+
+
+#================================================================
+#================================================================
+#================================================================
+
+from abc import ABCMeta , abstractmethod
+
+class Super(metaclass = ABCMeta):
+	def method( self ):
+		print('in Super.method')
+
+	def delegate( self ):
+		self.action()
+
+	@abstractmethod
+	def action( self ):
+		assert False , 'action must be defined!'
+
+
+class Inheritor( Super ):
+	pass
+
+class Replacer( Super ):
+	def method( self ):
+		print('in Replacer.method')
+	def action( self):
+		print('Replacer.action')
+
+class Extender( Super ):
+	def method( self ):
+		print('start Extender.method')
+		Super.method(self)
+		print('end Extender.method')
+
+	def action( self):
+		print('Extender.action')
+
+
+class Provider( Super ):
+	# def method( self ):
+	# 	print('in Provider.method')
+	def action( self ):
+		print('Provider action')
 
 
 
@@ -48,9 +75,35 @@ class Cwkim( Person ):
 
 
 if __name__ == '__main__':
-	cwkim = Cwkim(sex='female' , name='cwkim' , age = 30 , job = 'programmer')
-	print(cwkim)
-	print(cwkim.toString())
-	# print(cwkim._na())
+
+	# cwkim = Cwkim('yellow' , 'cwkim' , 20)
+	# print(cwkim)
+
+	# b = Cwkim('black' , 'jang' , 40)
+	# print(b)
+
+	# cwkim.count = 10
+	# print(cwkim.count)
+	# print('*'*20)
+	# print(cwkim)
+	# print(b.count)
+
+	# Person.count = 100
+	# print(cwkim.count)
+	# print(b.count)
+
+
+
+	for kl in [Replacer , Extender , Provider]:
+		print(kl.__class__.__name__)
+		kl().method()
+
+
+	p = Provider()
+	p.delegate()	
+
+	s = Super()
+	s.delegate()
+	
 
 

@@ -44,19 +44,30 @@
 	"buffers":
 	[
 		{
-			"file": "demo/portscanner/config.json",
+			"file": "system/socket_tst.py",
 			"settings":
 			{
-				"buffer_size": 107,
+				"buffer_size": 448,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "demo/portscanner/port_scanner.py",
+			"contents": "#!python3\n#-*- coding:utf-8 -*-\n\n\n\n\n\"\"\"\nstring 테스트\n\"\"\"\n\n\n\nSAMPLE_1 = 'xferlog kknda iablc iadifladkfalkflkak123'\n\n\ndef tst_1():\n\tsplits = SAMPLE_1.split(' ')\n\tprint(splits)\n\n\n\tprint('-'*40)\n\tstart_i = [ s for s in SAMPLE_1.split(' ') if s.startswith('i') ]\n\tprint(start_i)\n\n\tprint('-'*40)\n\tif 'ab' in SAMPLE_1:\n\t\tprint('\\\"ab\\\" contains')\n\n\n\tprint('-'*20+'upper'+'-'*20)\n\tprint(SAMPLE_1.upper())\n\n\tprint('-'*20+' a b i upper'+'-'*20)\n\n\toutput = ''\n\tfor s in SAMPLE_1:\n\t\toutput += s.upper() if s == 'i' or s == 'a' or s == 'b' else s\n\t\t\n\tprint(output)\n\n\tprint('-'*20+'replace'+'-'*20)\n\trep_sam = SAMPLE_1.replace('kknda' , 'bhkim')\n\tprint(rep_sam)\n\n\tprint('-'*20+'join'+'-'*20)\n\tl = ['xferlog' , 'kknda' , 'ccccc' , 'dddd']\n\tjstr = '<<>>'.join(l)\n\tprint(jstr)\n\n\n\n\n\n\nif __name__ == '__main__':\n\ttst_1()\n",
+			"file": "syntax/string_tst.py",
+			"file_size": 805,
+			"file_write_time": 132087676563166204,
 			"settings":
 			{
-				"buffer_size": 2784,
+				"buffer_size": 800,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "syntax/sort_tst.py",
+			"settings":
+			{
+				"buffer_size": 1306,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -145,12 +156,15 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/test_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/port_scanner.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/psutil_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/config.json",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/test_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/thread_conditon.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_3.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/18_cotyledon.py",
@@ -274,9 +288,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/decorator1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/decorator_tst2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/decorator/decorator_tst_1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/decorator.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/first_class_function.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/xmltest.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/decorator.py"
 	],
 	"find":
 	{
@@ -350,52 +362,54 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "demo/portscanner/config.json",
+					"file": "system/socket_tst.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 107,
+						"buffer_size": 448,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								107,
-								107
+								211,
+								212
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"auto_name": "",
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "demo/portscanner/port_scanner.py",
+					"file": "syntax/string_tst.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2784,
+						"buffer_size": 800,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2243,
-								2243
+								758,
+								758
 							]
 						],
 						"settings":
@@ -404,7 +418,36 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 150.0,
+						"translation.y": 155.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "syntax/sort_tst.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1306,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								913,
+								913
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 197.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
