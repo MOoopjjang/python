@@ -3,6 +3,12 @@
 
 
 
+def tst_1():
+	tmpdict = {}
+	k = 0
+	tmpdict[k] = 10
+	print('tmpdict : {}'.format(tmpdict))
+
 def main():
 	print('main')
 
@@ -22,4 +28,4 @@ def main():
 
 
 if __name__ == '__main__':
-	main()
+	tst_1()
