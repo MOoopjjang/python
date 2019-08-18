@@ -99,6 +99,7 @@ def solution4(progresses, speeds):
 		kv = mdict[k]
 		if k not in rdict:rdict[k] = 0
 
+		rdict[k] = 0
 
 		if (vv == 0) or (vv < kv):
 			rdict[k]=1
@@ -142,10 +143,10 @@ if __name__ == '__main__':
 	# print('result: {}'.format(solution2([93,30,55])))
 
 	# solution4([93,30,55] , [1,30,5])
-	# solution4([93,30,55] , [1,30,5])
+	print('answoer :{}'.format(solution4([50,70,55] , [50,10,1])))
 
 
 	# solution5("1 2 3 4")
-	answer = solution5("-1 -2 -3 -4")
-	print('answer : {}'.format(answer))
+	# answer = solution5("-1 -2 -3 -4")
+	# print('answer : {}'.format(answer))
 
