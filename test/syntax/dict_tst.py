@@ -3,11 +3,20 @@
 
 
 
+SAMPLE_DICT = {'name':'xferlog' , 'age' : 20 , 'addr':'incheon'}
+
 def tst_1():
 	tmpdict = {}
 	k = 0
 	tmpdict[k] = 10
 	print('tmpdict : {}'.format(tmpdict))
+
+
+def tst_2():
+	# copy method테스트
+	copy_sample = SAMPLE_DICT.copy()
+	print('copy_sample : {}'.format(copy_sample))
+
 
 def main():
 	print('main')
@@ -28,4 +37,6 @@ def main():
 
 
 if __name__ == '__main__':
-	tst_1()
+	# tst_1()
+
+	tst_2()

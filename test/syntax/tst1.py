@@ -40,6 +40,16 @@ def tst_3():
 	print('xferlog')
 
 
+def tst_4():
+	from decimal import getcontext , Decimal
+
+	getcontext().prec = 3
+	result = Decimal(0.1)+Decimal(0.2)
+	print(result)
+
+	print(help(result))
+
+
 
 if __name__ == '__main__':
 	# tst_1()
@@ -54,4 +64,9 @@ if __name__ == '__main__':
 	# tst('hi2' , '2019-x-x-x')
 
 
-	tst_3();
+	# tst_3();
+
+
+	tst_4()
+
+

@@ -197,17 +197,46 @@ def solution5(numbers):
 	
 
 
-def perm( input , i):
-	if i == len(input)-1:
-		print(input)
+def func2( numbers , i , s):
+	if i == len(numbers)-1:
+		print(numbers)
+		output = ''
+		for v in numbers:
+			output += str(v)
+
+		s.add(output)
+
 	else:
-		for j in range(i , len(input)):
-			input[i] , input[j] = input[j] , input[i]
-			print('i : {} , j : {} ,input : {}'.format(i,j,input))
-			perm(input , i+1 , ar)
-			print('*'*20)
-			input[i] , input[j] = input[j] , input[i]
-			print('n-i : {} , j : {} ,input : {}'.format(i,j,input))
+		for j in range(i , len(numbers)):
+			numbers[i] , numbers[j] = numbers[j] , numbers[i]
+			func2(numbers , i+1 , s)
+			numbers[i] , numbers[j] = numbers[j] , numbers[i]
+
+def solution6(numbers):
+	count = 0
+	l = list(numbers)
+	for v in l:
+		iv = int(v)
+		if iv == 2:
+			count +=1 
+
+		if iv !=0 and iv != 1 and iv !=2 and iv%2 !=0 and iv%3 != 0:
+			count +=1
+
+	s = set()
+	func2(l , 0 , s)
+	ls = list(s)
+	ss  = set()
+	for v in ls:
+		ss.add(int(v))
+
+	for vv in list(ss):
+		if vv != 0 and vv%2 != 0 and vv %3 != 0:
+			count+=1
+
+	return count
+
+
 		
 
 
@@ -236,7 +265,10 @@ if __name__ == '__main__':
 
 	
 
-	answer = solution5([6, 10, 2])
+	# answer = solution5([6, 10, 2])
+
+
+	answer = solution6('12345')
 	print('answer : {}'.format(answer))
 
 

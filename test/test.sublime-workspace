@@ -44,31 +44,19 @@
 	"buffers":
 	[
 		{
-			"file": "algorithm/programmers_lv1.py",
+			"file": "api/tst1.py",
 			"settings":
 			{
-				"buffer_size": 1385,
+				"buffer_size": 412,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "#!python3\n#-*- coding:utf-8 -*-\n\n\ndef solution( nums ):\n\t\"\"\"\n\t - nums/2 만큼을 골라야 한다.\n\t - nums/2 고르는것중 최다 종류로 골라야 한다\n\t - 그 값을 반환한다.\n\n\n\t set을 이용\n\t\"\"\"\n\n\tmy = int(len(nums)/2)\n\tprint('my :{}'.format(my))\n\n\tfilterS = set(nums)\n\tif len(filterS) >= (my*2):\n\t\tprint('cc :{}'.format(my))\n\n\n\ts = set()\n\tfor m in range(0,my):\n\t\t# print('m :{}'.format(m))\n\t\tfor n in nums:\n\t\t\tif n != nums[len(nums)-1]:\n\t\t\t\tfor nn in nums[n+1:]:\n\t\t\t\t\ts.add((n,nn))\n\n\n\tprint('s : {}'.format(s))\n\n\tanswer = 0\n\treturn answer\n\n\n\ndef solution2(phone_book):\n\t\"\"\"\n\t문제 설명\n\t\t전화번호부에 적힌 전화번호 중, 한 번호가 다른 번호의 접두어인 경우가 있는지 확인하려 합니다.\n\t\t전화번호가 다음과 같을 경우, 구조대 전화번호는 영석이의 전화번호의 접두사입니다.\n\n\t\t구조대 : 119\n\t\t박준영 : 97 674 223\n\t\t지영석 : 11 9552 4421\n\t\t전화번호부에 적힌 전화번호를 담은 배열 phone_book 이 solution 함수의 매개변수로 주어질 때, 어떤 번호가 다른 번호의 접두어인 경우가 있으면 false를 그렇지 않으면 true를 return 하도록 solution 함수를 작성해주세요.\n\n\t\t제한 사항\n\t\tphone_book의 길이는 1 이상 1,000,000 이하입니다.\n\t\t각 전화번호의 길이는 1 이상 20 이하입니다.\n\t\"\"\"\n\n\n\torgl = len(phone_book)\n\tfl = set(phone_book)\n\tcl = len(list(fl))\n\n\tif orgl != cl:return False\n\n\tfor index,p in enumerate(phone_book):\n\t\torglen = len(p)\n\t\tfor pp in phone_book[index+1:]:\n\t\t\tspp = pp.replace(' ','')\n\t\t\tprint('result : {} - {} :{}'.format(p , spp , spp.startswith(p)))\n\t\t\tif spp.startswith(p):\n\t\t\t\treturn False\n\n\treturn True\n\n\n\n\ndef solution4(progresses, speeds):\n\n\t\"\"\"\n\n\t  - progresses 별로 배포일 개산 및 매칭 ( dict )\n\t  - 순서별로 앞 > 뒤 개발 완료일이 클경우 { dict }\n\t  -  dict의 값들을 차레로 배열로 생성후 반환\n\n\t  result : PASS\n\t\"\"\"\n\n\tmdict = {}\n\tfor index , progress in enumerate(progresses):\n\t\tv = 100 - progress\n\t\tday = int(v/speeds[index])\n\t\tmdict[index] = day\n\n\tprint('mdict : {}'.format(mdict))\t\n\n\n\trdict = {}\n\tvv = 0\n\tckey = None\n\tfor k in mdict.keys():\n\t\tkv = mdict[k]\n\t\tif k not in rdict:rdict[k] = 0\n\n\t\trdict[k] = 0\n\n\t\tif (vv == 0) or (vv < kv):\n\t\t\trdict[k]=1\n\t\t\tvv = kv\n\t\t\tckey = k\n\t\telse:\n\t\t\trdict[ckey]+=1\n\n\tanswer = [v for k,v in rdict.items() if v != 0]\n\treturn answer\n\n\ndef solution5(s):\n\t\"\"\"\n\t문자열 s에는 공백으로 구분된 숫자들이 저장되어 있습니다. \n\tstr에 나타나는 숫자 중 최소값과 최대값을 찾아 이를 (최소값) (최대값)형태의 문자열을 반환하는 함수, solution을 완성하세요.\n\t예를들어 s가 1 2 3 4라면 1 4를 리턴하고, -1 -2 -3 -4라면 -4 -1을 리턴하면 됩니다.\n\n\tresult : PASS\n\t\"\"\"\n\n\t\"\"\"\n\t  - 분리\n\t  - sorted로 값 분리 \n\t\"\"\"\n\tsplits = s.split(' ')\n\tintar = [ int(v) for v in splits]\n\tsortint = sorted(intar)\n\tanswer = str(sortint[0])+' '+str(sortint[len(sortint)-1])\n\treturn answer\n\n\n\nif __name__ == '__main__':\n\t# solution([3,1,2,3])\n\n\t# print('result: {}'.format(solution2(['119', '97674223', '1195524421'])))\n\t# print('result: {}'.format(solution2(['123','456','789'])))\n\t# print('result: {}'.format(solution2(['12','123','1235','567','88'])))\n\t# print('result: {}'.format(solution2(['98','123','13235','567','88'])))\n\t# print('result: {}'.format(solution2([93,30,55])))\n\n\t# solution4([93,30,55] , [1,30,5])\n\t# solution4([93,30,55] , [1,30,5])\n\n\n\t# solution5(\"1 2 3 4\")\n\tanswer = solution5(\"-1 -2 -3 -4\")\n\tprint('answer : {}'.format(answer))\n\n",
-			"file": "algorithm/programmers_lv2.py",
-			"file_size": 3567,
-			"file_write_time": 132102523533920738,
+			"file": "api/log.txt",
 			"settings":
 			{
-				"buffer_size": 2866,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "syntax/dict_tst.py",
-			"settings":
-			{
-				"buffer_size": 405,
-				"encoding": "UTF-8",
+				"buffer_size": 42,
 				"line_ending": "Unix"
 			}
 		}
@@ -153,7 +141,7 @@
 	"expanded_folders":
 	[
 		"/Users/mooopjjang/Documents/work/gitrep/python/test",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/api",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
@@ -161,6 +149,16 @@
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst_2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/set_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/dict_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers_lv2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers_lv2_excerse.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers_lv1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/01_dynamic_mem.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/test.py",
@@ -185,7 +183,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/18_cotyledon.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/config.json",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/port_scanner.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/mifchecker.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/stop_watch.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/person-department.py",
@@ -195,7 +192,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/number.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/employees.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/AA.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/tt/email_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/04_hello-asyncio.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/access2.py",
@@ -226,7 +222,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_crawler.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/netresultdecorator.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/request_tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/dict_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api_test.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex/regex_test.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_4.py",
@@ -281,14 +276,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/attribute_interceptor.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/exam_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/monitoring.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/property_1.pyt",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/rangetest_test.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/028.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/rangetest.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/rangetest_test.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/decorator_tst2.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/decorator_tst_1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/person.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/property_1.pyt"
 	],
 	"find":
 	{
@@ -307,6 +295,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"getpid",
 			"cotyledon",
 			"StopWatcher",
 			"subprocess",
@@ -362,24 +351,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "algorithm/programmers_lv1.py",
+					"file": "api/tst1.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1385,
+						"buffer_size": 412,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								163,
-								163
+								275,
+								275
 							]
 						],
 						"settings":
@@ -391,59 +380,29 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "algorithm/programmers_lv2.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2866,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2106,
-								2106
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 9.0,
-						"translation.y": 1528.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "syntax/dict_tst.py",
+					"buffer": 1,
+					"file": "api/log.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 405,
+						"buffer_size": 42,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								405,
-								405
+								34,
+								34
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
