@@ -33,28 +33,6 @@ class PortScanner( cotyledon.Service ):
 		return fw
 
 
-
-
-	# def run2( self ):
-	# 	while self._shutdown.is_set() != True:
-	# 		serverIp = socket.gethostbyname(self._config.get('host'))
-	# 		print('ip : {}'.format(serverIp))
-	# 		fw = self.__getResultFile(serverIp)
-	# 		for port in range(self._config.get('scan_start') , self._config.get('scan_end')):
-	# 			sock = socket.socket(socket.AF_INET , socket.SOCK_STREAM)
-	# 			ret = sock.connect_ex((serverIp , port))
-	# 			if ret == 0:
-	# 				fw.write('Open Port : {} \n'.format(port))
-	# 				print('Open Port : {}'.format(port))
-	# 			sock.close()
-	# 		fw.close()
-
-	# 		# open된 port목록을 txt연결 프로그램을 이용하여 출력
-	# 		subprocess.Popen(['open' , self._config.get('log')])
-	# 		sleepTime = self._config.get('interval') * 60
-	# 		time.sleep(sleepTime)
-
-
 	def run( self ):
 		import psutil
 		while self._shutdown.is_set() != True:

@@ -44,19 +44,11 @@
 	"buffers":
 	[
 		{
-			"file": "api/tst1.py",
+			"file": "module/logging_tst.py",
 			"settings":
 			{
-				"buffer_size": 412,
+				"buffer_size": 1762,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "api/log.txt",
-			"settings":
-			{
-				"buffer_size": 42,
 				"line_ending": "Unix"
 			}
 		}
@@ -141,18 +133,29 @@
 	"expanded_folders":
 	[
 		"/Users/mooopjjang/Documents/work/gitrep/python/test",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/api",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/module",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/system",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/logging_module_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/performance/threadVsprocess.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/frozenset_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/port_scanner.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/mifchecker.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/mtail.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/list_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/dict_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/log.txt",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/set_tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/dict_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers_lv2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers_lv2_excerse.py",
@@ -165,13 +168,11 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/subprocess_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/ps_decorator.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/list_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es/es_test1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/book.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_4.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_3.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_2.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/port_scanner.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/socket_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/string_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/sort_tst.py",
@@ -183,7 +184,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/18_cotyledon.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/config.json",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/port_scanner.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/mifchecker.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/stop_watch.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/person-department.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/person-composite.py",
@@ -197,8 +197,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/access2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/singleton_decorator.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/access1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/unittest_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/zip_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/generator/setence_gen2.py",
@@ -271,16 +269,11 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/decorator1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/decorator_module.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/exercise_1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/06_asyncio-coroutine.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/getattr-builtins.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/attribute_interceptor.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/exam_1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/monitoring.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/property/property_1.pyt"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/06_asyncio-coroutine.py"
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 39.0
 	},
 	"find_in_files":
 	{
@@ -295,6 +288,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"RotateFileHandler_tst",
+			"\t# def run2( self ):\n\t# \twhile self._shutdown.is_set() != True:\n\t# \t\tserverIp = socket.gethostbyname(self._config.get('host'))\n\t# \t\tprint('ip : {}'.format(serverIp))\n\t# \t\tfw = self.__getResultFile(serverIp)\n\t# \t\tfor port in range(self._config.get('scan_start') , self._config.get('scan_end')):\n\t# \t\t\tsock = socket.socket(socket.AF_INET , socket.SOCK_STREAM)\n\t# \t\t\tret = sock.connect_ex((serverIp , port))\n\t# \t\t\tif ret == 0:\n\t# \t\t\t\tfw.write('Open Port : {} \\n'.format(port))\n\t# \t\t\t\tprint('Open Port : {}'.format(port))\n\t# \t\t\tsock.close()\n\t# \t\tfw.close()\n\n\t# \t\t# open된 port목록을 txt연결 프로그램을 이용하여 출력\n\t# \t\tsubprocess.Popen(['open' , self._config.get('log')])\n\t# \t\tsleepTime = self._config.get('interval') * 60\n\t# \t\ttime.sleep(sleepTime)",
 			"getpid",
 			"cotyledon",
 			"StopWatcher",
@@ -356,59 +351,30 @@
 			[
 				{
 					"buffer": 0,
-					"file": "api/tst1.py",
+					"file": "module/logging_tst.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 412,
+						"buffer_size": 1762,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								275,
-								275
+								1209,
+								1228
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 589.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "api/log.txt",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 42,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								34,
-								34
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
