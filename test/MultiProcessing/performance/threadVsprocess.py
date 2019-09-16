@@ -8,8 +8,9 @@ import timeit
 import time
 from threading import Thread
 from multiprocessing import Process
+import psutil
 
-
+from print_decorator import pdecorator
 
 
 
@@ -17,6 +18,22 @@ def func():
 	print('#'*10+'myfunc'+'#'*10)
 	time.sleep(2)
 
+
+@pdecorator(tag = '[thread]' , output = True)
+def thread_create_tst():
+	threads = []
+	for _ in range(10000):
+		t = Thread(target = func)
+		threads.append(t)
+
+
+@pdecorator(tag = '[process]' , output = True)
+def process_create_tst():
+	procs = []
+	for _ in range(10000):
+		p = Process(target = func)
+		procs.append(p)
+	
 
 def tst1():
 	"""
@@ -57,4 +74,9 @@ def tst1():
 
 
 if __name__ == '__main__':
-	tst1()
+	# tst1()
+
+	thread_create_tst()
+
+	process_create_tst()
+
