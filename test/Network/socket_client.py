@@ -10,8 +10,8 @@ if __name__ == '__main__':
 		sc.connect(('0.0.0.0' , 5000))
 		while True:
 			print('----------------')
-			msg = input('>')
-			sc.sendall(msg.encode())
+			# msg = input('>')
+			# sc.sendall(msg.encode())
 			msgg = sc.recv(1024)
 			print(msgg.decode())
 
