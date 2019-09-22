@@ -6,6 +6,28 @@
 import psutil
 
 
+
+def tst_3():
+	import uuid
+
+	print(hex(uuid.getnode()))
+
+	print('The MAC Address in formatted was is :',end='')
+	mac_address = ':'.join(['{:02x}'.format((uuid.getnode() >> ele) & 0xff) for ele in range(0,8*6,8)][::-1])
+	print(mac_address)
+
+	
+
+
+
+
+
+def tst_2():
+	net_info = psutil.net_io_counters(pernic = True)
+	print('net_info : {}'.format(net_info))
+
+
+
 def tst_1():
 
 	# print(psutil.net_connections())
@@ -28,4 +50,13 @@ def tst_1():
 
 
 if __name__ == '__main__':
-	tst_1()
+	# tst_1()
+
+	# tst_2()
+
+	tst_3()
+
+
+
+
+

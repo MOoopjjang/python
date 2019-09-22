@@ -44,10 +44,10 @@
 	"buffers":
 	[
 		{
-			"file": "module/logging_tst.py",
+			"file": "system/psutil_tst.py",
 			"settings":
 			{
-				"buffer_size": 1762,
+				"buffer_size": 765,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -136,15 +136,20 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/performance/threadVsprocess.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/performance/print_decorator.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/request_tst1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/logging_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/logging_module_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/performance/threadVsprocess.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/frozenset_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/port_scanner.py",
@@ -208,7 +213,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/sample_btree.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/etc.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/timerdeco.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/request_tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/singleton.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/flask/tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/main.py",
@@ -267,9 +271,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/crawling/crawling_wiki.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/object_file_decorator.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/decorator1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/decorator_module.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/exercise_1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/06_asyncio-coroutine.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/exercise_200/decorator_module.py"
 	],
 	"find":
 	{
@@ -351,19 +353,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "module/logging_tst.py",
+					"file": "system/psutil_tst.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1762,
+						"buffer_size": 765,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1209,
-								1228
+								684,
+								684
 							]
 						],
 						"settings":
@@ -372,7 +374,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 330.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
