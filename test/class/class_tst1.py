@@ -4,70 +4,61 @@
 
 
 
-
-class Person:
-	count = 0
-	def __init__( self , human_race = 'white' ):
-		self._human_race = human_race
-
-	def __str__( self ):
-		l = [k+'='+str(v) for k,v in self.__dict__.items()]
-		return ','.join(l)
-
-
-
-
-class Cwkim( Person ):
-	def __init__(self , human_race , name , age ):
-		Person.__init__(self , human_race )
-		self._name = name
-		self._age = age
-
-
-
-
-#================================================================
-#================================================================
-#================================================================
-
 from abc import ABCMeta , abstractmethod
 
-class Super(metaclass = ABCMeta):
-	def method( self ):
-		print('in Super.method')
 
-	def delegate( self ):
-		self.action()
+# 3.x
+class Base( metaclass = ABCMeta ):
+	# __metaclass__ = ABCMeta   # 2.x
+
+	def __init__( self  , kind ):  
+		self._kind = kind
+
+	def __str__( self ):
+		return '[kind] %s'%(self._kind)
 
 	@abstractmethod
-	def action( self ):
-		assert False , 'action must be defined!'
+	def getName( self ):
+		pass
+		
+
+	def getInfo( self ):
+		return "info"
 
 
-class Inheritor( Super ):
-	pass
 
-class Replacer( Super ):
-	def method( self ):
-		print('in Replacer.method')
-	def action( self):
-		print('Replacer.action')
+class Human( Base ):
+	def __init__( self ):
+		Base.__init__( self , 'Human')
 
-class Extender( Super ):
-	def method( self ):
-		print('start Extender.method')
-		Super.method(self)
-		print('end Extender.method')
+	def getInfo( self ):
+		return 'human info'
 
-	def action( self):
-		print('Extender.action')
+	def getName( self ):
+		return 'cwkim'
 
 
-class Provider( Super ):
-	# def method( self ):
-	# 	print('in Provider.method')
-	def action( self ):
-		print('Provider action')
+
+class Undeaded( Base ):
+	def __init__( self ):
+		Base.__init__( self , 'undeaded')
+
+
+
+
+class MNumber:
+	def __init__( self , v ):
+		self._value = v
+
+
+	def __add__(self , value):
+		return self._value + value
+
+	def __sub__( self , value ):
+		return self._value - value
+
+
+
 
 
 
@@ -76,34 +67,29 @@ class Provider( Super ):
 
 if __name__ == '__main__':
 
-	# cwkim = Cwkim('yellow' , 'cwkim' , 20)
-	# print(cwkim)
+	# base = Base('a')
+	# print('Base : {}'.format(base))
 
-	# b = Cwkim('black' , 'jang' , 40)
-	# print(b)
+	# human = Human()
+	# print('human : {} , {}'.format(human , human.getName()))
 
-	# cwkim.count = 10
-	# print(cwkim.count)
-	# print('*'*20)
-	# print(cwkim)
-	# print(b.count)
-
-	# Person.count = 100
-	# print(cwkim.count)
-	# print(b.count)
+	# undeaded = Undeaded()
+	# print('undeaded : {} , {}'.format(undeaded , undeaded.getName()))
 
 
+	n = MNumber(10)
+	print('+ : {}'.format(n+10))
+	print('- : {}'.format(n-2))
+	n+=2
+	print('n+=2 : {}'.format(n))
 
-	for kl in [Replacer , Extender , Provider]:
-		print(kl.__class__.__name__)
-		kl().method()
+	n-=2
+	print('n-=2 : {}'.format(n))
 
 
-	p = Provider()
-	p.delegate()	
 
-	s = Super()
-	s.delegate()
+
+
 	
 
 

@@ -13,11 +13,15 @@ if __name__ == '__main__':
 		sc.listen(1)
 		conn , addr = sc.accept()
 		data = 'xferlog'
+		count = 0
 		while True:
 			# msg = conn.recv(1024)
 			# print('echo : {}'.format(msg.decode()))
-			conn.sendall('msg\n'.encode())
-			time.sleep(1)
+			sendData = data + str(count)+'\n'
+			# data+='\n'
+			conn.sendall(sendData.encode())
+			time.sleep(0.1)
+			count +=1
 
 
 

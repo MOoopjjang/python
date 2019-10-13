@@ -48,9 +48,21 @@ def tst_1():
 	print(jstr)
 
 
+def tst_2():
+	SAMPLE_2 = 'hi kcwda  bbb z'
+	print(SAMPLE_2)
+
+	print(SAMPLE_2.strip('z'))
+
+
+
 
 
 
 
 if __name__ == '__main__':
-	tst_1()
+	# tst_1()
+
+	tst_2()
+
+

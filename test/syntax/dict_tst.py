@@ -12,6 +12,8 @@ def tst_1():
 	print('tmpdict : {}'.format(tmpdict))
 
 
+
+
 def tst_2():
 	# copy method테스트
 	copy_sample = SAMPLE_DICT.copy()
@@ -38,6 +40,17 @@ def tst_3():
 			print(k)
 
 
+
+def tst_4():
+	LEFT = ['a' , 'b' , 'c' , 'd']
+	RIGHT = ['kcwda' , 'bhkim' , 'ejkim' , 'khlee']
+
+	com_dict = {l:r for l,r in zip(LEFT , RIGHT)}
+	print(com_dict)
+
+	print('c : {}'.format(com_dict['c'])) if 'c' in com_dict else print('not find')
+
+
 def main():
 	print('main')
 
@@ -62,6 +75,8 @@ if __name__ == '__main__':
 	# tst_2()
 
 	tst_3()
+
+	tst_4()
 
 
 
