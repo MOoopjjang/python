@@ -44,19 +44,19 @@
 	"buffers":
 	[
 		{
-			"file": "class/class_tst1.py",
+			"file": "Network/socket_server.py",
 			"settings":
 			{
-				"buffer_size": 1216,
+				"buffer_size": 1161,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "syntax/createtag.py",
+			"file": "Network/socket_client.py",
 			"settings":
 			{
-				"buffer_size": 790,
+				"buffer_size": 475,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -142,16 +142,26 @@
 	"expanded_folders":
 	[
 		"/Users/mooopjjang/Documents/work/gitrep/python/test",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/bingocage.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/config.json",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/main.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/mcleaner.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/result.txt",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/test3.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/generator/tst_1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/generator/setence.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/string_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/sort_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/createtag.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/bingocage.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_server.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/socketserver_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst_3.py",
@@ -183,21 +193,18 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers_lv2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers_lv2_excerse.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers_lv1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/01_dynamic_mem.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/programmers.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/test.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/subprocess_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/ps_decorator.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es/es_test1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/book.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_4.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_3.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/socket_tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/string_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/config.json",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/test_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/thread_conditon.py",
@@ -245,7 +252,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_5.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/asyncio_5.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/manager-composite.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/generator/setence.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_test2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/tst_1.py",
@@ -270,14 +276,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/crawling/scraping_5_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/crawling/crawler_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/crawling/crawling_form.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_2.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/package/sample/sample_main.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/package/setup.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/package/sample/__init__.py",
-		"/Users/mooopjjang/Downloads/pyquibase-develop/setup.py",
-		"/Users/mooopjjang/Documents/work/my/python/redis-py-master/setup.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/package/sample/setup.cfg",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/package/README.md"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_2.py"
 	],
 	"find":
 	{
@@ -296,6 +295,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"os.walk",
 			"__metaclass__",
 			"ABCMeta",
 			"ThreadedTCPServer",
@@ -362,19 +362,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "class/class_tst1.py",
+					"file": "Network/socket_server.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1216,
+						"buffer_size": 1161,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								793,
-								793
+								103,
+								103
 							]
 						],
 						"settings":
@@ -383,7 +383,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 738.0,
+						"translation.y": 153.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -391,24 +391,25 @@
 				},
 				{
 					"buffer": 1,
-					"file": "syntax/createtag.py",
+					"file": "Network/socket_client.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 790,
+						"buffer_size": 475,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								557,
-								557
+								89,
+								89
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
