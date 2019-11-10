@@ -44,36 +44,19 @@
 	"buffers":
 	[
 		{
-			"file": "Network/socket_client_tst.py",
-			"settings":
-			{
-				"buffer_size": 253,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Network/socket_chat_client.py",
-			"settings":
-			{
-				"buffer_size": 475,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Network/selector_tst.py",
-			"settings":
-			{
-				"buffer_size": 851,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "Network/selector_chat_server.py",
 			"settings":
 			{
-				"buffer_size": 1226,
+				"buffer_size": 1317,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Network/selector_chat_client.py",
+			"settings":
+			{
+				"buffer_size": 332,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -166,9 +149,10 @@
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_client_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_chat_server.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_client.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/select_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/select_server.py",
@@ -292,8 +276,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/squares.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/squares_yield.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/exam-1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/crawling/crawling_selenium.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/chromedriver"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/crawling/crawling_selenium.py"
 	],
 	"find":
 	{
@@ -374,110 +357,53 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Network/socket_client_tst.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 253,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								234,
-								234
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "Network/socket_chat_client.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 475,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								475,
-								475
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Network/selector_tst.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 851,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								112,
-								112
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 93.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "Network/selector_chat_server.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1226,
+						"buffer_size": 1317,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								845,
-								845
+								1215,
+								1222
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 438.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Network/selector_chat_client.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 332,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								327,
+								327
 							]
 						],
 						"settings":
@@ -485,10 +411,10 @@
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 243.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

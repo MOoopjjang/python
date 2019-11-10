@@ -19,11 +19,11 @@ class ChatServer:
 
 
 	def _makesocket_( self , host , port ):
-		socket = socket.socket()
-		socket.bind((host , port))
-		socket.listen(LISTEN_COUNT)
-		socket.setblocking(False)
-		return socket
+		s = socket.socket()
+		s.bind((host , port))
+		s.listen(LISTEN_COUNT)
+		s.setblocking(False)
+		return s
 
 
 	def _accepthandler_(self , srv_sock , mask ):
@@ -34,24 +34,37 @@ class ChatServer:
 
 
 	def _readhandler_(self , cli_sock , mask ):
-		while True:
-			read_msg = cli_sock.recv(1024)
-			print('recv msg : {}'.format(read_msg.decode()))
-			if read_msg.decode() == 'q':
-				break
-
+		read_msg = cli_sock.recv(1024)
+		if read_msg:
+			print('read_msg : {}'.format(read_msg.decode()))
 			cli_sock.sendall(read_msg)
-
-		self._selectors.unregister(cli_sock)
-		cli_sock.close()
+		else:
+			self._selectors.unregister(cli_sock)
+			cli_sock.close()
 
 
 
 
 	def run( self ):
 		while True:
+			"""
+			blocking -- 등록된 stream으로부터 EVENT_READ가 발생할때까지 대기
+			"""
 			events = self._selectors.select()
 			for key , mask in events:
 				callback = key.data
 				callback( key.fileobj , mask )
+
+
+
+if __name__ == '__main__':
+	chat_server = ChatServer()
+	chat_server.run()
+
+
+
+
+
+
+
 
