@@ -32,6 +32,20 @@ def defaultdict_exam():
 			print('{}:{}'.format(word , index[word]))
 
 
+def defaultdict_exam2():
+	import collections
+
+	# d = collections.defaultdict( list )
+	d = {}
+
+	d['name'] = 'cwkim'
+	d['age'] = 20
+	d['friends'].append('park')
+
+	print('friends : {}'.format(d['friends']))
+
+
+
 
 def setdefault_exam():
 	index = {}
@@ -48,6 +62,7 @@ def setdefault_exam():
 			print('{}:{}'.format(word , index[word]))
 
 	
+
 
 
 
@@ -71,7 +86,9 @@ if __name__ == '__main__':
 	# normal()
 	# setdefault_exam()
 
-	defaultdict_exam()
+	# defaultdict_exam()
+
+	defaultdict_exam2()
 
 
 
