@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"if",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"i",
+				"ifmain\tif __name__ == '__main__'"
+			],
+			[
+				"pr",
+				"previous_lines"
+			],
+			[
 				"fi",
 				"firstNode"
 			],
@@ -44,19 +56,28 @@
 	"buffers":
 	[
 		{
-			"file": "Network/selector_chat_server.py",
+			"file": "advanced/index0.py",
 			"settings":
 			{
-				"buffer_size": 1317,
+				"buffer_size": 1645,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "Network/selector_chat_client.py",
+			"file": "advanced/cookbook-1.py",
 			"settings":
 			{
-				"buffer_size": 332,
+				"buffer_size": 642,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "advanced/namedtuple_tst.py",
+			"settings":
+			{
+				"buffer_size": 844,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -142,13 +163,23 @@
 	"expanded_folders":
 	[
 		"/Users/mooopjjang/Documents/work/gitrep/python/test",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/adv_set.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/advanced_dict.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/test3.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/adv-1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/unpacking.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/myworker.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/tmp.txt",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/index0.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_chat_client.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_chat_server.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_client_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_chat_server.py",
@@ -160,7 +191,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/main.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/mcleaner.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/result.txt",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/test3.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/generator/tst_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/generator/setence.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
@@ -267,16 +297,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_server.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_client.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/getattr_setattr.py",
-		"/Users/mooopjjang/Documents/work/my/python/Ref/test_asyncio.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_test.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/sync/{i}.txt",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/squares_yield.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/skipper_yield.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/skipper.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/squares.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/squares_yield.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/exam-1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/crawling/crawling_selenium.py"
+		"/Users/mooopjjang/Documents/work/my/python/Ref/test_asyncio.py"
 	],
 	"find":
 	{
@@ -295,6 +316,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"defaultdict",
+			"\t\n",
 			"os.walk",
 			"__metaclass__",
 			"ABCMeta",
@@ -357,24 +380,24 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Network/selector_chat_server.py",
+					"file": "advanced/index0.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1317,
+						"buffer_size": 1645,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1215,
-								1222
+								771,
+								771
 							]
 						],
 						"settings":
@@ -383,32 +406,62 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 438.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Network/selector_chat_client.py",
+					"file": "advanced/cookbook-1.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 332,
+						"buffer_size": 642,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								327,
-								327
+								238,
+								238
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "advanced/namedtuple_tst.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 844,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								426,
+								426
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
