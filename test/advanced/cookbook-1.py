@@ -3,6 +3,104 @@
 
 
 
+def tst_7():
+	from collections import deque
+
+	class linehistory:
+		def __init__( self , lines , hislength = 3 ):
+			self._lines = lines
+			self._queue = deque(maxlen = hislength )
+
+
+		def __iter__( self ):
+			for no , line in enumerate(self._lines , 1):
+				self._queue.append((no , line))
+				yield line
+
+
+
+		def clear( self ):
+			self._queue.clear()
+
+		def getHistory( self ):
+			return self._queue.copy()
+
+
+
+	with open('tmp.txt' , 'r') as fr:
+		lh = linehistory(fr , 10)
+		for line in lh:
+			print('{} , {}'.format(line , len(line.strip())) , end = ' ')
+			if line.strip()=='python':
+				for no , l in lh.getHistory():
+					print('no :{},line:{}'.format(no , l),end = ' ')
+
+
+
+def tst_6():
+	l = [1,3,2,5,9]
+	rl = reversed(l)
+	# for v in rl:print('v : {}'.format(v))
+	# print('rl : {}'.format(rl))
+
+
+	class NameMananger:
+		def __init__( self ):
+			self._data = []
+
+		def __iter__( self ):
+			for v in self._data:
+				yield v
+
+		def __reversed__( self ):
+			for v in self._data[::-1]:
+				yield v
+
+		def add(self , _v):
+			self._data.append(_v)
+			return self
+
+
+	nm = NameMananger()
+	nm.add('xferlog').add('kknda').add('ccc').add('cwkim')
+	for n in nm:
+		print('v : {}'.format(n))
+
+	print('*'*30)
+	for n in reversed( nm ):
+		print('v : {}'.format(n))
+
+
+	class Countdown:
+		def __init__( self , start ):
+			self._start = start
+
+		def __iter__( self ):
+			n = self._start
+			while n >= 0:
+				yield n
+				n -= 1
+
+		def __reversed__( self ):
+			n = 0
+			while n <= self._start:
+				yield n
+				n +=1
+
+
+
+	print('*'*30)
+	cd = Countdown(10)
+	for n in cd:
+		print('n : {}'.format(n))
+
+	print('*'*30)
+	for rn in reversed(cd):
+		print('n : {}'.format(rn))
+
+
+
+
 def test_5():
 	s = '{name} has {n} message'
 	ss = s.format(name = 'xferlog' , n = 'hi')
@@ -86,16 +184,14 @@ def namedtuple_tst():
 
 if __name__ == '__main__':
 	# namedtuple_tst()
-
 	# tst_1()
-
 	# tst_2()
-
 	# tst_3()
-
 	# tst_4()
+	# test_5()
+	# tst_6()
 
-	test_5()
+	tst_7()
 
 
 

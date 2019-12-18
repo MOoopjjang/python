@@ -10,6 +10,8 @@ SERVER_ADDRESS = ('0.0.0.0' , 5000)
 RECV_SIZE = 1024
 
 
+client_socks = []
+
 class MChatServer:
 	def __init__( self ):
 		self.selector = selectors.DefaultSelector()
@@ -39,21 +41,37 @@ class MChatServer:
 			- 전달받은 cli sock을 selectors에 등록
 			- 반드시 nont blocking을 설정해야 된다.
 		'''
+		global client_socks
+
 		csock , addr = server_sock.accept()
 		csock.setblocking( False )
+
+		client_socks.append(csock)
+
 		self.selector.register( csock , selectors.EVENT_READ , self._readHandler)
 
 
 	def _readHandler( self ,  cli_sock , mask ):
 		msg = cli_sock.recv(RECV_SIZE)
+
+		# if msg:
+		# 	msg_text = self.logmsg.format(server = self.__class__.__name__ , clinet = '' , rmsg = msg.decode())
+		# 	print(msg_text)
+		# 	cli_sock.sendall(msg)
+		# else:
+		# 	self.selector.unregister( cli_sock )
+		# 	cli_sock.close()
+
+
 		if msg:
-			msg_text = self.logmsg.format(server = self.__class__.__name__ , clinet = '' , rmsg = msg.decode())
-			print(msg_text)
-			cli_sock.sendall(msg)
+			print('size : {}'.format(len(client_socks)))
+			for cs in client_socks:
+				msg_text = self.logmsg.format(server = self.__class__.__name__ , clinet = '' , rmsg = msg.decode())
+				print(msg_text)
+				cs.sendall(msg)
 		else:
 			self.selector.unregister( cli_sock )
 			cli_sock.close()
-
 
 
 

@@ -56,28 +56,10 @@
 	"buffers":
 	[
 		{
-			"file": "advanced/index0.py",
-			"settings":
-			{
-				"buffer_size": 1645,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "advanced/cookbook-1.py",
 			"settings":
 			{
-				"buffer_size": 642,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "advanced/namedtuple_tst.py",
-			"settings":
-			{
-				"buffer_size": 844,
+				"buffer_size": 3448,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -164,22 +146,30 @@
 	[
 		"/Users/mooopjjang/Documents/work/gitrep/python/test",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/tmp.txt",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/clinet.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/mchatserver.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_chat_server.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/main.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/server.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/namedtuple_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/index0.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/cookbook-1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/adv_set.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/advanced_dict.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/test3.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/adv-1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/unpacking.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/myworker.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/tmp.txt",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/index0.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_chat_client.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_chat_server.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_client_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/socket_chat_server.py",
@@ -291,13 +281,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/tst_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/privacy.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/19_producer-consumer.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/privacy.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_test2_result.txt",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_server.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_client.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/getattr_setattr.py",
-		"/Users/mooopjjang/Documents/work/my/python/Ref/test_asyncio.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/19_producer-consumer.py"
 	],
 	"find":
 	{
@@ -316,6 +300,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\t\t\t\n",
 			"defaultdict",
 			"\t\n",
 			"os.walk",
@@ -380,53 +365,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "advanced/index0.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1645,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								771,
-								771
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
 					"file": "advanced/cookbook-1.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 642,
+						"buffer_size": 3448,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								238,
-								238
+								360,
+								360
 							]
 						],
 						"settings":
@@ -439,35 +395,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "advanced/namedtuple_tst.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 844,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								426,
-								426
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
