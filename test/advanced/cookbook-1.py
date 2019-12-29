@@ -2,6 +2,70 @@
 #-*- coding:utf -*-
 
 
+def tst_11():
+	'''
+	객체가 서로 다른 컨테이너에 들어있다.하지만 중첩된 반복문을 사용해 코드의 기독성을 해치고 싶지 않다.
+	'''
+	from itertools import chain
+
+	l1 = ['1','2','3']
+	l2 = ['a','b','c']
+
+	for p in chain(l1,l2):
+		print(p)
+
+
+
+def tst_10():
+	l1 = ['1','2','3']
+	l2 = ['a','b','c']
+
+	for p in list(zip(l1,l2)):
+		print(p)
+
+	d = dict(zip(l1,l2))
+	for pp in d:
+		print(d)
+
+	print('-'*50)
+	ll = list(zip(l1,l2))
+	print(ll)
+
+
+
+def tst_9():
+	'''
+	'''
+
+	from collections import defaultdict
+
+	word_summary = defaultdict(list)
+
+	with open('/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/sample_2.txt' , 'r') as fr:
+		for idx , line in enumerate(fr , 1):
+			words = [ w.strip().lower() for w in line.split() ]
+			for ss in words:
+				word_summary[ss].append(idx)
+
+
+	for k,v in word_summary.items():
+		print('{} : {}'.format(k,v))
+
+
+
+
+def tst_8():
+	'''
+	아이템 컬렉션에 대해 가능한 모든 순열과 조합을 순환
+	'''
+	from itertools import permutations
+
+	items = ['a' , 'b' , 'c']
+	for p in permutations(items):
+		print(p)
+	
+
+
 
 def tst_7():
 	from collections import deque
@@ -190,8 +254,12 @@ if __name__ == '__main__':
 	# tst_4()
 	# test_5()
 	# tst_6()
+	# tst_7()
+	# tst_8()
+	# tst_9()
+	# tst_10()
 
-	tst_7()
+	tst_11()
 
 
 

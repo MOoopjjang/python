@@ -3,6 +3,59 @@
 
 
 
+def weakrefTst():
+	'''
+	약한 참조 테스트
+	'''
+	import weakref
+	import time
+
+	a_set = {0,1}
+	wref = weakref.ref(a_set)
+	print('{}'.format(wref))
+	print('wref > {}'.format(wref()))
+	a_set = {2,3}
+	while wref() is not None:
+		print(wref() is None)
+		time.sleep(1)
+
+	print('end')
+
+
+def copyTst():
+	'''
+	copy & deepcopy 테스트
+	'''
+	import copy
+
+	class Bus:
+		def __init__( self , passeners ):
+			self.passeners = [] if passeners is None else list(passeners)
+
+		def __str__( self ):
+			return '{}'.format(self.passeners)
+
+		def add(self , data):
+			self.passeners.append(data)
+
+		def remove( self , data):
+			self.passeners.remove(data)
+
+
+	b1 = Bus(['xferlog' , 'kknda' , 'kcwda' , 'ddd'])
+	b2 = copy.copy(b1)
+	b3 = copy.deepcopy(b1)
+	print('b1 : {} - b2:{} - b3:{}'.format(b1 , b2 , b3))
+	print('b1 : {} - b2 : {} - b3:{}'.format(id(b1) , id(b2) , id(b3)))
+	print('-'*20)
+	b2.remove('kcwda')
+	print('b1 : {} - b2:{} - b3:{}'.format(b1 , b2 , b3))
+	print('b1 : {} - b2 : {} - b3:{}'.format(id(b1) , id(b2) , id(b3)))
+
+			
+
+
+
 import heapq
 class PriorityQueue:
 	"""
@@ -19,6 +72,11 @@ class PriorityQueue:
 
 	def pop(self):
 		return heapq.heappop(self._queue)[-1]
+
+
+
+
+
 
 
 
@@ -73,8 +131,10 @@ def heapq_tst():
 
 if __name__ == '__main__':
 	# heapq_tst()
+	# heapq_tst2()
+	# copyTst()
 
-	heapq_tst2()
+	weakrefTst()
 
 
 
