@@ -3,6 +3,7 @@
 
 
 import os , sys
+from progress.bar import PixelBar
 
 
 class MCleaner:
@@ -28,18 +29,22 @@ class MCleaner:
 			saveResultFile = self._config.get('result')
 		if os.path.exists(saveResultFile):os.unlink(saveResultFile)
 
-		with open(saveResultFile , 'w') as fw:
-			count = 0
-			for d,s,fs in os.walk(self._rootPath):
-				for f in fs:
-					fullPath = os.path.join(d,f)
-					ss = f.split('.')
-					if ss != None and len(ss) > 0:
-						if self._contain_(ss[len(ss)-1]):
-							os.unlink(fullPath)
-							print('delete : {}'.format(fullPath))
-							fw.write(fullPath+'\n')
-							count +=1
+		with PixelBar('Delete progressing...') as bar:
+			with open(saveResultFile , 'w') as fw:
+				count = 0
+				for d,s,fs in os.walk(self._rootPath):
+					for f in fs:
+						fullPath = os.path.join(d,f)
+						ss = f.split('.')
+						if ss != None and len(ss) > 0:
+							if self._contain_(ss[len(ss)-1]):
+								os.unlink(fullPath)
+								# print('delete : {}'.format(fullPath))
+								fw.write(fullPath+'\n')
+								count +=1
+
+						bar.next()
+
 	
 		print('*'*100)
 		print('root : {}'.format(self._rootPath))
@@ -51,7 +56,7 @@ class MCleaner:
 
 
 if __name__ == '__main__':
-	mc = MCleaner('/Users/mooopjjang/Documents/work' , ['sh','pyc'])
+	mc = MCleaner('/Users/mooopjjang/Documents/work' , ['pyc'])
 	mc.run()
 
 

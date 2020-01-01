@@ -22,6 +22,28 @@ def weakrefTst():
 	print('end')
 
 
+def copyTst2():
+	import copy
+
+	list1 = ['xferlog' , 'kknda', ['aaaa' , 'bbbb']]
+	list2 = copy.deepcopy(list1)
+	print('list1 : {} - list2:{}'.format(id(list1) , id(list2)))
+
+
+	list1[1] = 'ccc'
+	print('list1 : {} - list2:{}'.format(list1 , list2))
+
+	print('list1 : {} - list2:{}'.format(id(list1[2]) , id(list2[2])))
+
+	list1[2][1] = 'ffff'
+	print('list1 : {} - list2:{}'.format(list1 , list2))
+
+
+
+
+
+
+
 def copyTst():
 	'''
 	copy & deepcopy 테스트
@@ -133,8 +155,9 @@ if __name__ == '__main__':
 	# heapq_tst()
 	# heapq_tst2()
 	# copyTst()
+	# weakrefTst()
 
-	weakrefTst()
+	copyTst2()
 
 
 

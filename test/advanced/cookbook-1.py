@@ -2,6 +2,49 @@
 #-*- coding:utf -*-
 
 
+def merge_tst2():
+	from heapq import merge
+
+	with open('sample_1.txt' , 'r') as fr1, \
+		open('sample_2.txt' , 'r') as fr2, \
+		open('sample_merge_result.txt' , 'w') as fw:
+		for line in merge(fr1 , fr2):
+			fw.write(line)
+
+
+def merge_tst():
+	'''
+	정렬된 시퀀스가 여럿이 있고 , 이를 하나로 합친후 정렬된 시퀀스를 순환
+	'''
+	import heapq
+
+	l1 = [1,3,5,7,9]
+	l2 = [2,4,6,8,10]
+	for x in heapq.merge(l1,l2):
+		print('x : {}'.format(x))
+
+
+
+
+
+def tst_12():
+	'''
+	중첩된 시퀀스를 합쳐 하나의 리스트로 만들고 싶다.
+	'''
+	from collections import Iterable
+
+	def flattern(items , ignore_types = (str , bytes)):
+		for x in items:
+			if isinstance( x , Iterable) and not isinstance( x , ignore_types ):
+				yield from flattern(x)
+			else:
+				yield x
+
+	items = [1,2,[3,4,[5,6],7],8]
+	for x in flattern(items):
+		print('x : {}'.format(x))
+
+
 def tst_11():
 	'''
 	객체가 서로 다른 컨테이너에 들어있다.하지만 중첩된 반복문을 사용해 코드의 기독성을 해치고 싶지 않다.
@@ -13,6 +56,7 @@ def tst_11():
 
 	for p in chain(l1,l2):
 		print(p)
+
 
 
 
@@ -258,8 +302,10 @@ if __name__ == '__main__':
 	# tst_8()
 	# tst_9()
 	# tst_10()
-
-	tst_11()
+	# tst_11()
+	# tst_12()
+	# merge_tst()
+	merge_tst2()
 
 
 
