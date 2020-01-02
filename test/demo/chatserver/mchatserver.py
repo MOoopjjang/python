@@ -53,16 +53,6 @@ class MChatServer:
 
 	def _readHandler( self ,  cli_sock , mask ):
 		msg = cli_sock.recv(RECV_SIZE)
-
-		# if msg:
-		# 	msg_text = self.logmsg.format(server = self.__class__.__name__ , clinet = '' , rmsg = msg.decode())
-		# 	print(msg_text)
-		# 	cli_sock.sendall(msg)
-		# else:
-		# 	self.selector.unregister( cli_sock )
-		# 	cli_sock.close()
-
-
 		if msg:
 			print('size : {}'.format(len(client_socks)))
 			for cs in client_socks:
