@@ -21,8 +21,6 @@ class MChatServer:
 		self.logmsg = '{server} << {clinet} :: {rmsg} receive'
 
 
-
-
 	def _createSocket( self ):
 		'''
 		 서버 socket을 생성한다
@@ -45,18 +43,18 @@ class MChatServer:
 
 		csock , addr = server_sock.accept()
 		csock.setblocking( False )
-
-		client_socks.append(csock)
-
 		self.selector.register( csock , selectors.EVENT_READ , self._readHandler)
 
+		# server에 접속한 client socket을 list에 저장한다.
+		client_socks.append(csock)
+		
 
 	def _readHandler( self ,  cli_sock , mask ):
 		msg = cli_sock.recv(RECV_SIZE)
 		if msg:
-			print('size : {}'.format(len(client_socks)))
+			print('connection client count : {}'.format(len(client_socks)))
 			for cs in client_socks:
-				msg_text = self.logmsg.format(server = self.__class__.__name__ , clinet = '' , rmsg = msg.decode())
+				msg_text = self.logmsg.format(server = self.__class__.__name__ , clinet = cs , rmsg = msg.decode())
 				print(msg_text)
 				cs.sendall(msg)
 		else:

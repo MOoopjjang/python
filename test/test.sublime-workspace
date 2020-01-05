@@ -56,19 +56,27 @@
 	"buffers":
 	[
 		{
-			"file": "advanced/adv-1.py",
+			"file": "demo/chatserver/main.py",
 			"settings":
 			{
-				"buffer_size": 2871,
+				"buffer_size": 33,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "demo/chatserver/clinet.py",
+			"settings":
+			{
+				"buffer_size": 521,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "/Users/mooopjjang/Desktop/blog_copy.txt",
+			"file": "demo/chatserver/mchatserver.py",
 			"settings":
 			{
-				"buffer_size": 2925,
+				"buffer_size": 1689,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -154,28 +162,35 @@
 	"expanded_folders":
 	[
 		"/Users/mooopjjang/Documents/work/gitrep/python/test",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/es",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/ziptest",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/zip_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/compress_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/cookbook_io.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/sample_3.txt",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/mchatserver.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/clinet.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/adv-1.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/sample_1.txt",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/cookbook-1.py",
+		"/Users/mooopjjang/Desktop/blog_copy.txt",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/tst1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/config.json",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/main.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/progressbar_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner/mcleaner.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/cookbook-1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/sample_2.txt",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/sample_1.txt",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/sample_merge_result.txt",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/itertools_tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/adv-1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/tmp.txt",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/clinet.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/mchatserver.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/selector_chat_server.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/main.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver/server.py",
@@ -209,7 +224,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/algorithm/tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/zip_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/dict_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/netifaces_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/psutil_tst.py",
@@ -285,15 +299,11 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/netresultdecorator.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/request_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api_test.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex/regex_test.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_4.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_5.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/asyncio_5.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/manager-composite.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex/regex_test.py"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
@@ -381,19 +391,47 @@
 			[
 				{
 					"buffer": 0,
-					"file": "advanced/adv-1.py",
+					"file": "demo/chatserver/main.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2871,
+						"buffer_size": 33,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								623,
-								697
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "demo/chatserver/clinet.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 521,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								256,
+								256
 							]
 						],
 						"settings":
@@ -402,39 +440,39 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 72.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/Users/mooopjjang/Desktop/blog_copy.txt",
+					"buffer": 2,
+					"file": "demo/chatserver/mchatserver.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2925,
+						"buffer_size": 1689,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2438,
-								2438
+								1029,
+								1029
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 722.0,
+						"translation.y": 434.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]

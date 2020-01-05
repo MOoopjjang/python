@@ -12,7 +12,9 @@ SERVER_INFO = ('0.0.0.0' , 5000)
 def recvfunc(csock):
 	while True:
 		msg = csock.recv(1024)
-		print('msg : {}'.format(msg.decode()))
+		print('\nmsg : {}'.format(msg.decode()) , end='')
+		if msg == None or len(msg) == 0:
+			break
 
 
 def main():
@@ -24,7 +26,7 @@ def main():
 
 
 	while True:
-		input_text = input('input :')
+		input_text = input()
 		csock.sendall(input_text.encode())
 		
 
