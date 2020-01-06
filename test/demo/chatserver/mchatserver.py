@@ -10,7 +10,7 @@ SERVER_ADDRESS = ('0.0.0.0' , 5000)
 RECV_SIZE = 1024
 
 
-client_socks = []
+CLIENT_SOCKS = []
 
 class MChatServer:
 	def __init__( self ):
@@ -46,20 +46,37 @@ class MChatServer:
 		self.selector.register( csock , selectors.EVENT_READ , self._readHandler)
 
 		# server에 접속한 client socket을 list에 저장한다.
-		client_socks.append(csock)
-		
+		CLIENT_SOCKS.append(csock)
+
+		connectionMessage = '{} 님이 chatting방에 접속하셨습니다.\n'.format(addr)
+		self._broadcastMessage(csock , connectionMessage.encode())
 
 	def _readHandler( self ,  cli_sock , mask ):
 		msg = cli_sock.recv(RECV_SIZE)
 		if msg:
-			print('connection client count : {}'.format(len(client_socks)))
-			for cs in client_socks:
-				msg_text = self.logmsg.format(server = self.__class__.__name__ , clinet = cs , rmsg = msg.decode())
-				print(msg_text)
-				cs.sendall(msg)
+			print('connection client count : {}'.format(len(CLIENT_SOCKS)))
+			self._broadcastMessage(cli_sock , msg)
+
+
 		else:
 			self.selector.unregister( cli_sock )
 			cli_sock.close()
+			CLIENT_SOCKS.remove(cli_sock)
+
+
+
+
+	def _broadcastMessage(self , cli_sock  , message ):
+		'''
+		수신된 message를 접속한 client들에게 전송한다
+		'''
+		for cs in CLIENT_SOCKS:
+			# 글을쓴 client에게는 메세지를 발송하지 않는다.
+			if cs != cli_sock:
+				# msg_text = self.logmsg.format(server = self.__class__.__name__ , clinet = cs , rmsg = message.decode())
+				# print(msg_text)
+				cs.sendall(message)
+
 
 
 
