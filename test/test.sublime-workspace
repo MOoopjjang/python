@@ -56,27 +56,10 @@
 	"buffers":
 	[
 		{
-			"file": "demo/chatserver/main.py",
+			"file": "demo/chatserver/mchatserver_2.py",
 			"settings":
 			{
-				"buffer_size": 33,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "demo/chatserver/clinet.py",
-			"settings":
-			{
-				"buffer_size": 521,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "demo/chatserver/mchatserver.py",
-			"settings":
-			{
-				"buffer_size": 1689,
+				"buffer_size": 1270,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -161,17 +144,16 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/mooopjjang/Documents/work/gitrep/python/test",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/chatserver",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mcleaner",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/es",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/ziptest",
+		"/Users/gimcheol-u/Documents/work/git/python/test",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/chatserver",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/chatserver/mchatserver.py",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/chatserver/main.py",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/chatserver/clinet.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/zip_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/compress_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/cookbook_io.py",
@@ -296,14 +278,11 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/mp_performance_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/rangetest.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/async_crawler.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/netresultdecorator.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/request_tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/api_test.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/regex/regex_test.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/Network/netresultdecorator.py"
 	],
 	"find":
 	{
-		"height": 24.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -386,93 +365,36 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "demo/chatserver/main.py",
+					"file": "demo/chatserver/mchatserver_2.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 33,
+						"buffer_size": 1270,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								877,
+								877
 							]
 						],
 						"settings":
 						{
+							"incomplete_sync": null,
 							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "demo/chatserver/clinet.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 521,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								256,
-								256
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 458.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "demo/chatserver/mchatserver.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1689,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1029,
-								1029
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 434.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -480,7 +402,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 24.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -529,7 +451,7 @@
 	"project": "test.sublime-project",
 	"replace":
 	{
-		"height": 44.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
