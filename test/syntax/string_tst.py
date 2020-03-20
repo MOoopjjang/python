@@ -10,59 +10,32 @@ string 테스트
 
 
 
-SAMPLE_1 = 'xferlog kknda iablc iadifladkfalkflkak123'
-
-
-def tst_1():
-	splits = SAMPLE_1.split(' ')
-	print(splits)
-
-
-	print('-'*40)
-	start_i = [ s for s in SAMPLE_1.split(' ') if s.startswith('i') ]
-	print(start_i)
-
-	print('-'*40)
-	if 'ab' in SAMPLE_1:
-		print('\"ab\" contains')
-
-
-	print('-'*20+'upper'+'-'*20)
-	print(SAMPLE_1.upper())
-
-	print('-'*20+' a b i upper'+'-'*20)
-
-	output = ''
-	for s in SAMPLE_1:
-		output += s.upper() if s == 'i' or s == 'a' or s == 'b' else s
-		
-	print(output)
-
-	print('-'*20+'replace'+'-'*20)
-	rep_sam = SAMPLE_1.replace('kknda' , 'bhkim')
-	print(rep_sam)
-
-	print('-'*20+'join'+'-'*20)
-	l = ['xferlog' , 'kknda' , 'ccccc' , 'dddd']
-	jstr = '<<>>'.join(l)
-	print(jstr)
-
-
-def tst_2():
-	SAMPLE_2 = 'hi kcwda  bbb z'
-	print(SAMPLE_2)
-
-	print(SAMPLE_2.strip('z'))
+SAMPLE_1 = 'xferlog kknda iablc iadifladkfalkflkak123 :'
 
 
 
 
+def tst1():
+	strip_str = SAMPLE_1.strip()
+	print('strip_str : {}'.format(strip_str))
+	print(' ":" remove :{}'.format(SAMPLE_1.strip(':')))
 
+	#replace test
+	print('":" --> "=" : {}'.format(SAMPLE_1.replace(':' , '=')))
+
+	# SAMPLE_1[3] = 'k'
+
+	l = list(SAMPLE_1)
+	l[3] = 'k'
+	print(''.join(l))
+
+	# split 테스트
+	print('split test : {}'.format(SAMPLE_1.split(' ')))
+
+
+	x = SAMPLE_1.find('kknda')
+	print('find "kknda" : {}'.format(x))
 
 
 if __name__ == '__main__':
-	# tst_1()
-
-	tst_2()
-
-
+	tst1()

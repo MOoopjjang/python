@@ -2,61 +2,37 @@
 #-*- coding:utf-8 -*-
 
 
-class Person:
-	def __init__( self , name , job = None , pay = 0 ):
-		self.name = name
-		self.job = job
-		self.pay = pay
 
-	def __repr__( self ):
-		return '[Person :{} , {}]'.format(self.name , self.pay)
-
-	def lastName( self):
-		return self.name.split()[-1]
-
-	# @rangetest(percent=(0.0,1.0))
-	def giveRaise( self , percent ):
-		self.pay = int( self.pay * (1 + percent ))
+class Base:
+	def _getAttribute_( self ):
+		return ",".join([k+":"+str(v) for k,v in self.__dict__.items()])
 
 
+class Person( Base ):
+	def __init__( self , name , age , pay ):
+		self._name = name
+		self._age = age
+		self._pay = pay
+
+
+	def __str__( self ):
+		return '[person] {}'.format(self._getAttribute_())
+
+
+	def givenRaise( self  , percent ):
+		return self._pay * 10
 
 
 class Manager( Person ):
-	def __init__( self  , name , pay = 0):
-		Person.__init__( self , name , 'mgr' , pay)
+	def givenRaise( self  , percent ):
+		return self._pay * 10+10
 
-	def __repr__( self ):
-		return '[Manager :{} , {} , {}]'.format(self.name , self.job , self.pay)
-
-
-	def giveRaise( self , percent , bonus=.10 ):
-		Person.giveRaise( self ,  percent + bonus)
-		# super().giveRaise(percent + bonus)
 
 
 
 if __name__ == '__main__':
-	bob = Person('Bob Smith')
-	sue = Person('Sue Jones' , job = 'dev' , pay = 100000)
-	print('{} , {}'.format(bob.name , bob.pay))
-	print('{} , {}'.format(sue.name , sue.pay))
-	print('{} , {}'.format(bob.lastName() , sue.lastName()))
-	sue.giveRaise(.10)
-	print('{}'.format(sue.pay))
+	p = Person('xferlog' , 23 , 23)
+	m = Manager('cwkim' , 23 , 23)
 
-	print('bob >> {}'.format(bob))
-	print('sue >> {}'.format(sue))
-
-	tom = Manager('Tom Jones' , 50000)
-	tom.giveRaise(.10)
-	print(tom.lastName())
-	print(tom)
-
-
-	print('-- All there --')
-	for p in (bob , sue , tom):
-		p.giveRaise(.10)
-		print('{}'.format(p))
-
-
-
+	print(p.givenRaise(10));
+	print(m.givenRaise(10))

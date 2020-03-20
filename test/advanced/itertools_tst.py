@@ -4,7 +4,7 @@
 
 def chain_tst():
     '''
-    chain : 서로다른 container에 들어있으나 , 중처된 반복문을 사용하지 않고 나열하고 싶다.
+    chain : 서로다른 container에 들어있으나 , 중첩된 반복문을 사용하지 않고 나열하고 싶다.
     '''
     from itertools import chain
 

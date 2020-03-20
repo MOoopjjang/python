@@ -7,11 +7,20 @@
 '''
 
 
+
 from authentication import Authentication
+
+
+RGX_EMAIL = '^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 
 class MAuthenticationManager:
 	def __init__( self ):
 		self._members = []
+
+
+	def __repr__( self ):
+		l = [str(m.getEmail())+':'+str(m.getPwd()) for m in self._members]
+		return '==='.join(l)
 
 
 	def createMember( self , email = None , pwd = None):
@@ -21,8 +30,13 @@ class MAuthenticationManager:
 		if email == None or pwd == None:
 			raise Exception('파라미터 오류입니다.')
 
-		if self._existMember_( email ):
-			raise Exception('{} 는 이미등록된 사용자입니다.'.format(email))
+		if self._checkMember_( email ) == False:
+			errmsg = '{} 는 이미등록된 사용자입니다.'.format(email)
+			raise Exception(errmsg)
+
+		if self._checkEmailSyntax_( email ) == False:
+			errmsg = '{} 는 email이 아닙니다.'.format(email)
+			raise Exception(errmsg)
 
 		#등록
 		self._members.append(Authentication(email , pwd))
@@ -30,12 +44,32 @@ class MAuthenticationManager:
 
 
 
-	def _existMember_( self , email ):
+	def _checkMember_( self , email ):
 		if len(self._members) == 0:return True
 
 		for m in self._members:
 			if m.getEmail() == email:
-				return True
-		return False
+				return False
+		return True
+
+
+	def _checkEmailSyntax_( self , email ):
+		import re
+
+		rgx = re.compile(RGX_EMAIL)
+		mo = rgx.search(email)
+		if mo == None:return False
+		return True
+			
+
+
+
+
+if __name__ == '__main__':
+	mm = MAuthenticationManager()
+	mm.createMember('xferlog@naver.com' , '11111')
+	mm.createMember('cccc@naver.com' , '11111')
+	print(mm)
+
 
 
