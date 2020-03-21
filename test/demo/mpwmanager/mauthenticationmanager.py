@@ -7,15 +7,17 @@
 '''
 
 
-
+import defines.defines as df
 from authentication import Authentication
+from mdataaccessmanager import MDataAccessManager
 
 
-RGX_EMAIL = '^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
+# RGX_EMAIL = '^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 
 class MAuthenticationManager:
 	def __init__( self ):
 		self._members = []
+		self._repositoryManager = MDataAccessManager()
 
 
 	def __repr__( self ):
@@ -42,7 +44,19 @@ class MAuthenticationManager:
 		self._members.append(Authentication(email , pwd))
 
 
+	def certification( self , _email , _pwd ):
+		'''
+		인증 진행
+		'''
+		for m in self._members:
+			if _email == m.getEmail() and m.matched(_pwd):
+				print('인증 되었습니다.')
+				return True
 
+
+		return False
+
+					
 
 	def _checkMember_( self , email ):
 		if len(self._members) == 0:return True
@@ -56,7 +70,7 @@ class MAuthenticationManager:
 	def _checkEmailSyntax_( self , email ):
 		import re
 
-		rgx = re.compile(RGX_EMAIL)
+		rgx = re.compile(df.RGX_EMAIL)
 		mo = rgx.search(email)
 		if mo == None:return False
 		return True

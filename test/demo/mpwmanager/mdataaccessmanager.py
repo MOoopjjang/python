@@ -5,5 +5,27 @@
 '''
 Data를 db | file로 저장/수정/삭제/read하는 기능을 제공
 '''
+import defines.defines as df
+from filedataaccess import FileDataAccessManager
+from databaseaccess import DatabaseAccessManager
+from defines.singleton import Singleton
 
-class MDataAccessManager:pass
+@Singleton('MDataAccessManager' , True)
+class MDataAccessManager:
+	def __init__( self , _tag = 'FILE_SAVE'):
+		self._repositoryDict = {
+			'FILE_SAVE':FileDataAccessManager(),
+			'DB_SAVE':DatabaseAccessManager()
+		}
+		self._tag = _tag
+		self._repository = self._repositoryDict[self._tag]
+
+
+
+
+
+
+
+
+
+		

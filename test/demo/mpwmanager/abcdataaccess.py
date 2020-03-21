@@ -1,0 +1,16 @@
+#!python3
+#-*- coding:utf-8 -*-
+
+from abc import ABCMeta , abstractmethod
+
+class ABCDataAccess( metaclass = ABCMeta ):
+
+
+	@abstractmethod
+	def save(self ,  _data ):pass
+
+	@abstractmethod
+	def findByAll( self ):pass
+
+	@abstractmethod
+	def findByEmail( self , email ):pass
