@@ -5,6 +5,8 @@ from abc import ABCMeta , abstractmethod
 
 class ABCDataAccess( metaclass = ABCMeta ):
 
+	@abstractmethod
+	def load(self , _path):pass
 
 	@abstractmethod
 	def save(self ,  _data ):pass

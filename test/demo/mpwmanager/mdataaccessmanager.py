@@ -20,9 +20,15 @@ class MDataAccessManager:
 		self._tag = _tag
 		self._repository = self._repositoryDict[self._tag]
 
+	def load(self , _path ):
+		return self._repository.load(_path)
+
+	def save( self , _key , _data):
+		self._repository.save( _key , _data )
 
 
-
+	def findByEmail( self , _key ):
+		return self._repository.findByEmail( _key )
 
 
 

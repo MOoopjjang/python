@@ -7,6 +7,10 @@ from defines.singleton import Singleton
 @Singleton('DatabaseAccessManager' , True)
 class DatabaseAccessManager( ABCDataAccess ):
 
+	def load(self , _path):
+		print('load')
+		return self
+
 	def save(self ,  _data ):
 		print('save')
 

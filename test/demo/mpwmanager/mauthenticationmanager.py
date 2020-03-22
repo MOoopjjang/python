@@ -12,12 +12,10 @@ from authentication import Authentication
 from mdataaccessmanager import MDataAccessManager
 
 
-# RGX_EMAIL = '^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
-
 class MAuthenticationManager:
 	def __init__( self ):
-		self._members = []
-		self._repositoryManager = MDataAccessManager()
+		# self._members = []
+		self._repositoryManager = MDataAccessManager().load('auth.bin')
 
 
 	def __repr__( self ):
@@ -41,30 +39,31 @@ class MAuthenticationManager:
 			raise Exception(errmsg)
 
 		#등록
-		self._members.append(Authentication(email , pwd))
+		self._repositoryManager.save(email , Authentication(email , pwd))
+
 
 
 	def certification( self , _email , _pwd ):
 		'''
 		인증 진행
 		'''
-		for m in self._members:
-			if _email == m.getEmail() and m.matched(_pwd):
-				print('인증 되었습니다.')
-				return True
+		auth = self._repositoryManager.findByEmail(_email)
+		if(auth == None):
+			return False
 
-
+		if auth.matched(_pwd):
+			print('인증되었습니다.')
+			return True;
 		return False
 
 					
 
 	def _checkMember_( self , email ):
-		if len(self._members) == 0:return True
-
-		for m in self._members:
-			if m.getEmail() == email:
-				return False
+		if self._repositoryManager.findByEmail( email ):
+			return False
 		return True
+
+		
 
 
 	def _checkEmailSyntax_( self , email ):
