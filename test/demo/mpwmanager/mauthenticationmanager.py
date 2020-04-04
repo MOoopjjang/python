@@ -14,7 +14,6 @@ from mdataaccessmanager import MDataAccessManager
 
 class MAuthenticationManager:
 	def __init__( self ):
-		# self._members = []
 		self._repositoryManager = MDataAccessManager().load('auth.bin')
 
 
@@ -42,13 +41,27 @@ class MAuthenticationManager:
 		self._repositoryManager.save(email , Authentication(email , pwd))
 
 
+	def removeMember( self , _email ):
+		'''
+		member를 등록해지한다.
+		'''
+		auth = self._repositoryManager.findByEmail(_email)
+		if auth != None:
+			try:
+				self._repositoryManager.remove(_email)
+			except:
+				raise Exception('{} 계정삭제중 에러가 발생했습니다.'.format(_email))
+			
+			
+
+
 
 	def certification( self , _email , _pwd ):
 		'''
 		인증 진행
 		'''
 		auth = self._repositoryManager.findByEmail(_email)
-		if(auth == None):
+		if auth == None:
 			return False
 
 		if auth.matched(_pwd):
@@ -64,7 +77,6 @@ class MAuthenticationManager:
 		return True
 
 		
-
 
 	def _checkEmailSyntax_( self , email ):
 		import re

@@ -12,6 +12,9 @@ class ABCDataAccess( metaclass = ABCMeta ):
 	def save(self ,  _data ):pass
 
 	@abstractmethod
+	def remove( self , _key ):pass
+
+	@abstractmethod
 	def findByAll( self ):pass
 
 	@abstractmethod

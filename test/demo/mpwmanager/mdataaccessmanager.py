@@ -26,6 +26,9 @@ class MDataAccessManager:
 	def save( self , _key , _data):
 		self._repository.save( _key , _data )
 
+	def remove( self , _key ):
+		self._repository.remove(_key)
+
 
 	def findByEmail( self , _key ):
 		return self._repository.findByEmail( _key )

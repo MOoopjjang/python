@@ -1,6 +1,9 @@
 #!python3
 #-*- coding:utf-8 -*-
 
+'''
+Data를  file로 저장/수정/삭제/read하는 기능을 제공
+'''
 
 from abcdataaccess import ABCDataAccess
 from defines.singleton import Singleton
@@ -25,7 +28,11 @@ class FileDataAccessManager( ABCDataAccess ):
 			sh[_key] = _data
 		return True
 			
-		
+	def remove( self , _key ):
+		with shelve.open( self._path ) as sh:
+			del sh[_key]
+
+
 
 
 	def findByAll( self ):pass
@@ -37,4 +44,4 @@ class FileDataAccessManager( ABCDataAccess ):
 			return False
 
 		with shelve.open(self._path) as sh:
-			return sh[_key]
+			return sh.get(_key , None)

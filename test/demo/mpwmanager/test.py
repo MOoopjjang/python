@@ -6,23 +6,37 @@ from mauthenticationmanager import MAuthenticationManager
 
 
 
+def auth_init( _manager ):
+	_manager.createMember('khlee@zinnaworks.com' , 'khlee123')
+	_manager.createMember('cwkim@zinnaworks.com' , 'cwkim123')
+	
 def tst_auth():
 	m = MAuthenticationManager()
-	m.createMember('aaaa@aaaa.com' , '1111')
+	auth_init(m)
 
-	input_email = input('email:')
-	input_pw = input('pw:')
+	# m.removeMember('cwkim@zinnaworks.com')
 
-	ret = m.certification(input_email , input_pw)
-	print('{}'.format(ret))
+	while True:
+		input_email = input('email:')
+		input_pw = input('pw:')
+
+		if input_email=='q':break
+
+		ret = m.certification(input_email , input_pw)
+		print('{}'.format(ret))
 
 
 
+def main():
+	SAMPLE_DICT = {'name':'xferlog' , 'age':20}
 
-def main():pass
-	
+	print('{}'.format(SAMPLE_DICT))	
+
+	del SAMPLE_DICT['name']
+	print('{}'.format(SAMPLE_DICT))	
 
 
 
 if __name__ == '__main__':
 	tst_auth()
+	# main()

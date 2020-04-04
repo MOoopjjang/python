@@ -14,6 +14,9 @@ class DatabaseAccessManager( ABCDataAccess ):
 	def save(self ,  _data ):
 		print('save')
 
+	def remove( self , _key ):pass
+		
+
 
 	def findByAll( self ):
 		print('findByAll')
