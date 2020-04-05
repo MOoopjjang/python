@@ -6,4 +6,8 @@
 - user data class
 '''
 
-class PersonInformation:pass
+
+class PersonInformation:
+	def __init__( self  , _id):
+		self._id = _id
+		self._infos = []
