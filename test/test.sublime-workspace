@@ -65,28 +65,19 @@
 			}
 		},
 		{
-			"file": "demo/mpwmanager/mauthenticationmanager.py",
+			"file": "demo/mpwmanager/informationmanager.py",
 			"settings":
 			{
-				"buffer_size": 1361,
+				"buffer_size": 86,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "demo/mpwmanager/defines.py",
+			"file": "demo/mpwmanager/person_information.py",
 			"settings":
 			{
-				"buffer_size": 34,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "demo/mpwmanager/authentication.py",
-			"settings":
-			{
-				"buffer_size": 702,
+				"buffer_size": 90,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -171,13 +162,32 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/gimcheol-u/Documents/work/git/python/test",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/current_open_port.txt",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/port_scanner.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_2.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/classtree.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/test.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/filedataaccess.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/mdataaccessmanager.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/defines/singleton.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/mauthenticationmanager.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/module/shelve_tst.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/abcdataaccess.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/databaseaccess.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/singleton_decorator.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/singleton.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/defines/defines.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/authentication.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/defines/__init__.py",
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/mpwmanager/defines.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/module/browser_tst.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/syntax/string_tst.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/module/test.py",
@@ -265,7 +275,6 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/frozenset_tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/port_scanner.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/mifchecker.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/mtail.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/list_tst.py",
@@ -284,38 +293,22 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/book.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_4.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_3.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/socket_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/config.json",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/test_1.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/thread_conditon.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_3.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/18_cotyledon.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/config.json",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/port_scanner.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/stop_watch.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/person-department.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/person-composite.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/contains.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/aa.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/number.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/employees.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/AA.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/tt/email_tst.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/04_hello-asyncio.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/access2.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/singleton_decorator.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/decorator/access1.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_3.py"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
 		"height": 101.0,
 		"where_history":
 		[
+			"/Users/mooopjjang/Documents/work/gitrep/python/test",
 			"/Users/gimcheol-u/Documents/work/git/python/test",
 			"/Users/mooopjjang/Documents/work/gitrep/python/test"
 		]
@@ -325,6 +318,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Super",
+			"\n\n\tdef __init__( self ):\n\t\tABCData",
+			"abstractmethod",
+			"shelve",
 			"webbrowser",
 			"Person",
 			"pyperclip",
@@ -400,7 +397,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -416,71 +413,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "demo/mpwmanager/mauthenticationmanager.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1361,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								201,
-								201
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "demo/mpwmanager/defines.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 34,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								34,
-								34
+								149,
+								149
 							]
 						],
 						"settings":
@@ -498,29 +432,54 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "demo/mpwmanager/authentication.py",
-					"semi_transient": true,
+					"buffer": 1,
+					"file": "demo/mpwmanager/informationmanager.py",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 702,
+						"buffer_size": 86,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								86,
+								86
 							]
 						],
 						"settings":
 						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "demo/mpwmanager/person_information.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 90,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								59,
+								59
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Python/Python.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -534,7 +493,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 24.0
 	},
 	"input":
 	{
@@ -583,7 +542,7 @@
 	"project": "test.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":
