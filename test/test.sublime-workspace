@@ -74,15 +74,6 @@
 			}
 		},
 		{
-			"file": "class/OperatorOverloading/squares.py",
-			"settings":
-			{
-				"buffer_size": 1830,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "demo/mpwmanager/person_information.py",
 			"settings":
 			{
@@ -180,13 +171,11 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/gimcheol-u/Documents/work/git/python/test",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/OperatorOverloading/squares.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/current_open_port.txt",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/port_scanner.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/class/class_tst_2.py",
@@ -313,12 +302,11 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/socket_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/demo/portscanner/config.json",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/system/test_1.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/thread_conditon.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/async/asyncio_3.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/advanced/thread_conditon.py"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 24.0
 	},
 	"find_in_files":
 	{
@@ -416,7 +404,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -478,43 +466,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "class/OperatorOverloading/squares.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1830,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1380,
-								1380
-							]
-						],
-						"settings":
-						{
-							"incomplete_sync": null,
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "demo/mpwmanager/person_information.py",
 					"semi_transient": false,
 					"settings":
@@ -526,8 +482,8 @@
 						"selection":
 						[
 							[
-								273,
-								273
+								61,
+								61
 							]
 						],
 						"settings":
@@ -536,7 +492,8 @@
 							"incomplete_sync": null,
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Python/Python.sublime-syntax"
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -546,7 +503,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 3,
 					"file": "demo/mpwmanager/information.py",
 					"semi_transient": false,
 					"settings":
@@ -574,7 +531,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -582,7 +539,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 24.0
 	},
 	"input":
 	{
@@ -631,7 +588,7 @@
 	"project": "test.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 44.0
 	},
 	"save_all_on_build": true,
 	"select_file":

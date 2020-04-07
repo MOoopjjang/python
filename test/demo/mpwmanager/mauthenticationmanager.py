@@ -11,7 +11,7 @@ import defines.defines as df
 from authentication import Authentication
 from mdataaccessmanager import MDataAccessManager
 
-
+@Singleton('mAuthenticationManager' , True)
 class MAuthenticationManager:
 	def __init__( self ):
 		self._repositoryManager = MDataAccessManager().load('auth.bin')

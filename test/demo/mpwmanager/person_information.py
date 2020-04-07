@@ -22,6 +22,5 @@ class PersonInformation:
 		return self._infos[x]
 
 
-
 	def add( self , _info ):
 		self._infos.append(_info)

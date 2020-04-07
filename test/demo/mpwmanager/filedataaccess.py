@@ -33,10 +33,11 @@ class FileDataAccessManager( ABCDataAccess ):
 			del sh[_key]
 
 
-
-
-	def findByAll( self ):pass
-
+	def findByAll( self ):
+		with shelve.open(self._path) as sh:
+			if len(sh) == 0:
+				return {};
+			return sh
 
 
 	def findByEmail( self , _key ):
@@ -45,3 +46,6 @@ class FileDataAccessManager( ABCDataAccess ):
 
 		with shelve.open(self._path) as sh:
 			return sh.get(_key , None)
+
+
+
