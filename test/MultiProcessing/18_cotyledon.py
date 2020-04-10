@@ -21,16 +21,16 @@ cotyledon :: 오랜시간동한 실행되는 process를 생성하기 위해 만�
 
 
 
-class PrinterService( cotyledon.Service ):
-	name='printer'
-	def __init__( self , worker_id):
+class PrintWriter( cotyledon.Service ):
+	def __init__( self , worker_id ):
+		cotyledon.Service.__init__( self , worker_id)
+		self._worker_id = worker_id
 		self._shutdown = threading.Event()
-		super(PrinterService , self).__init__(worker_id)
 
 
 	def run( self ):
 		while not self._shutdown.is_set():
-			print(' polling... ')
+			print('run  ==>{}'.format(self._worker_id))
 			time.sleep(1)
 
 
@@ -38,13 +38,12 @@ class PrinterService( cotyledon.Service ):
 		self._shutdown.set()
 
 
-def main():
-	manager = cotyledon.ServiceManager()
-	manager.add(PrinterService , 2)
-	manager.run()
-
-
 
 
 if __name__ == '__main__':
-	main()
+	manager = cotyledon.ServiceManager()
+	manager.add( PrintWriter , 1 )
+	manager.run()
+
+
+	

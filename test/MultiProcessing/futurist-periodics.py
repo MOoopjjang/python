@@ -18,16 +18,16 @@ from futurist import periodics
 """
 
 @periodics.periodic(1)
-def every_one(started_at):
-	print(' 1:{}'.format(time.time() - started_at))
+def every_one( started_at ):
+	print(' 1: %s '%(time.time() - started_at))
 
-
-w = periodics.PeriodicWorker([(every_one , (time.time(),),{}),])
+w = periodics.PeriodicWorker([
+	(every_one , (time.time(),) , {})
+	])
 
 @periodics.periodic(4)
 def print_stats():
-	print(' stats : {}'.format(list(w.iter_watchers())))
-
+	print('stats : %s'%list(w.iter_watchers()))
 
 w.add(print_stats)
 w.start()

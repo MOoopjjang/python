@@ -12,44 +12,48 @@ import cotyledon
 """
 
 
-class Manager( cotyledon.ServiceManager ):
-	def __init__( self  ):
-		super(Manager , self).__init__()
+class MManager( cotyledon.ServiceManager ):
+	def __init__( self ):
+		cotyledon.ServiceManager.__init__( self )
 		self.queue = multiprocessing.Manager().Queue()
-		self.add(ProducerService , args = (self.queue,))
-		self.add(ConsumerService , args=(self.queue,) , workers = 2)
+		self.add(Producer , args = (self.queue , ))
+		self.add(Consumer , args = (self.queue , ),workers = 2)
 
 
 
 
-class ProducerService( cotyledon.Service ):
-	def __init__( self , worker_id , queue ):
-		super( ProducerService , self ).__init__(worker_id)
-		self.queue = queue
+class Producer( cotyledon.Service ):
+	def __init__( self ,worker_id, _queue ):
+		cotyledon.Service.__init__( self , worker_id)
+		self._queue = _queue
+
 
 	def run( self ):
-		i = 0
+		count = 0
 		while True:
-			self.queue.put(i)
+			self._queue.put(count)
+			count+=1
+			time.sleep(4)
+
+
+
+
+class Consumer( cotyledon.Service ):
+	def __init__( self ,worker_id ,_queue):
+		cotyledon.Service.__init__( self , worker_id)
+		self._queue = _queue
+		self._worker_id = worker_id
+
+	def run( self ):
+		while True:
+			j = self._queue.get(block = True)
+			print("I am worker :: id : {} , pid : {} , job : {}".format(self._worker_id , self.pid , j))
 			time.sleep(1)
-			i +=1
 
-
-
-class ConsumerService( cotyledon.Service ):
-	def __init__( self , worker_id , queue ):
-		super( ConsumerService , self ).__init__(worker_id)
-		self.queue = queue
-
-
-	def run( self ):
-		while True:
-			j = self.queue.get(block = True)
-			print('pid : {} , worker_id : {} , job : {}'.format(self.pid , self.worker_id , j))
 
 
 
 if __name__ == '__main__':
-	Manager().run()
+	MManager().run()
 
 
