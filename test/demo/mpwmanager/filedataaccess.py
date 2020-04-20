@@ -38,8 +38,7 @@ class FileDataAccessManager( ABCDataAccess ):
 
 	def findByAll( self ):
 		with shelve.open(self._path) as sh:
-			print('>>>>>>>>>len : {}'.format(len(sh)))
-			cache = copy.deepcopy(dict(sh)) if len( sh ) > 0 else {}
+			cache = dict(sh) if len( sh ) > 0 else {}
 		return cache
 
 
