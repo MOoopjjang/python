@@ -10,6 +10,7 @@
 import defines.defines as df
 from authentication import Authentication
 from mdataaccessmanager import MDataAccessManager
+from defines.singleton import Singleton
 
 @Singleton('mAuthenticationManager' , True)
 class MAuthenticationManager:
