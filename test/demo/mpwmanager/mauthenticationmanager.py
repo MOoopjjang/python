@@ -45,7 +45,7 @@ class MAuthenticationManager:
 		'''
 		member를 등록해지한다.
 		'''
-		auth = self._repositoryManager.findByEmail(_email)
+		auth = self._repositoryManager.findByOne(_email)
 		if auth != None:
 			try:
 				self._repositoryManager.remove(_email)
@@ -60,7 +60,7 @@ class MAuthenticationManager:
 		'''
 		인증 진행
 		'''
-		auth = self._repositoryManager.findByEmail(_email)
+		auth = self._repositoryManager.findByOne(_email)
 		if auth == None:
 			return False
 
@@ -72,7 +72,7 @@ class MAuthenticationManager:
 					
 
 	def _checkMember_( self , email ):
-		if self._repositoryManager.findByEmail( email ):
+		if self._repositoryManager.findByOne( email ):
 			return False
 		return True
 

@@ -19,6 +19,16 @@ class Information:
 		return '@'.join(l)
 
 
+	# def __eq__( self , x ):
+	# 	return self._info == x._info
+
+	def getInfo( self ):return self._info
+
+	def getId( self ):return self._id
+
+	def getPassword( self ):return self._pw
+
+
 
 if __name__ == '__main__':
 	i1 = Information('www.naver.com' , 'xferlog' , '1111')

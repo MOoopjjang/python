@@ -36,8 +36,8 @@ class MDataAccessManager:
 		return self._repository.findByAll()
 
 
-	def findByEmail( self , _key ):
-		return self._repository.findByEmail( _key )
+	def findByOne( self , _key ):
+		return self._repository.findByOne( _key )
 
 
 

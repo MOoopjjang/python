@@ -22,5 +22,5 @@ class DatabaseAccessManager( ABCDataAccess ):
 		print('findByAll')
 
 
-	def findByEmail( self , email ):
+	def findByOne( self , email ):
 		print('findByEmail')

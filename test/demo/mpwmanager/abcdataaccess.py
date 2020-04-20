@@ -18,4 +18,4 @@ class ABCDataAccess( metaclass = ABCMeta ):
 	def findByAll( self ):pass
 
 	@abstractmethod
-	def findByEmail( self , email ):pass
+	def findByOne( self , email ):pass
