@@ -37,12 +37,17 @@ class InformationManager:
 			self._cacheOne = PersonInformation( _id )
 		return self
 
+	def _remove_( self ):pass
+
 
 	def load( self , _id ):
 		self._cacheOne_( _id ) 
 		return self
 
 	def add( self , _id , _data ):
+		'''
+		새로운 사용자 정보를 저장한다.
+		'''
 		if self._cacheOne is None:
 			self._cacheOne_( _id )
 
@@ -58,7 +63,23 @@ class InformationManager:
 		return self
 
 
-	def remove( self , _id , _data ):pass
+	def remove( self , _id , _data = None ):
+		'''
+		사용정보를 삭제한다
+		'''
+		if self._cacheOne is None:
+			self._cacheOne_( _id )
+
+		if _data is None:
+			self._remove_()
+		else:	
+			if len( self._cacheOne ) > 0 and _data in self._cacheOne:
+				self._cacheOne.remove( _data )
+				self._repository.save( _id , self._cacheOne )
+		return self
+
+	
+
 
 
 
