@@ -73,9 +73,7 @@ class MAuthenticationManager:
 					
 
 	def _checkMember_( self , email ):
-		if self._repositoryManager.findByOne( email ):
-			return False
-		return True
+		return False if self._repositoryManager.findByOne( email ) else True
 
 		
 
@@ -84,8 +82,7 @@ class MAuthenticationManager:
 
 		rgx = re.compile(df.RGX_EMAIL)
 		mo = rgx.search(email)
-		if mo == None:return False
-		return True
+		return False if mo == None else True
 			
 
 

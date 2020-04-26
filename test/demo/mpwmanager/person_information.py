@@ -26,7 +26,7 @@ class PersonInformation:
 
 	def __contains__( self , x ):
 		for info in self._infos:
-			if info.getInfo() == x.getInfo():
+			if info.getInfo() == x:
 				return True
 		return False
 
@@ -35,6 +35,6 @@ class PersonInformation:
 
 	def remove( self , _info ):
 		for idx , info in enumerate( self._infos ):
-			if info.getInfo() == _info.getInfo():
+			if info.getInfo() == _info:
 				del self._infos[idx]
 				break 

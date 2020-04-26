@@ -18,10 +18,6 @@ class Information:
 		l = [ k+':'+str(v) for k,v in self.__dict__.items() ]
 		return '@'.join(l)
 
-
-	# def __eq__( self , x ):
-	# 	return self._info == x._info
-
 	def getInfo( self ):return self._info
 
 	def getId( self ):return self._id
