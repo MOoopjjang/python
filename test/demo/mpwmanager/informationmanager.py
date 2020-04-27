@@ -67,6 +67,20 @@ class InformationManager:
 		return self
 
 
+	def edit( self , _id ,  _data):
+		'''
+		저장된 사용자 정보를 수정된 정보로 변경한다.
+		'''
+		if self._cacheOne is None:
+			self._cacheOne_( _id )
+
+		self._cacheOne.remove( _data.getInfo() )
+		self._cacheOne.add( _data )
+		self._cacheData[_id] = self._cacheOne
+		self._repository.save( _id , self._cacheOne )
+		return self
+
+
 	def remove( self , _id , _getInfo = None ):
 		'''
 		사용정보를 삭제한다
