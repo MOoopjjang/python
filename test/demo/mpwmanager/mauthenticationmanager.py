@@ -23,6 +23,18 @@ class MAuthenticationManager:
 		return '==='.join(l)
 
 
+	def _checkMember_( self , email ):
+		return False if self._repositoryManager.findByOne( email ) else True
+
+		
+	def _checkEmailSyntax_( self , email ):
+		import re
+
+		rgx = re.compile(df.RGX_EMAIL)
+		mo = rgx.search(email)
+		return False if mo == None else True
+
+
 	def createMember( self , email = None , pwd = None):
 		'''
 		새로운 사용자를 등록한다.
@@ -72,17 +84,7 @@ class MAuthenticationManager:
 
 					
 
-	def _checkMember_( self , email ):
-		return False if self._repositoryManager.findByOne( email ) else True
-
-		
-
-	def _checkEmailSyntax_( self , email ):
-		import re
-
-		rgx = re.compile(df.RGX_EMAIL)
-		mo = rgx.search(email)
-		return False if mo == None else True
+	
 			
 
 

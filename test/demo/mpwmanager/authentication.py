@@ -13,6 +13,7 @@ class Authentication:
 		self._email = email
 		self._salt = bcrypt.gensalt()
 		self._pwd = bcrypt.hashpw(pwd.encode() , self._salt )
+		self._authority = 'USER'
 
 	def __repr__( self ):
 		return 'email : %s , pwd : %s'%(self._email , self._pwd)
@@ -23,6 +24,9 @@ class Authentication:
 
 	def getPwd( self ):
 		return self._pwd
+
+	def getAuthority( self ):
+		return self._authority
 
 	def matched( self , rawPwd ):
 		return bcrypt.checkpw( rawPwd.encode() , self._pwd)

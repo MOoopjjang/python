@@ -25,7 +25,6 @@ class InformationManager:
 		return '@'.join(l)
 
 
-
 	def _cache_( self ):
 		self._cacheData = self._repository.findByAll()
 		return self
@@ -47,6 +46,7 @@ class InformationManager:
 		'''
 		self._cacheOne_( _id ) 
 		return self
+
 
 	def add( self , _id , _data ):
 		'''
@@ -104,10 +104,22 @@ class InformationManager:
 		return self._cacheData[_id]
 
 
+	def printInfo( self , _id ):
+		'''
+		사용자의 등록한 정보를 출력한다.
+		'''
+		self._cacheOne_( _id )
+
+		if self._cacheOne is None:
+			print('존재하지 않는 사용자 입니다.')
+		else:
+			for index , p in enumerate( self._cacheOne ):
+				print('[{}]{}'.format(index , p))
+
+
 
 if __name__ == '__main__':
 	im = InformationManager()
-	
 
 	ifo = Information('www.naver.com' , 'xferlog' , '1111')
 	ifo2 = Information('mypc' , 'cwkim' , 'cwkim123')
@@ -137,6 +149,16 @@ if __name__ == '__main__':
 	print('*'*20)
 	im2.load('khlee').remove('khlee')
 	print(im2)
+
+	print('*'*20)
+	im.edit('xferlog' , Information('mypc' , 'edit' , 'edit'))
+	im.printInfo('xferlog')
+
+	print('*'*20)
+	print('im : {} - im2 : {}'.format(id(im) , id(im2)))
+
+
+
 
 
 
