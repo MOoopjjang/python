@@ -97,11 +97,24 @@ class InformationManager:
 		return self
 
 	
-	def get( self , _id ):
+	def get( self , _id , _info = None , _sec = 'N' ):
 		'''
 		사용자 정보를 가져온다
 		'''
-		return self._cacheData[_id]
+		import pyperclip
+
+		pi = self._cacheData[_id]
+		if _info is None:
+			return pi
+		else:
+			for idx , info in enumerate( pi ):
+				if _info == info:
+					if _sec == 'Y':
+						# clip board에 복사
+						pyperclip.copy( pi[idx].getPassword() )
+					else:
+						return pi[idx].getPassword()		
+		return None
 
 
 	def printInfo( self , _id ):

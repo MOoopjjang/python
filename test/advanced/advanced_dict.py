@@ -12,18 +12,20 @@ import collections
 
 
 
-class StrKeyDict ( collections.UserDict ):
+class CustomDict( collections.UserDict ):
+	'''
+	dict에 key값이 존재하지 않을경우 Customdict를 사용하여 default value를 반환한다.
+	'''
 	def __missing__( self , key ):
 		if isinstance( key , str ):
 			return 'unknown'
-			# raise KeyError(key)
-		return self[str(key)]
+		return self.data[ str(key) ]
 
 	def __contains__( self , key ):
 		return str(key) in self.data
 
-	def __setitem__( self , key , item ):
-		self.data[str(key)] = item
+	def __setitem__( self , key , value ):
+		self.data[ str(key) ] = value
 
 
 
@@ -49,11 +51,11 @@ def unmutable_tst():
 
 def tst_1():
 
-	d = StrKeyDict()
-	d['name'] = 'xferlog'
-	d['age'] = 20
-	print('d : {}'.format(d))
-	print('addr : {}'.format(d['addr']))
+	cd = CustomDict()
+	cd['name'] = 'cwkim'
+	cd['age'] = 20
+	print('{cd}'.format(cd = cd))
+	print('{addr}'.format(addr = cd['addr']))
 
 
 def tst_0():
