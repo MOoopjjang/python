@@ -108,7 +108,7 @@ class InformationManager:
 			return pi
 		else:
 			for idx , info in enumerate( pi ):
-				if _info == info:
+				if _info == info.getInfo():
 					if _sec == 'Y':
 						# clip board에 복사
 						pyperclip.copy( pi[idx].getPassword() )
@@ -166,6 +166,8 @@ if __name__ == '__main__':
 	print('*'*20)
 	im.edit('xferlog' , Information('mypc' , 'edit' , 'edit'))
 	im.printInfo('xferlog')
+
+	im.get('xferlog' , _info = 'mypc' , _sec='Y')
 
 	print('*'*20)
 	print('im : {} - im2 : {}'.format(id(im) , id(im2)))

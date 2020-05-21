@@ -64,10 +64,19 @@
 	"buffers":
 	[
 		{
-			"file": "demo/mpwmanager/filedataaccess.py",
+			"file": "book/cookbook/test_2.py",
 			"settings":
 			{
-				"buffer_size": 947,
+				"buffer_size": 1421,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "book/cookbook/test.py",
+			"settings":
+			{
+				"buffer_size": 2154,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -153,25 +162,30 @@
 	"expanded_folders":
 	[
 		"/Users/gimcheol-u/Documents/work/git/python/test",
+		"/Users/gimcheol-u/Documents/work/git/python/test/book",
+		"/Users/gimcheol-u/Documents/work/git/python/test/book/cookbook",
+		"/Users/gimcheol-u/Documents/work/git/python/test/flask",
 		"/Users/mooopjjang/Documents/work/my/python/Ref"
 	],
 	"file_history":
 	[
+		"/Users/gimcheol-u/Documents/work/git/python/test/flask/tst1.py",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/information.py",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/filedataaccess.py",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/informationmanager.py",
+		"/Users/gimcheol-u/Documents/work/git/python/test/mcw.pyw",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/person_information.py",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/authentication.py",
+		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/admin.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/MultiProcessing/18_cotyledon.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/book/cookbook/test_2.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/advanced/advanced_dict.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/book/cookbook/test.py",
-		"/Users/gimcheol-u/Documents/work/git/python/test/flask/tst1.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/security_context_holder.py",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/authentication.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/mauthenticationmanager.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/test.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/Flask_ex.py",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/informationmanager.py",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/person_information.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/MultiProcessing/mp_performance_2.py",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/information.py",
-		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/filedataaccess.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/mdataaccessmanager.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/databaseaccess.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/demo/mpwmanager/abcdataaccess.py",
@@ -211,7 +225,6 @@
 		"/Users/gimcheol-u/Documents/work/git/python/test/advanced/itertools_tst.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/advanced/cookbook_io.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/syntax/tst1.py",
-		"/Users/gimcheol-u/Documents/work/git/python/test/mcw.pyw",
 		"/Users/gimcheol-u/Documents/work/git/python/test/test2.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/advanced/classtools.py",
 		"/Users/gimcheol-u/Documents/work/git/python/test/demo/chatserver/mchatserver_2.py",
@@ -283,8 +296,7 @@
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/MultiProcessing/test_2.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/frozenset_tst.py",
 		"/Users/mooopjjang/Documents/work/gitrep/python/test/tools/mifchecker.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/mtail.py",
-		"/Users/mooopjjang/Documents/work/gitrep/python/test/syntax/list_tst.py"
+		"/Users/mooopjjang/Documents/work/gitrep/python/test/api/mtail.py"
 	],
 	"find":
 	{
@@ -306,6 +318,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"arg2",
+			"pyperclip",
+			"get",
 			"cotyledon",
 			"UserDict",
 			"flask",
@@ -398,19 +413,51 @@
 			[
 				{
 					"buffer": 0,
-					"file": "demo/mpwmanager/filedataaccess.py",
+					"file": "book/cookbook/test_2.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 947,
+						"buffer_size": 1421,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								500,
-								500
+								53,
+								53
+							]
+						],
+						"settings":
+						{
+							"incomplete_sync": null,
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/Python/Python.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 503.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "book/cookbook/test.py",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								132
 							]
 						],
 						"settings":
@@ -425,7 +472,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
