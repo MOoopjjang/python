@@ -3,6 +3,7 @@
 
 '''
  - user 등록 / 인증 기능제공
+ - 등록된 모든 user 인증정보 제공
  - 계정정보를 MDataAccessManager를 통해 저장/삭제/편집을 할수 있다.
 '''
 
@@ -18,9 +19,9 @@ class MAuthenticationManager:
 		self._repositoryManager = MDataAccessManager().load('auth.bin')
 
 
-	def __repr__( self ):
-		l = [str(m.getEmail())+':'+str(m.getPwd()) for m in self._members]
-		return '==='.join(l)
+	# def __repr__( self ):
+	# 	l = [str(m.getEmail())+':'+str(m.getPwd()) for m in self._members]
+	# 	return '==='.join(l)
 
 
 	def _checkMember_( self , email ):
@@ -35,7 +36,7 @@ class MAuthenticationManager:
 		return False if mo == None else True
 
 
-	def createMember( self , email = None , pwd = None):
+	def createMember( self , email = None , pwd = None , authentication = None):
 		'''
 		새로운 사용자를 등록한다.
 		'''
@@ -51,7 +52,7 @@ class MAuthenticationManager:
 			raise Exception(errmsg)
 
 		#등록
-		self._repositoryManager.save(email , Authentication(email , pwd))
+		self._repositoryManager.save(email , Authentication(email , pwd , authentication))
 
 
 	def removeMember( self , _email ):
@@ -83,6 +84,12 @@ class MAuthenticationManager:
 		return False
 
 					
+	def getAllUsers( self ):
+		'''
+		등록된 모든 사용자의 정보를 반환한다.
+		'''
+		return self._repositoryManager.findByAll()
+		
 
 	
 			
@@ -91,10 +98,16 @@ class MAuthenticationManager:
 
 
 if __name__ == '__main__':
+	import os
+
+	os.unlink('auth.bin');
+
 	mm = MAuthenticationManager()
 	mm.createMember('xferlog@naver.com' , '11111')
 	mm.createMember('cccc@naver.com' , '11111')
-	print(mm)
+	mm.createMember('admin@naver.com' , '2222' , 'ADMIN')
+	print('*'*20)
+	mm.getAllUsers()
 
 
 

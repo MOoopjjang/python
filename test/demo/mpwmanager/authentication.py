@@ -6,17 +6,20 @@
 '''
 
 import bcrypt
+from defines.mpwattribute import MPWAttribute
 
 
-class Authentication:
-	def __init__( self , email = None , pwd = None):
+class Authentication( MPWAttribute ):
+	def __init__( self , email = None , pwd = None , _authority = None):
+		MPWAttribute.__init__( self )
 		self._email = email
 		self._salt = bcrypt.gensalt()
 		self._pwd = bcrypt.hashpw(pwd.encode() , self._salt )
-		self._authority = 'USER'
+		self._authority = 'USER' if _authority == None else _authority
+		
 
 	def __repr__( self ):
-		return 'email : %s , pwd : %s'%(self._email , self._pwd)
+		return self.getMpwAttribute('_pwd' , '_salt')
 
 
 	def getEmail( self ):
