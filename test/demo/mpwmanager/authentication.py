@@ -15,10 +15,12 @@ class Authentication( MPWAttribute ):
 		self._email = email
 		self._salt = bcrypt.gensalt()
 		self._pwd = bcrypt.hashpw(pwd.encode() , self._salt )
+		self._enable = 'Y'
 		self._authority = 'USER' if _authority == None else _authority
 		
+		
 
-	def __repr__( self ):
+	def __repr__( self ):	
 		return self.getMpwAttribute('_pwd' , '_salt')
 
 
@@ -30,6 +32,9 @@ class Authentication( MPWAttribute ):
 
 	def getAuthority( self ):
 		return self._authority
+
+	def getEnable( self ):
+		return self._enable
 
 	def matched( self , rawPwd ):
 		return bcrypt.checkpw( rawPwd.encode() , self._pwd)

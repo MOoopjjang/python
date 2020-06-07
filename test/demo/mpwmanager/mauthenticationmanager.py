@@ -16,12 +16,7 @@ from defines.singleton import Singleton
 @Singleton('mAuthenticationManager' , True)
 class MAuthenticationManager:
 	def __init__( self ):
-		self._repositoryManager = MDataAccessManager().load('auth.bin')
-
-
-	# def __repr__( self ):
-	# 	l = [str(m.getEmail())+':'+str(m.getPwd()) for m in self._members]
-	# 	return '==='.join(l)
+		self._repositoryManager = MDataAccessManager().load(df.AUTH_BIN)
 
 
 	def _checkMember_( self , email ):
