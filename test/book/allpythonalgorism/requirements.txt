@@ -39,7 +39,7 @@ pyperclip==1.7.0
 python-dateutil==2.7.5
 pytils==0.3
 redis==3.0.1
-requests==2.19.1
+requests==2.20.0
 selectors==0.0.14
 selenium==3.141.0
 setproctitle==1.1.10
