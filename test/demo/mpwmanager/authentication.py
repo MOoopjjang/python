@@ -36,6 +36,9 @@ class Authentication( MPWAttribute ):
 	def getEnable( self ):
 		return self._enable
 
+	def setEnable( self , v ):
+		self._enable = v
+
 	def matched( self , rawPwd ):
 		return bcrypt.checkpw( rawPwd.encode() , self._pwd)
 
