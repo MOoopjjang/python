@@ -6,12 +6,10 @@ Data를  file로 저장/수정/삭제/read하는 기능을 제공
 '''
 
 from abcdataaccess import ABCDataAccess
-from defines.singleton import Singleton
 import shelve
 import copy
 
 
-@Singleton('FileDataAccessManager' , True)
 class FileDataAccessManager( ABCDataAccess ):
 	def __init__( self ):
 		ABCDataAccess.__init__( self )

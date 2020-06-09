@@ -9,11 +9,12 @@
   - 계정 block
   - 계정 추가
 
-  ===> removeAuthenticationInfo , blockAuthentication 테스트 X
+  ===>  createAuthenticationInfo , blockAuthentication 테스트 X
 '''
 
 from defines.singleton import Singleton
 from mauthenticationmanager import MAuthenticationManager
+from informationmanager import InformationManager
 
 @Singleton('[Admin]' , True )
 class Admin:
@@ -27,7 +28,7 @@ class Admin:
 		'''
 		 - 등록된 모든 계정의 정보를 출력한다. 
 		'''
-		return self._authenticationManager.getAllUsers()
+		return self._authenticationManager.getAllMembers()
 
 
 
@@ -43,11 +44,21 @@ class Admin:
 		self._authenticationManager.removeMember( _id )
 
 		# data정보제삭제제
-		self._informationManager.remove( _id )
+		self._informationManager.load( _id ).remove( _id )
+
+
+	def createAuthenticationInfo(self , email = None , pwd = None , authentication = None ):
+		'''
+		계정정보를 추가한다.
+		'''
+		if email == None or pwd == None or authentication == None:raise Exception("파리미터 오류")
+
+		self._authenticationManager.createMember(email , pwd , authentication)
+		return self
 
 
 
-	def blockAuthentication( self , _id = None , v ):
+	def blockAuthentication( self , _id = None , v = None ):
 		'''
 		사용자 계정 block 유/무
 		'''
@@ -61,8 +72,14 @@ class Admin:
 
 
 if __name__ == '__main__':
-	am = MAuthenticationManager()
-	admin = Admin(am)
+	admin = Admin(MAuthenticationManager() , InformationManager())
 	infos = admin.getAllAuthenticationInfo()
+	print('-'*20)
 	for user in infos:
 		print(infos[user])
+
+	print('-'*20)
+	admin.removeAuthenticationInfo('cccc@naver.com')
+	infos = admin.getAllAuthenticationInfo()
+	for user in infos:
+			print(infos[user])

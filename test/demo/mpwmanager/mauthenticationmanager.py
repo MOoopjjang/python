@@ -93,25 +93,18 @@ class MAuthenticationManager:
 
 					
 
-		
-
-	
-			
-
-
-
 
 if __name__ == '__main__':
 	import os
 
-	os.unlink('auth.bin');
+	os.unlink(df.AUTH_BIN);
 
 	mm = MAuthenticationManager()
 	mm.createMember('xferlog@naver.com' , '11111')
 	mm.createMember('cccc@naver.com' , '11111')
 	mm.createMember('admin@naver.com' , '2222' , 'ADMIN')
 	print('*'*20)
-	mm.getAllUsers()
+	mm.getAllMembers()
 
 
 
