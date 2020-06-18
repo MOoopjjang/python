@@ -103,7 +103,9 @@ class InformationManager:
 		'''
 		import pyperclip
 
-		pi = self._cacheData[_id]
+		pi = self._cacheData.get(_id , None)
+		if pi is None or len(pi) == 0:return None
+
 		if _info is None:
 			return pi
 		else:

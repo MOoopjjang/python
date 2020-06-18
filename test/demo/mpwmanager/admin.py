@@ -44,8 +44,8 @@ class Admin:
 		self._authenticationManager.removeMember( _id )
 
 		# data정보제삭제제
-		self._informationManager.load( _id ).remove( _id )
-
+		if self._informationManager.get(_id) != None:
+			self._informationManager.load(_id).remove(_id)
 
 	def createAuthenticationInfo(self , email = None , pwd = None , authentication = None ):
 		'''
