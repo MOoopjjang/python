@@ -1,6 +1,5 @@
 #!python3
-#-*- coding:utf-8 -*-
-
+# -*- coding:utf-8 -*-
 
 
 '''
@@ -9,8 +8,21 @@
 - 관리자 기능
 '''
 
+import sys
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5 import uic
+import view.login as lg
+from view.login import *
 
-def main():pass
+
+def main():
+    app = QApplication(sys.argv)
+    wLogin = lg.createLogin('./template/login.ui','./resources/image/login_icon.png')
+    wLogin.show()
+    sys.exit(app.exec_())
+
 
 if __name__ == '__main__':
-	main()
+    main()
