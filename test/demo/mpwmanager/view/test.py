@@ -8,7 +8,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5 import uic
 
-form_class = uic.loadUiType('./template/test.ui')[0]
+form_class = uic.loadUiType('../resources/template/test.ui')[0]
 
 class Test(QDialog , form_class):
     def __init__(self):

@@ -12,6 +12,8 @@ import view.registry as reg
 from view.registry import *
 from view.view_base import BaseView
 
+from mauthenticationmanager import MAuthenticationManager
+
 
 def createLogin(*args):
     if len(args) != 2:
@@ -62,6 +64,7 @@ def createLogin(*args):
         def _registry_(self, action):
             registry = reg.createDialog('./resources/template/registry.ui', './resources/image/registry_icon.png')
             registry.show()
+            registry.setModal(True)
             registry.exec()
 
         # def _setStyle_(self, args, *, _style=None):

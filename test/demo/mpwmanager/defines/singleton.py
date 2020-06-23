@@ -9,6 +9,8 @@ def Singleton(tag = '' , display = False ):
 			def onDecorator( *args , **kargv ):
 				if cls not in singletonlist:
 					singletonlist[cls] = cls( *args , **kargv )
+				else:
+					print('{} is registry'.format(cls.__name__))
 
 					if display:
 						print('{} '.format(cls.__name__ ))
