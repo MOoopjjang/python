@@ -50,6 +50,6 @@ def createDialog(*args):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    qd = createDialog('../template/registry.ui', '../resources/image/registry_icon.png')
+    qd = createDialog('../resources/template/registry.ui', '../resources/image/registry_icon.png')
     qd.show()
     sys.exit(app.exec_())

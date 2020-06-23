@@ -19,7 +19,7 @@ from view.login import *
 
 def main():
     app = QApplication(sys.argv)
-    wLogin = lg.createLogin('./template/login.ui','./resources/image/login_icon.png')
+    wLogin = lg.createLogin('./resources/template/login.ui','./resources/image/login_icon.png')
     wLogin.show()
     sys.exit(app.exec_())
 

@@ -60,7 +60,7 @@ def createLogin(*args):
             self._setStyle_((self.gb_registry,), _style=Login.TRANSPARENT_BG)
 
         def _registry_(self, action):
-            registry = reg.createDialog('./template/registry.ui', './resources/image/registry_icon.png')
+            registry = reg.createDialog('./resources/template/registry.ui', './resources/image/registry_icon.png')
             registry.show()
             registry.exec()
 
@@ -75,7 +75,7 @@ def createLogin(*args):
             self.lbl_icon.setPixmap(self.qPixmapFileVar)
 
         def _login_(self):
-            registry = reg.createDialog('./template/registry.ui', './resources/image/registry_icon.png')
+            registry = reg.createDialog('./resources/template/registry.ui', './resources/image/registry_icon.png')
             registry.show()
             registry.exec()
 
@@ -84,6 +84,6 @@ def createLogin(*args):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    winlogin = createLogin('../template/login.ui', '../resources/image/login_icon.png')
+    winlogin = createLogin('../resources/template/login.ui', '../resources/image/login_icon.png')
     winlogin.show()
     app.exec_()
