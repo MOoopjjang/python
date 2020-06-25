@@ -5,9 +5,8 @@
 Data를  file로 저장/수정/삭제/read하는 기능을 제공
 '''
 
-from abcdataaccess import ABCDataAccess
+from source.mod.abcdataaccess import ABCDataAccess
 import shelve
-import copy
 
 
 class FileDataAccessManager( ABCDataAccess ):
@@ -42,7 +41,7 @@ class FileDataAccessManager( ABCDataAccess ):
 
 	def findByOne( self , _key ):
 		if len(shelve.open(self._path)) == 0:
-			return False
+			return None
 
 		with shelve.open(self._path) as sh:
 			return sh.get(_key , None)

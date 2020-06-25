@@ -1,8 +1,8 @@
 #!python3
 #-*- coding:utf-8 -*-
 
-from abcdataaccess import ABCDataAccess
-from defines.singleton import Singleton
+from source.mod.abcdataaccess import ABCDataAccess
+from source.defines.singleton import Singleton
 
 @Singleton('DatabaseAccessManager' , True)
 class DatabaseAccessManager( ABCDataAccess ):

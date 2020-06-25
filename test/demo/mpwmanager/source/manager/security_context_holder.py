@@ -3,7 +3,7 @@
 
 
 from datetime import datetime
-from authentication import Authentication
+from source.mod.authentication import Authentication
 
 
 '''

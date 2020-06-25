@@ -7,12 +7,13 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5 import uic
-from view.custom_qlabel import CustomQLabel
-import view.registry as reg
-from view.registry import *
-from view.view_base import BaseView
 
-from mauthenticationmanager import MAuthenticationManager
+from source.view.custom_qlabel import CustomQLabel
+import source.view.registry as reg
+from source.view.registry import *
+from source.view.view_base import BaseView
+
+import source.common.application_context as ctx
 
 
 def createLogin(*args):
@@ -78,9 +79,14 @@ def createLogin(*args):
             self.lbl_icon.setPixmap(self.qPixmapFileVar)
 
         def _login_(self):
-            registry = reg.createDialog('./resources/template/registry.ui', './resources/image/registry_icon.png')
-            registry.show()
-            registry.exec()
+            import source.manager.mauthenticationmanager as mam
+
+            context = ctx.getInstance()
+            authenticationManager = context.getComponent(mam.__file__)
+            if authenticationManager.certification(self.line_username.text() , self.line_pwd) == False:
+                self._showAlertDialog_(QMessageBox.Critical , 'Warning','등록된 사용자가 아닙니다.','Warning')
+
+
 
     return Login()
 

@@ -5,9 +5,8 @@
 '''
 Data를 db | file로 저장/수정/삭제/read하는 기능을 제공
 '''
-import defines.defines as df
-from filedataaccess import FileDataAccessManager
-from databaseaccess import DatabaseAccessManager
+from source.mod.filedataaccess import FileDataAccessManager
+from source.mod.databaseaccess import DatabaseAccessManager
 
 
 class MDataAccessManager:
