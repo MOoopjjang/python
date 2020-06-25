@@ -83,7 +83,7 @@ def createLogin(*args):
 
             context = ctx.getInstance()
             authenticationManager = context.getComponent(mam.__file__)
-            if authenticationManager.certification(self.line_username.text() , self.line_pwd) == False:
+            if authenticationManager.certification(self.line_username.text() , self.line_pwd.text()) == False:
                 self._showAlertDialog_(QMessageBox.Critical , 'Warning','등록된 사용자가 아닙니다.','Warning')
             else:
                 self._showAlertDialog_(QMessageBox.Critical , 'Warning','로그인이 성공되었습니다.','Warning')
