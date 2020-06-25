@@ -15,7 +15,10 @@ import source.defines.defines as df
 import source.common.application_context as ctx
 
 def init():
+    # 저장경로 설정
     df.initRepositoryPath(__file__)
+
+    # ApplicationContext 생성
     ctx.getInstance()
 
 
