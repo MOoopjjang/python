@@ -6,6 +6,8 @@ class BaseView:
 
     def _setLayout_(self):pass
 
+    def _setListener_(self):pass
+
     '''
      - view에 style sheet를 셋팅한다
     '''
@@ -13,7 +15,7 @@ class BaseView:
         for e in _es:e.setStyleSheet(_style)
 
     '''
-    경고팝업 출력
+     - 경고팝업 출력
     '''
     def _showAlertDialog_(self , _iconType , _text , _infoText , _wtitle):
         from PyQt5.QtWidgets import QMessageBox

@@ -24,7 +24,6 @@ def createLogin(*args):
     _image_path = args[1]
 
     form_class = uic.loadUiType(_template_path)[0]
-
     class Login(QDialog, form_class, BaseView):
         LEStyle = 'color:white;padding-left:10px;border-radius: 5px;'
         PBStyle = 'border: 1px solid white;border-radius:5px;'
@@ -63,13 +62,11 @@ def createLogin(*args):
             self._setStyle_((self.gb_registry,), _style=Login.TRANSPARENT_BG)
 
         def _registry_(self, action):
-            registry = reg.createDialog('./resources/template/registry.ui', './resources/image/registry_icon.png')
+            registry = reg.createDialog('../resources/template/registry.ui', '../resources/image/registry_icon.png')
             registry.show()
             registry.setModal(True)
             registry.exec()
 
-        # def _setStyle_(self, args, *, _style=None):
-        #    for e in args: e.setStyleSheet(_style)
 
         def _loadImage_(self):
             self.qPixmapFileVar = QPixmap()
@@ -78,6 +75,9 @@ def createLogin(*args):
             self.qPixmapFileVar = self.qPixmapFileVar.scaledToHeight(170)
             self.lbl_icon.setPixmap(self.qPixmapFileVar)
 
+        '''
+         - 로그인 인증 진행
+        '''
         def _login_(self):
             import source.manager.mauthenticationmanager as mam
 
@@ -85,6 +85,9 @@ def createLogin(*args):
             authenticationManager = context.getComponent(mam.__file__)
             if authenticationManager.certification(self.line_username.text() , self.line_pwd) == False:
                 self._showAlertDialog_(QMessageBox.Critical , 'Warning','등록된 사용자가 아닙니다.','Warning')
+            else:
+                self._showAlertDialog_(QMessageBox.Critical , 'Warning','로그인이 성공되었습니다.','Warning')
+
 
 
 
