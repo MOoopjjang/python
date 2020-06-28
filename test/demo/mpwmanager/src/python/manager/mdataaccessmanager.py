@@ -5,8 +5,9 @@
 '''
 Data를 db | file로 저장/수정/삭제/read하는 기능을 제공
 '''
-from source.mod.filedataaccess import FileDataAccessManager
-from source.mod.databaseaccess import DatabaseAccessManager
+
+from src.python.mod.filedataaccess import FileDataAccessManager
+from src.python.mod.databaseaccess import DatabaseAccessManager
 
 
 class MDataAccessManager:
@@ -37,8 +38,3 @@ class MDataAccessManager:
 	def findByOne( self , _key ):
 		return self._repository.findByOne( _key )
 
-
-
-
-
-		

@@ -6,10 +6,12 @@
 '''
 
 import os
-from source.defines.singleton import Singleton
-import source.manager.mauthenticationmanager as mam
-import source.manager.informationmanager as im
-import source.manager.admin as ad
+from src.python.defines.singleton import Singleton
+import src.python.manager.mauthenticationmanager as mam
+import src.python.manager.informationmanager as im
+import src.python.manager.admin as ad
+
+
 
 def getInstance():
     @Singleton(tag='[ctx]', display=True)
@@ -33,11 +35,25 @@ def getInstance():
             self._ctx_[self._parsingBaseName_(im.__file__)] = im.getInstance()
             self._ctx_[self._parsingBaseName_(ad.__file__)] = ad.getInstance()
 
+        def _resource_load_( self ):
+            import src.resources.template as te
+            import src.resources.image as img
+
+            self._resources_ = dict()
+            self._resources_['template'] = os.path.dirname(te.__file__)
+            self._resources_['image'] = os.path.dirname(img.__file__)
+
         '''
         등록된 module 객체를 반환한다.
         '''
         def getComponent(self, _cname=None):
             return self._ctx_.get(self._parsingBaseName_(_cname) , None )
+
+        def getTemplatePath(self , _file_name):
+            return os.path.join(self._resources_['template'] , _file_name)
+
+
+
 
     return ApplicationContext()
 

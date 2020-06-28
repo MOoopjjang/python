@@ -7,10 +7,10 @@
  - 계정정보를 MDataAccessManager를 통해 저장/삭제/편집을 할수 있다.
 '''
 
-from source.defines import defines as df
-from source.mod.authentication import Authentication
-from source.manager.mdataaccessmanager import MDataAccessManager
-from source.defines.singleton import Singleton
+import src.python.defines.defines as df
+from src.python.mod.authentication import Authentication
+from src.python.defines.singleton import Singleton
+from src.python.manager.mdataaccessmanager import MDataAccessManager
 
 def getInstance():
     @Singleton('mAuthenticationManager', True)

@@ -6,7 +6,7 @@
 '''
 
 import bcrypt
-from source.defines.mpwattribute import MPWAttribute
+from src.python.defines.mpwattribute import MPWAttribute
 
 
 class Authentication( MPWAttribute ):

@@ -6,11 +6,13 @@
  - 추가/편집/삭제 기능 제공
 '''
 
-import source.defines.defines as df
-from source.manager.mdataaccessmanager import MDataAccessManager
-from source.defines.singleton import Singleton
-from source.mod.person_information import PersonInformation
-from source.mod.information import Information
+
+
+import src.python.defines.defines as df
+from src.python.defines.singleton import Singleton
+from src.python.manager.mdataaccessmanager import MDataAccessManager
+from src.python.mod.person_information import PersonInformation
+from src.python.mod.information import Information
 
 
 def getInstance():

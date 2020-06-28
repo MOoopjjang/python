@@ -2,7 +2,8 @@
 # -*- coding:utf-8 -*-
 
 import os
-import source.main as m
+from src import python as m
+
 
 def tst1():
     print('{}'.format(os.path.dirname(m.__file__)))

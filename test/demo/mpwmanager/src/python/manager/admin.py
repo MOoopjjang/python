@@ -12,9 +12,10 @@
   ===>  createAuthenticationInfo , blockAuthentication 테스트 X
 '''
 
-from source.defines.singleton import Singleton
-import source.manager.mauthenticationmanager as mam
-import source.manager.informationmanager as im
+from src.python.defines.singleton import Singleton
+import src.python.manager.mauthenticationmanager as mam
+import src.python.manager.informationmanager as im
+
 
 def getInstance():
 	@Singleton('[Admin]' , True )

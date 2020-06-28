@@ -5,7 +5,7 @@
 Data를  file로 저장/수정/삭제/read하는 기능을 제공
 '''
 
-from source.mod.abcdataaccess import ABCDataAccess
+from src.python.mod.abcdataaccess import ABCDataAccess
 import shelve
 
 

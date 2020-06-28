@@ -4,11 +4,11 @@
 
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5 import uic
-from source.view.view_base import BaseView
-import source.common.application_context as ctx
+from src.python.view.view_base import BaseView
+import src.python.common.application_context as ctx
+import src.python.manager.mauthenticationmanager as mam
 
 
 def createDialog(*args):
@@ -49,8 +49,6 @@ def createDialog(*args):
             self.lbl_registry_icon.setPixmap(self.qmapImagVar)
 
         def _ok_(self):
-            import source.manager.mauthenticationmanager as mam
-
             context = ctx.getInstance()
             authenticationManager = context.getComponent(mam.__file__)
             authenticationManager.createMember(email = self.le_email.text() , pwd = self.le_pwd.text())

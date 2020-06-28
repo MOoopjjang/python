@@ -8,12 +8,11 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5 import uic
 
-from source.view.custom_qlabel import CustomQLabel
-import source.view.registry as reg
-from source.view.registry import *
-from source.view.view_base import BaseView
-
-import source.common.application_context as ctx
+from src.python.view.custom_qlabel import CustomQLabel
+import src.python.common.application_context as ctx
+import src.python.manager.mauthenticationmanager as mam
+from src.python.view.view_base import BaseView
+import src.python.view.registry as reg
 
 
 def createLogin(*args):
@@ -62,7 +61,8 @@ def createLogin(*args):
             self._setStyle_((self.gb_registry,), _style=Login.TRANSPARENT_BG)
 
         def _registry_(self, action):
-            registry = reg.createDialog('../resources/template/registry.ui', '../resources/image/registry_icon.png')
+            import src.python.defines.defines as df
+            registry = reg.createDialog(df.getTemplatePah('registry.ui'), df.getImagePath('registry_icon.png'))
             registry.show()
             registry.setModal(True)
             registry.exec()
@@ -79,7 +79,6 @@ def createLogin(*args):
          - 로그인 인증 진행
         '''
         def _login_(self):
-            import source.manager.mauthenticationmanager as mam
 
             context = ctx.getInstance()
             authenticationManager = context.getComponent(mam.__file__)

@@ -7,14 +7,19 @@
 - 클립보드 복사기능
 - 관리자 기능
 '''
+import sys , os
 
-import source.view.login as lg
-from source.view.login import *
-import source.defines.defines as df
+from PyQt5.QtWidgets import QApplication
+import src.python.defines.defines as df
+import src.python.common.application_context as ctx
+import src.python.view.login as lg
 
-import source.common.application_context as ctx
+
 
 def init():
+    # Resource 경로 설정
+    df.initResourcePath()
+
     # 저장경로 설정
     df.initRepositoryPath(__file__)
 
@@ -27,7 +32,7 @@ def main():
     init()
 
     app = QApplication(sys.argv)
-    wLogin = lg.createLogin('../resources/template/login.ui','../resources/image/login_icon.png')
+    wLogin = lg.createLogin(df.getTemplatePah('login.ui'),df.getImagePath('login_icon.png'))
     wLogin.show()
     sys.exit(app.exec_())
 
