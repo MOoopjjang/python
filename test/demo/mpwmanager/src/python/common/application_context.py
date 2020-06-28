@@ -18,6 +18,7 @@ def getInstance():
     class ApplicationContext():
         def __init__(self):
             self._load_()
+            self._resource_load_()
 
         def __repr__( self ):
             l = ['module :{}'.format(k) for k in self._ctx_]
@@ -35,6 +36,11 @@ def getInstance():
             self._ctx_[self._parsingBaseName_(im.__file__)] = im.getInstance()
             self._ctx_[self._parsingBaseName_(ad.__file__)] = ad.getInstance()
 
+        '''
+        resource 경로 설정
+         - template 경로
+         - image 경로
+        '''
         def _resource_load_( self ):
             import src.resources.template as te
             import src.resources.image as img
@@ -49,11 +55,18 @@ def getInstance():
         def getComponent(self, _cname=None):
             return self._ctx_.get(self._parsingBaseName_(_cname) , None )
 
+        '''
+        .ui template 경로를 반환한다.
+        '''
         def getTemplatePath(self , _file_name):
+            print('tempate : {}'.format(os.path.join(self._resources_['template'],_file_name)))
             return os.path.join(self._resources_['template'] , _file_name)
 
-
-
+        '''
+        image 경로를 반환한다.
+        '''
+        def getImagePath(self , _file_name ):
+            return os.path.join(self._resources_['image'],_file_name)
 
     return ApplicationContext()
 

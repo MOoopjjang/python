@@ -33,7 +33,6 @@ def createLogin(*args):
             super().__init__()
             self.setupUi(self)
             self.setFixedSize(400, 540)
-
             self._setLayout_()
 
         def _setLayout_(self):
@@ -61,8 +60,7 @@ def createLogin(*args):
             self._setStyle_((self.gb_registry,), _style=Login.TRANSPARENT_BG)
 
         def _registry_(self, action):
-            import src.python.defines.defines as df
-            registry = reg.createDialog(df.getTemplatePah('registry.ui'), df.getImagePath('registry_icon.png'))
+            registry = reg.createDialog(ctx.getInstance().getTemplatePath('registry.ui'), ctx.getInstance().getImagePath('registry_icon.png'))
             registry.show()
             registry.setModal(True)
             registry.exec()
@@ -88,13 +86,15 @@ def createLogin(*args):
                 self._showAlertDialog_(QMessageBox.Critical , 'Warning','로그인이 성공되었습니다.','Warning')
 
 
-
-
     return Login()
 
 
 if __name__ == '__main__':
+    import src.python.defines.defines as df
+
+    df.initRepositoryPath(__file__)
     app = QApplication(sys.argv)
-    winlogin = createLogin('../resources/template/login.ui', '../resources/image/login_icon.png')
+
+    winlogin = createLogin(ctx.getInstance().getTemplatePath('login.ui'), ctx.getInstance().getImagePath('login_icon.png'))
     winlogin.show()
     app.exec_()

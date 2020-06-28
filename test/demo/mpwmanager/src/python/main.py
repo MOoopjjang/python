@@ -17,9 +17,6 @@ import src.python.view.login as lg
 
 
 def init():
-    # Resource 경로 설정
-    df.initResourcePath()
-
     # 저장경로 설정
     df.initRepositoryPath(__file__)
 
@@ -32,7 +29,7 @@ def main():
     init()
 
     app = QApplication(sys.argv)
-    wLogin = lg.createLogin(df.getTemplatePah('login.ui'),df.getImagePath('login_icon.png'))
+    wLogin = lg.createLogin(ctx.getInstance().getTemplatePath('login.ui'),ctx.getInstance().getImagePath('login_icon.png'))
     wLogin.show()
     sys.exit(app.exec_())
 
