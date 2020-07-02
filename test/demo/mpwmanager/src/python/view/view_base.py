@@ -21,6 +21,7 @@ class BaseView:
         from PyQt5.QtWidgets import QMessageBox
 
         msg = QMessageBox()
+        msg.setFixedSize(300 , 200)
         msg.setIcon(_iconType)
         msg.setText(_text)
         msg.setInformativeText(_infoText)

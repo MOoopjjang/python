@@ -16,6 +16,8 @@ def initRepositoryPath( _file ):
     global AUTH_BIN
     global USER_BIN
 
+    print('#############')
+    print('-- {}'.format(os.path.basename(_file)))
     org_path = os.getcwd()
     if os.path.basename(_file) == 'main.py':
         os.chdir(os.getcwd())

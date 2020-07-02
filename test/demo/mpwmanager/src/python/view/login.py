@@ -13,6 +13,7 @@ import src.python.common.application_context as ctx
 import src.python.manager.mauthenticationmanager as mam
 from src.python.view.view_base import BaseView
 import src.python.view.registry as reg
+import src.python.view.custom_alert_popup as cdp
 
 
 def createLogin(*args):
@@ -77,11 +78,16 @@ def createLogin(*args):
          - 로그인 인증 진행
         '''
         def _login_(self):
-
             context = ctx.getInstance()
             authenticationManager = context.getComponent(mam.__file__)
             if authenticationManager.certification(self.line_username.text() , self.line_pwd.text()) == False:
-                self._showAlertDialog_(QMessageBox.Critical , 'Warning','등록된 사용자가 아닙니다.','Warning')
+                popup = cdp.createDialog()
+                popup.setText('등록된 사용자가 아닙니다.') \
+                    .setIConImage({'path': ctx.getInstance().getImagePath("alert_icon.png"), "w": 62, "h": 52}) \
+                    .setButtons([
+                    {'text': 'OK', 'listener': lambda :popup.close()}
+                ]).show()
+                popup.exec()
             else:
                 self._showAlertDialog_(QMessageBox.Critical , 'Warning','로그인이 성공되었습니다.','Warning')
 
