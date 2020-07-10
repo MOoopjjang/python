@@ -8,6 +8,8 @@ from PyQt5 import uic
 import src.python.common.application_context as ctx
 from src.python.view.view_base import BaseView
 
+from functools import partial
+
 '''
 Custom Alert Dialog
 '''
@@ -19,9 +21,11 @@ def createDialog():
             QDialog.__init__(self)
             self.setupUi(self)
 
-            self.setListener()
 
-        def setListener( self ):pass
+        def _click_( self , _listener):
+            _listener('hi')
+            self.close()
+
 
         def setText( self , _text):
             self.lbl_text.setText(_text)
@@ -38,19 +42,19 @@ def createDialog():
 
 
         def setButtons(self , buttonDatas):
+            if len(buttonDatas) > 3 or len(buttonDatas) == 0:
+                raise Exception("최소 1 최대 3 개의 button만 만들수 있습니다.")
+
             layout = QHBoxLayout()
-            for button_info in buttonDatas:
+            for idx , button_info in enumerate( buttonDatas ):
                 btn = QPushButton(button_info['text'],self)
                 btn.setCheckable(True)
                 btn.toggle()
-                btn.clicked.connect(button_info['listener'])
+                btn.clicked.connect(partial(self._click_ , button_info['listener']))
                 layout.addWidget(btn)
 
             self.gb_button.setLayout(layout)
             return self
-
-        def close(self):
-            self.close()
 
 
 

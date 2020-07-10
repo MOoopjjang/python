@@ -1,48 +1,39 @@
 #!python3
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 
 
 from datetime import datetime
 from src.python.mod.authentication import Authentication
-
 
 '''
  - 로그인한 정보를 보관하고 있다
  - 로그인이후에는 SecurityContextHolder 객체를 통해 사용자 정보를 확인할수 있따.
 '''
 
-class SecurityContextHolder:
-	instance = False
-	def __init__( self , _authentication = None ):
+def getInstance():
+    class SecurityContextHolder:
+        def __init__(self, _authentication=None):
+            self._authentication = None
 
-		if SecurityContextHolder.instance == False or _authentication == None:
-			raise Exception('SecurityContextHolder 객체를 생성할수 없습니다.')
-			
-		self._logintime = datetime.now()
-		self._authentication = _authentication
-		SecurityContextHolder.instance = False
+        def setAuthentication( self , _authentication  = None):
+            self._authentication = _authentication
+            self._logintime = datetime.now()
 
+        def getUsername(self):
+            return self._authentication.getEmail()
 
-	def getUsername( self ):
-		return self._authentication.getEmail()
+        def getPassword(self):
+            return self._authentication.getPwd()
 
-	def getPassword( self ):
-		return self._authentication.getPwd()
+        def getAuthority(self):
+            return self._authentication.getAuthority()
 
-	def getAuthority( self ):
-		return self._authentication.getAuthority()
-
-	@staticmethod
-	def getInstance( _auth ):
-		SecurityContextHolder.instance = True
-		return SecurityContextHolder( _auth )
-
-
+    return SecurityContextHolder()
 
 
 if __name__ == '__main__':
-	auth = Authentication('xferlog@naver.com' , '1111')
-	sch = SecurityContextHolder.getInstance( auth )
-	print('sch username : {}'.format(sch.getUsername()))
+    auth = Authentication('xferlog@naver.com', '1111')
+    sch = SecurityContextHolder(auth)
+    print('sch username : {}'.format(sch.getUsername()))
 
-	# sch2 = SecurityContextHolder(auth)
+# sch2 = SecurityContextHolder(auth)

@@ -9,6 +9,7 @@ from PyQt5 import uic
 from src.python.view.view_base import BaseView
 import src.python.common.application_context as ctx
 import src.python.manager.mauthenticationmanager as mam
+import src.python.view.custom_alert_popup as cdp
 
 
 def createDialog(*args):
@@ -49,10 +50,22 @@ def createDialog(*args):
             self.lbl_registry_icon.setPixmap(self.qmapImagVar)
 
         def _ok_(self):
-            context = ctx.getInstance()
-            authenticationManager = context.getComponent(mam.__file__)
-            authenticationManager.createMember(email = self.le_email.text() , pwd = self.le_pwd.text())
-            self._showAlertDialog_(QMessageBox.Critical, 'Warning', '가입됬습니다.', 'Warning')
+            t = '가입돼었습니다.'
+            if len(self.le_email.text()) == 0 or len(self.le_pwd.text()) == 0:
+                t = 'email 과 암호를 체크하세요.'
+            else:
+                context = ctx.getInstance()
+                authenticationManager = context.getComponent(mam.__file__)
+                authenticationManager.createMember(email = self.le_email.text() , pwd = self.le_pwd.text())
+
+            popup = cdp.createDialog()
+            popup.setText(t) \
+                .setIConImage({'path': ctx.getInstance().getImagePath("alert_icon.png"), "w": 62, "h": 52}) \
+                .setButtons([
+                {'text': 'OK', 'listener': lambda p: print('{}'.format(p))}
+            ]).show()
+            popup.exec()
+            self.close()
 
         def _cancel_( self ):
             self.close()

@@ -85,7 +85,7 @@ def createLogin(*args):
                 popup.setText('등록된 사용자가 아닙니다.') \
                     .setIConImage({'path': ctx.getInstance().getImagePath("alert_icon.png"), "w": 62, "h": 52}) \
                     .setButtons([
-                    {'text': 'OK', 'listener': lambda :popup.close()}
+                    {'text': 'OK', 'listener': lambda p:print('{}'.format(p))}
                 ]).show()
                 popup.exec()
             else:

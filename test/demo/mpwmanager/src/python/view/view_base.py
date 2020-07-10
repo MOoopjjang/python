@@ -17,13 +17,13 @@ class BaseView:
     '''
      - 경고팝업 출력
     '''
-    def _showAlertDialog_(self , _iconType , _text , _infoText , _wtitle):
-        from PyQt5.QtWidgets import QMessageBox
+    #def _showAlertDialog_(self , _iconType , _text , _infoText , _wtitle):
+    #    from PyQt5.QtWidgets import QMessageBox
 
-        msg = QMessageBox()
-        msg.setFixedSize(300 , 200)
-        msg.setIcon(_iconType)
-        msg.setText(_text)
-        msg.setInformativeText(_infoText)
-        msg.setWindowTitle(_wtitle)
-        msg.exec_()
+     #   msg = QMessageBox()
+     #   msg.setFixedSize(300 , 200)
+     #   msg.setIcon(_iconType)
+     #   msg.setText(_text)
+     #   msg.setInformativeText(_infoText)
+     #   msg.setWindowTitle(_wtitle)
+     #   msg.exec_()
