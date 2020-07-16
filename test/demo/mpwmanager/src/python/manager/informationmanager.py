@@ -107,7 +107,7 @@ def getInstance():
 			import pyperclip
 
 			pi = self._cacheData.get(_id , None)
-			if pi is None or len(pi) == 0:return None
+			if pi is None or len(pi) is 0:return None
 
 			if _info is None:
 				return pi

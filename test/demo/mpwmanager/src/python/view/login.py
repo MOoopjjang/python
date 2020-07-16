@@ -47,6 +47,7 @@ def createLogin(*args):
             self.line_pwd.setPlaceholderText('패스워드')
 
             # StyleSheet 적용
+            self.line_pwd.setEchoMode(QLineEdit.Password)
             self._setStyle_((self.line_username, self.line_pwd), _style=Login.LEStyle)
             self._setStyle_((self.btn_login,), _style=Login.PBStyle)
             self._setStyle_((self.lb_registry,), _style=Login.LBStyle)
@@ -89,7 +90,11 @@ def createLogin(*args):
                 ]).show()
                 popup.exec()
             else:
-                self._showAlertDialog_(QMessageBox.Critical , 'Warning','로그인이 성공되었습니다.','Warning')
+                import src.python.manager.security_context_holder as sch
+                securityContextHolder = context.getComponent(sch.__file__)
+                securityContextHolder.setAuthentication(authenticationManager.getMember(self.line_username.text()))
+                print('login Success ---> {}'.format(securityContextHolder))
+
 
 
     return Login()

@@ -27,7 +27,6 @@ def init():
 
 def main():
     init()
-
     app = QApplication(sys.argv)
     wLogin = lg.createLogin(ctx.getInstance().getTemplatePath('login.ui'),ctx.getInstance().getImagePath('login_icon.png'))
     wLogin.show()

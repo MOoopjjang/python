@@ -32,7 +32,7 @@ def getInstance():
             '''
             새로운 사용자를 등록한다.
             '''
-            if email == None or pwd == None:
+            if email is None or pwd is None:
                 raise Exception('파라미터 오류입니다.')
 
             if self._checkMember_(email) == False:
@@ -75,8 +75,7 @@ def getInstance():
             인증 진행
             '''
             auth = self._repositoryManager.findByOne(_email)
-            if auth == None:
-                return False
+            if auth is None: return False
 
             if auth.matched(_pwd):
                 print('인증되었습니다.')

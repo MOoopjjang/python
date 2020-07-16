@@ -4,6 +4,7 @@
 
 from datetime import datetime
 from src.python.mod.authentication import Authentication
+from src.python.defines.singleton import Singleton
 
 '''
  - 로그인한 정보를 보관하고 있다
@@ -11,9 +12,10 @@ from src.python.mod.authentication import Authentication
 '''
 
 def getInstance():
+    @Singleton(tag = '[SecurityContextHolder]' , display = True)
     class SecurityContextHolder:
-        def __init__(self, _authentication=None):
-            self._authentication = None
+        def __repr__(self):
+            return '{} : {} : {}'.format(self._authentication.getEmail(),self._authentication.getAuthority(),self._logintime)
 
         def setAuthentication( self , _authentication  = None):
             self._authentication = _authentication
@@ -33,7 +35,8 @@ def getInstance():
 
 if __name__ == '__main__':
     auth = Authentication('xferlog@naver.com', '1111')
-    sch = SecurityContextHolder(auth)
-    print('sch username : {}'.format(sch.getUsername()))
+    holder = getInstance();
+    holder.setAuthentication(auth)
+    print('sch username : {}'.format(holder.getUsername()))
 
 # sch2 = SecurityContextHolder(auth)

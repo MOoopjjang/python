@@ -10,6 +10,7 @@ from src.python.defines.singleton import Singleton
 import src.python.manager.mauthenticationmanager as mam
 import src.python.manager.informationmanager as im
 import src.python.manager.admin as ad
+import src.python.manager.security_context_holder as sch
 
 
 
@@ -35,6 +36,7 @@ def getInstance():
             self._ctx_[self._parsingBaseName_(mam.__file__)] = mam.getInstance()
             self._ctx_[self._parsingBaseName_(im.__file__)] = im.getInstance()
             self._ctx_[self._parsingBaseName_(ad.__file__)] = ad.getInstance()
+            self._ctx_[self._parsingBaseName_(sch.__file__)] = sch.getInstance()
 
         '''
         resource 경로 설정
