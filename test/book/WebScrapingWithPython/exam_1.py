@@ -29,6 +29,9 @@ u = set()
 
 
 def exam_2():
+    '''
+     - wiki 페이지 내부 링크 crawler
+    '''
     import os, sys
 
     def wiki_url_crawler(_url):
@@ -52,6 +55,72 @@ def exam_2():
             fw.write(line + '\n')
 
 
+count = 0
+def exam_3():
+
+    def getPageToBs(_url):
+        html = urlopen(_url)
+        return BeautifulSoup(html , 'html.parser')
+
+    def getExternalLink(bs , _url):
+        extLinks = []
+        links = bs.findAll('a' , href = re.compile('^(http|www)((?!'+_url+').)*$'))
+        if bool(links):
+            for link in links:
+                if link.attrs['href'] is not None and link.attrs['href']  not in extLinks:
+                    extLinks.append(link.attrs['href'])
+
+        return extLinks
+
+    def getInternalLinks(bs , _url):
+        intLinks = []
+        links = bs.findAll('a',href=re.compile('^(/|.*'+_url+')'))
+        if bool(links):
+            for link in links:
+                if link.attrs['href'] is not None and link.attrs['href']  not in intLinks:
+                    fu = _url + link.attrs['href'] if link.attrs['href'].startswith('/') else link.attrs['href']
+                    intLinks.append(fu)
+
+        return intLinks
+
+
+    def getRandomUrl(_urls):
+        import random
+        return _urls[random.randrange(0,len(_urls))]
+
+
+    def url_crawler(_url):
+        global count
+        count +=1
+        print('{} : {}'.format(count , _url))
+        try:
+            bs = getPageToBs(_url)
+            elinks = getExternalLink(bs, _url)
+            print('elinks : {} , bool : {}'.format(elinks , bool(elinks)))
+            if bool(elinks):
+                gourl = getRandomUrl(elinks)
+                print('gourl : {}'.format(gourl))
+                url_crawler(gourl)
+            else:
+                ilinks = getInternalLinks(bs, _url)
+                print('ilinks : {} , bool : {}'.format(ilinks , bool(elinks)))
+                if bool(ilinks):
+                    gourl = getRandomUrl(ilinks)
+                    print('in gourl>>{}'.format(gourl))
+                    url_crawler(gourl)
+        except HTTPError as e:
+            print('{} ->e : {}'.format(_url,e.errno))
+
+
+    url_crawler('http://oreilly.com')
+    #url_crawler('https://locate.apple.com/')
+
+
+
+
+
+
 if __name__ == '__main__':
     #    exam_1()
-    exam_2()
+    #exam_2()
+    exam_3()
