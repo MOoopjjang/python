@@ -59,29 +59,82 @@ def tst1():
 
 
 def tst2():
+    # def bsearch(_ar, low, high, searchV):
+    #     if low > high:return -1
+    #      mid = int((high + low) / 2)
+    #      print('high : {} , low : {} , mid : {}'.format(high , low,mid))
+    #
+    #      print('searchV : {} , v : {}'.format(searchV, _ar[mid]))
+    #      if searchV == _ar[mid]:
+    #          print('-------- search : {} ---------'.format(mid))
+    #          return mid
+    #      elif searchV > _ar[mid]:
+    #          return bsearch(_ar, mid + 1, high, searchV)
+    #      else:
+    #          return bsearch(_ar, low, mid - 1, searchV)
+
     def bsearch(_ar, low, high, searchV):
-        if low > high:return -1
+        print('>>>>> low : {} , high : {} <<<<<'.format(low, high))
+        if low > high: return -1
+
         mid = int((high + low) / 2)
-        print('high : {} , low : {} , mid : {}'.format(high , low,mid))
 
-        print('searchV : {} , v : {}'.format(searchV, _ar[mid]))
-        if searchV == _ar[mid]:
-            print('-------- search : {} ---------'.format(mid))
+        print('mid : {} , v : {} , searchV : {}'.format(mid, _ar[mid], searchV))
+        if _ar[mid] == searchV:
             return mid
-        elif searchV > _ar[mid]:
-            return bsearch(_ar, mid + 1, high, searchV)
-        else:
-            return bsearch(_ar, low, mid - 1, searchV)
 
-    #ar = [i for i in range(1, 13)]
-    ar = [1,2,4,7,8,10,11,12,15]
+        if _ar[mid] > searchV:
+            return bsearch(_ar, low , mid - 1, searchV)
+        else:
+            return bsearch(_ar, mid+1, high , searchV)
+
+    # ar = [i for i in range(1, 13)]
+    ar = [1, 2, 4, 7, 8, 10, 11, 12, 15]
     while True:
         searchV = int(input('>>'))
-        if bsearch(ar, 0, len(ar)-1, searchV) == -1:
+        if bsearch(ar, 0, len(ar) - 1, searchV) == -1:
             print('exit')
             break
 
 
+def tst3():
+    def solution(n, times):
+        left = 0
+        right = max(times) * n
+        temp = right
+        answer = right
+
+        print('>>>>> left : {} , right : {} , temp : {} , answer : {} <<<<<'.format(left, right, temp, answer))
+
+        while right >= left:
+            mid = (right + left) // 2
+            people = 0
+            print('LOOP :: right : {} , left : {} , mid : {} , people : {}'.format(right, left, mid, people))
+            for i in times:
+                people += mid // i
+                print('[[[ i : {} , people : {} ]]]'.format(i, people))
+
+            print('**** people : {} , n : {}'.format(people , n))
+            if people == n:
+                if answer >= mid:
+                    answer = mid
+                right = mid - 1
+            elif people > n:
+                right = mid - 1
+            else:
+                left = mid + 1
+
+        print('result ==? answer : {} , temp : {}'.format(answer , temp))
+        if answer == temp:
+            return right + 1
+        else:
+            return answer
+
+    v = solution(6, [7, 10])
+    print('v : {}'.format(v))
+
+
 if __name__ == '__main__':
     # tst1()
-    tst2()
+    # tst2()
+    tst3()
