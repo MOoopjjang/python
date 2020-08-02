@@ -3,47 +3,61 @@
 
 
 
-import time
+import timeit
+
+class StopWatch:
+    def __init__(self):
+        self._list = []
+        self._index= 0
+        self._start = 0
+
+    def __repr__( self ):
+        output = ''
+        for item in self._list:
+            output+='##'
+            for k,v in item.items():
+                output+='- {}:{}'.format(k,v)
+        return output
 
 
 
-class StopWatcher:
-	def __init__( self , _lap , _startTime ):
-		self._time_lap = _lap
-		self._start = _startTime
-		self._end = None
-
-	def __str__( self ):
-		return '[%s]duration time : %d'%(self._time_lap , self._end-self._start)
-
-	def getStart( self ):
-		return 
+    def start(self):
+        self._start = timeit.default_timer()
 
 
-	def end( self ):
-		self._end = time.time()
+    def pause(self):
+        t = timeit.default_timer()
+        data = {'i':self._index , 's':self._start , 'e':t - self._start}
+        self._list.append(data)
+        print('size : {}'.format(len(self._list)))
 
+        # next 랩타임 갱신
+        self._start = t
+        self._index +=1
+
+    def stop(self):
+        self._list.clear()
+        self._index = 0
+        self._start = 0
 
 
 
 if __name__ == '__main__':
-	wl = []
-	count = 0
-	while True:
-		try:
-			count +=1
-			cStopWatcher = StopWatcher(count , time.time())
-			input('\"enter\" end')
-		
-			cStopWatcher.end()
-			wl.append(cStopWatcher)
-			print(cStopWatcher)
-		except KeyboardInterrupt:
-			break;
+    stopwatch = StopWatch()
+    print('## Start ##')
+    stopwatch.start()
+    while True:
+        v = str(input('enter>'))
+        if v is 'q':
+            break
+
+        stopwatch.pause()
 
 
-	print('*'*40)
-	for w in wl:print(w)
+    print(stopwatch)
+
+
+
 		
 		
 

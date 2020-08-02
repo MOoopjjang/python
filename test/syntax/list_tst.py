@@ -6,43 +6,34 @@
 import os , sys
 import copy
 
-from ps_decorator import cpu_decorator
-from ps_decorator import mem_decorator
 
-LIST_SAMPLE = ['xferlog' , 'kknda' ,'aee' , 'ciek' , 'abc']
+LIST_SAMPLE = ['xferlog' , 'kknda' , 'kim' ,'aee' , 'ciek' , 'abc']
 LIST_SAMPLE2 = ['kim' , 'park' ,'lee' , 'kim' , 'kim' , 'park']
 
 def test():
-	print('*'*10+'LIST_SAMPLE'+'*'*10)
-	print(LIST_SAMPLE)
+	print('LIST_SAMPLE : {}'.format(LIST_SAMPLE))
+	print('LIST_SAMPLE2 : {}'.format(LIST_SAMPLE2))
+	print('-- index --')
+	print('index : {}'.format(LIST_SAMPLE.index('ciek')))
+	print('count : {}'.format(LIST_SAMPLE2.count('park')))
+	LIST_SAMPLE.sort()
+	print('sort LIST_SAMPLE : {}'.format(LIST_SAMPLE))
+	LIST_SAMPLE.sort(reverse = True)
+	print('reverse LIST_SAMPLE : {}'.format(LIST_SAMPLE))
+	LIST_SAMPLE2.remove('lee')
+	print('LIST_SAMPLE2 : {}'.format(LIST_SAMPLE2))
+	print('-'*20)
+	LIST_SAMPLE.extend(set(LIST_SAMPLE2))
+	print('LIST_SAMPLE : {}'.format(LIST_SAMPLE))
+	print('LIST_SAMPLE : {}'.format(set(LIST_SAMPLE)))
+	# ml = list(filter(lambda x:x is not LIST_SAMPLE2, LIST_SAMPLE))
+	# print('ml : {}'.format(ml))
 
-	print('*'*10+'deep copy'+'*'*10)
-	copy_list = LIST_SAMPLE[:]
-	print('copy_list : {}'.format(copy_list))
+# def test2():
+# 	v = LIST_SAMPLE & LIST_SAMPLE2
+# 	print('v : {}'.format(v))
 
-	print('*'*10+'copy_list remove'+'*'*10)
-	del copy_list[1]
-	print(LIST_SAMPLE)
-	print('copy_list : {}'.format(copy_list))
-	copy_list.remove('ciek')
-	print('copy_list : {}'.format(copy_list))
 
-	fl=[ v for v in LIST_SAMPLE if v.startswith('a') ]
-	print(fl)
-
-	print('*'*10+'LIST_SAMPLE search'+'*'*10)
-	print(LIST_SAMPLE.index('kknda'))
-
-	print('*'*10+'copy_list insert'+'*'*10)
-	print('copy_list : {}'.format(copy_list))
-	copy_list.insert(1 , 'add_1')
-	print('copy_list : {}'.format(copy_list))
-
-	print('*'*10+'copy_list sort'+'*'*10)
-	copy_list.sort()
-	print(copy_list)
-	copy_list.sort(reverse = True)
-	print(copy_list)
 
 
 
@@ -66,11 +57,11 @@ def extend_method_tst():
 
 
 if __name__ == '__main__':
-	# test()
+	 test()
 
 	# count_method_tst()
 
-	extend_method_tst()
+#	extend_method_tst()
 
 
 

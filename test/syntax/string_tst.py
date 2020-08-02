@@ -16,25 +16,37 @@ SAMPLE_1 = 'xferlog kknda iablc iadifladkfalkflkak123 :'
 
 
 def tst1():
-	strip_str = SAMPLE_1.strip()
-	print('strip_str : {}'.format(strip_str))
-	print(' ":" remove :{}'.format(SAMPLE_1.strip(':')))
+	if SAMPLE_1.startswith('xferlog'):print('e')
+	else:print('ne')
 
-	#replace test
-	print('":" --> "=" : {}'.format(SAMPLE_1.replace(':' , '=')))
+	print('-'*30)
+	if SAMPLE_1.endswith('123 :'):
+		print('e')
+	else:
+		print('ne')
 
-	# SAMPLE_1[3] = 'k'
+	print('-'*30)
+	print('upper : {}'.format(SAMPLE_1.upper()))
+	print('lower : {}'.format(SAMPLE_1.lower()))
+	print('-'*30)
+	r = SAMPLE_1.replace(' ','')
+	print('r : {}'.format(r))
+	print('-'*30)
+	print('{}'.format(SAMPLE_1[3:10]))
+	print('{}'.format(SAMPLE_1[3:10:2]))
+	print('-'*30)
+	LIST = list(SAMPLE_1)
+	print('list : {}'.format(LIST))
+	print('-'*30)
+	t = tuple(SAMPLE_1)
+	print('tuple : {}'.format(t))
+	print('-'*30)
+	print('find "iablc" : {}'.format(SAMPLE_1.find('iablc')))
+	print('-'*30)
+	f = list(filter(lambda x:x != ' ',SAMPLE_1))
+	print('f : {}'.format(f))
 
-	l = list(SAMPLE_1)
-	l[3] = 'k'
-	print(''.join(l))
 
-	# split 테스트
-	print('split test : {}'.format(SAMPLE_1.split(' ')))
-
-
-	x = SAMPLE_1.find('kknda')
-	print('find "kknda" : {}'.format(x))
 
 
 if __name__ == '__main__':
