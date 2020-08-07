@@ -92,7 +92,23 @@ def test_put():
 	parsing(res)
 
 
+def test_head():
+	''' requests로 HEAD 요청을 만들고 응답으로부터 헤더를 추출하는 예제'''
 
+	resp = requests.head('http://www.naver.com')
+	#print(resp.text)
+
+
+	for h in resp.headers.keys():
+		print('{}'.format(h))
+
+	content_type = resp.headers['Content-Type']
+	content_date = resp.headers['Date']
+	# content_length = resp.headers['content-length']
+	print('status : {}'.format(resp.status_code))
+	print('date : {}'.format(content_date))
+	print('ct : {}'.format(content_type))
+	# print('cl: '.format(content_length))
 
 if __name__ == '__main__':
 	# test_1()
@@ -103,6 +119,6 @@ if __name__ == '__main__':
 
 	# test_delete()
 
-	test_put()
-
+	# test_put()
+	test_head()
 
