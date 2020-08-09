@@ -138,7 +138,6 @@ def getInstance():
 
 
 if __name__ == '__main__':
-	df.initRepositoryPath(__file__)
 	im = getInstance()
 
 	ifo = Information('www.naver.com' , 'xferlog' , '1111')

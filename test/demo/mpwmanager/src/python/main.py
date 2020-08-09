@@ -18,7 +18,7 @@ import src.python.view.login as lg
 
 def init():
     # 저장경로 설정
-    df.initRepositoryPath(__file__)
+    # df.initRepositoryPath(__file__)
 
     # ApplicationContext 생성
     ctx.getInstance()
@@ -28,7 +28,7 @@ def init():
 def main():
     init()
     app = QApplication(sys.argv)
-    wLogin = lg.createLogin(ctx.getInstance().getTemplatePath('login.ui'),ctx.getInstance().getImagePath('login_icon.png'))
+    wLogin = lg.createLogin(ctx.getInstance().getTemplatePath('main_dialog.ui'),ctx.getInstance().getImagePath('login_icon.png'))
     wLogin.show()
     sys.exit(app.exec_())
 

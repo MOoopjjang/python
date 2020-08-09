@@ -70,6 +70,7 @@ def getInstance():
         def getImagePath(self , _file_name ):
             return os.path.join(self._resources_['image'],_file_name)
 
+
     return ApplicationContext()
 
 

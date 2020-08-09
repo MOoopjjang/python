@@ -33,33 +33,19 @@ def createLogin(*args):
         def __init__(self):
             super().__init__()
             self.setupUi(self)
-            self.setFixedSize(400, 540)
+            self.setFixedSize(826 , 486 )
             self._setLayout_()
 
         def _setLayout_(self):
-            self.lb_registry = CustomQLabel()
-            self.lb_registry.setText("가입하기")
-            self.lb_registry.setGeometry(70, 460, 280, 20)
-            self.lb_registry.clicked.connect(self._registry_)
-
+            self.tb_invalid_notify.hide()
             self.btn_login.clicked.connect(self._login_)
-            self.line_username.setPlaceholderText('이메일')
-            self.line_pwd.setPlaceholderText('패스워드')
-
-            # StyleSheet 적용
-            self.line_pwd.setEchoMode(QLineEdit.Password)
-            self._setStyle_((self.line_username, self.line_pwd), _style=Login.LEStyle)
-            self._setStyle_((self.btn_login,), _style=Login.PBStyle)
-            self._setStyle_((self.lb_registry,), _style=Login.LBStyle)
-
-            self._loadImage_()
 
             # 회원가입 UI
-            hbox = QHBoxLayout()
-            hbox.setAlignment(Qt.AlignRight)
-            hbox.addWidget(self.lb_registry)
-            self.gb_registry.setLayout(hbox)
-            self._setStyle_((self.gb_registry,), _style=Login.TRANSPARENT_BG)
+            # hbox = QHBoxLayout()
+            # hbox.setAlignment(Qt.AlignRight)
+            # hbox.addWidget(self.lb_registry)
+            # self.gb_registry.setLayout(hbox)
+            # self._setStyle_((self.gb_registry,), _style=Login.TRANSPARENT_BG)
 
         def _registry_(self, action):
             registry = reg.createDialog(ctx.getInstance().getTemplatePath('registry.ui'), ctx.getInstance().getImagePath('registry_icon.png'))
@@ -81,19 +67,15 @@ def createLogin(*args):
         def _login_(self):
             context = ctx.getInstance()
             authenticationManager = context.getComponent(mam.__file__)
-            if authenticationManager.certification(self.line_username.text() , self.line_pwd.text()) == False:
-                popup = cdp.createDialog()
-                popup.setText('등록된 사용자가 아닙니다.') \
-                    .setIConImage({'path': ctx.getInstance().getImagePath("alert_icon.png"), "w": 62, "h": 52}) \
-                    .setButtons([
-                    {'text': 'OK', 'listener': lambda p:print('{}'.format(p))}
-                ]).show()
-                popup.exec()
+            if authenticationManager.certification(self.le_email.text() , self.le_password.text()) == False:
+                self.tb_invalid_notify.show()
             else:
                 import src.python.manager.security_context_holder as sch
                 securityContextHolder = context.getComponent(sch.__file__)
-                securityContextHolder.setAuthentication(authenticationManager.getMember(self.line_username.text()))
+                securityContextHolder.setAuthentication(authenticationManager.getMember(self.le_email.text()))
                 print('login Success ---> {}'.format(securityContextHolder))
+
+                # self.gb_login.deleteLater()
 
 
 
@@ -106,6 +88,6 @@ if __name__ == '__main__':
     df.initRepositoryPath(__file__)
     app = QApplication(sys.argv)
 
-    winlogin = createLogin(ctx.getInstance().getTemplatePath('login.ui'), ctx.getInstance().getImagePath('login_icon.png'))
+    winlogin = createLogin(ctx.getInstance().getTemplatePath('main_dialog.ui'), ctx.getInstance().getImagePath('login_icon.png'))
     winlogin.show()
     app.exec_()

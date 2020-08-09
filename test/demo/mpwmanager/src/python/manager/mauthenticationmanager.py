@@ -11,6 +11,8 @@ import src.python.defines.defines as df
 from src.python.mod.authentication import Authentication
 from src.python.defines.singleton import Singleton
 from src.python.manager.mdataaccessmanager import MDataAccessManager
+import src.python.common.application_context as ctx
+
 
 def getInstance():
     @Singleton('mAuthenticationManager', True)
@@ -87,9 +89,6 @@ def getInstance():
 
 if __name__ == '__main__':
     import os
-
-    df.initRepositoryPath(__file__)
-
     if os.path.exists(df.AUTH_BIN):
         os.unlink(df.AUTH_BIN)
 
@@ -101,4 +100,4 @@ if __name__ == '__main__':
     for m in mm.getAllMembers():
         print('{}'.format(m))
 
-    mc = getInstance()
+    # mc = getInstance()

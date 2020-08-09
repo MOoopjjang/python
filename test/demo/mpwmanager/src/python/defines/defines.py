@@ -3,31 +3,18 @@
 
 
 import os , sys
+import src.resources.file as store
 
 RGX_EMAIL = '^[a-zA-Z0-9+-_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 
 CERF_PATH = './cerf/cerf'
 
-AUTH_BIN = None
-USER_BIN = None
+'''
+file db 저장소 설정
+'''
+AUTH_BIN = os.path.join(os.path.dirname(store.__file__) , '.auth.bin')
+USER_BIN = os.path.join(os.path.dirname(store.__file__) , '.user.bin')
 
-def initRepositoryPath( _file ):
-    import os
-    global AUTH_BIN
-    global USER_BIN
-
-    print('#############')
-    print('-- {}'.format(os.path.basename(_file)))
-    org_path = os.getcwd()
-    if os.path.basename(_file) == 'main.py':
-        os.chdir(os.getcwd())
-        os.chdir('..')
-    else:
-        os.chdir(os.getcwd())
-
-    AUTH_BIN = os.path.join(os.getcwd() , '.auth.bin')
-    USER_BIN = os.path.join(os.getcwd() , '.user.bin')
-    os.chdir(org_path)
 
 
 
