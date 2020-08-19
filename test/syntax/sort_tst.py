@@ -5,15 +5,19 @@
 
 from operator import itemgetter
 
+SAMPLE_STR = 'xferlogickaodfk'
+
 
 def str_sort():
-	sample1 = 'akcmakam12mcldkad9rmckadjf'
-	print('-------- sorted 3rd index ------------')
-	s_str1 = ''.join(sorted(sample1))
-	print(s_str1)
-	print('-------- sorted 3rd index ------------')
-	s_str1 = ''.join(sorted(sample1 , reverse = True))
-	print(s_str1)
+	print('{}'.format(SAMPLE_STR))
+	sort_sample_str = sorted(SAMPLE_STR)
+	print('{}'.format(''.join(sort_sample_str)))
+	r_sorted_sample_str = sorted(SAMPLE_STR , reverse = True)
+	number = 1
+	print('{} : {}'.format(number , r_sorted_sample_str))
+
+
+
 
 
 def list_tst():
@@ -80,10 +84,10 @@ def reverse( word ):
 if __name__ == '__main__':
 	# dict_tst()
 
-	list_tst()
 
-	# str_sort()
+	 str_sort()
 
+	# list_tst()
 
 	# print('\"xferlog\" reverse : {}'.format(reverse('xferlog')))
 

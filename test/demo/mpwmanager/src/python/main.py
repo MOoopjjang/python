@@ -17,9 +17,6 @@ import src.python.view.login as lg
 
 
 def init():
-    # 저장경로 설정
-    # df.initRepositoryPath(__file__)
-
     # ApplicationContext 생성
     ctx.getInstance()
 
