@@ -15,6 +15,8 @@ from src.python.view.view_base import BaseView
 import src.python.view.registry as reg
 import src.python.view.custom_alert_popup as cdp
 
+from src.python.view.t_registry import *
+
 
 def createLogin(*args):
     if len(args) != 2:
@@ -74,6 +76,12 @@ def createLogin(*args):
                 securityContextHolder = context.getComponent(sch.__file__)
                 securityContextHolder.setAuthentication(authenticationManager.getMember(self.le_email.text()))
                 print('login Success ---> {}'.format(securityContextHolder))
+
+                self.gb_login.deleteLater()
+
+                registryLayout = getLayout()
+                dir(self.gb_login)
+
 
                 # self.gb_login.deleteLater()
 
