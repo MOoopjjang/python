@@ -57,8 +57,9 @@ def default_dict_test():
 	# int 테스트
 	d = defaultdict(int)
 	ld = defaultdict(list)
-	ld['name'].append('xferlog')
-	print('intDict : '.format(ld))
+	# ld['name'].append('xferlog')
+	print('ld : {}'.format(ld))
+	print('ld : {}'.format(ld['name']))
 
 	# intDict['age'] = 20
 	# print('age : '.format(intDict['age']))
