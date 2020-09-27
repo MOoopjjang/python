@@ -51,6 +51,19 @@ def tst_4():
 	print('c : {}'.format(com_dict['c'])) if 'c' in com_dict else print('not find')
 
 
+def default_dict_test():
+	from collections import defaultdict
+
+	# int 테스트
+	d = defaultdict(int)
+	ld = defaultdict(list)
+	ld['name'].append('xferlog')
+	print('intDict : '.format(ld))
+
+	# intDict['age'] = 20
+	# print('age : '.format(intDict['age']))
+
+
 def main():
 	print('main')
 
@@ -71,12 +84,11 @@ def main():
 
 if __name__ == '__main__':
 	# tst_1()
-
 	# tst_2()
+	# tst_3()
+	# tst_4()
 
-	tst_3()
-
-	tst_4()
+    default_dict_test()
 
 
 

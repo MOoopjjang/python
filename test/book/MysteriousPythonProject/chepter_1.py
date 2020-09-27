@@ -74,6 +74,33 @@ def pig_latin():
         ip = input('retry y/n:')
         if ip == 'n': break
 
+def etaoin_chart():
+    """
+    영어세서 가장 많이 쓰이는 글자는 'etaoin'(eh-tay-oh-in)으로 기억할수 있다.
+    문장을 입력받아 그림 1-2와 같이 단순한 막대 차트형으로 표현하는 파이썬 스크립트를 작성하라.
+    힌트는 다음과 같다.사전의 자료 구조와 아직 다루지 않은 두개의 모듈 pprint와 collections/defaultdict를 사용했다.
+    """
+    import pprint
+    from collections import defaultdict
+
+    # wordDict = {}
+    wordDict = defaultdict(list)
+    while True:
+        inputWord = input('word:')
+        for w in inputWord:
+            # 일반적인 dict 활용
+            # if w not in wordDict:wordDict[w] = [w]
+            # else:wordDict[w].append(w)
+
+            ## defaultdict 활용
+            wordDict[w].append(w)
+
+        retry = input('retry y/n:')
+        if(retry == 'n'):break
+
+    pprint.pprint(wordDict)
+
 
 if __name__ == '__main__':
-    pig_latin()
+    # pig_latin()
+    etaoin_chart()
