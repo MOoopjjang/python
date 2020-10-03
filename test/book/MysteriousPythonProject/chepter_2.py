@@ -39,26 +39,39 @@ def search_palintext():
     4. 좌측 문장과 비교
     """
 
+    def analy_text(org_list , le , rs):
+        rtext = mtext_ar[rs:]
+        print('rrtex : {}'.format(rtext[::-1]))
+        tle = le
+        for rt in rtext:
+            print('>> l : {} - r : {}'.format(org_list[tle] ,rt[::-1]))
+            if rt[::-1] != org_list[tle]:return False
+            tle -= 1
+
+
     while True:
         mtext = input('input text (min : 3 , max : 7):')
-        print('mtext : {}'.format(mtext))
+        print('==== {} ===='.format(mtext))
+
+        if mtext == 'quit':
+            sys.exit(1)
 
         mtext_ar = mtext.split(" ")
-        print('len : {}'.format(len(mtext_ar)))
         size = len(mtext_ar)
         le = int(size / 2) - 1
         rs = int(size/2) if size%2 == 0 else int(size/2)+1
-        print('le : {} , rs : {}'.format(le , rs))
         isPalinText = False
         if size%2 != 0:
             m = mtext_ar[le+1]
             if m == m[::-1]:
-                rtext = mtext_ar[rs:]
-                print('rrtex : {}'.format(rtext[::-1]))
+                isPalinText = analy_text(mtext_ar , le , rs)
         else:
-            pass
+            isPalinText = analy_text(mtext_ar, le, rs)
 
-        if isPalinText == False:print('not palin text')
+        if isPalinText == False:
+            print('not palin text')
+        else:
+            print("'{}' is palinText".format(mtext))
 
 
 
