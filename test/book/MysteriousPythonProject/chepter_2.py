@@ -68,17 +68,10 @@ def search_palintext():
         else:
             isPalinText = analy_text(mtext_ar, le, rs)
 
-        if isPalinText == False:
+        if not isPalinText:
             print('not palin text')
         else:
             print("'{}' is palinText".format(mtext))
-
-
-
-
-
-
-
 
 
 def main():
