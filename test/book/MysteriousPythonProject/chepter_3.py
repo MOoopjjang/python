@@ -30,7 +30,6 @@ def process( iWord , wFunc , _file):
     anagram_list = []
     s_input_word = sorted(iWord)
     for word in wFunc(_file):
-        # word = word.lower()
         if iWord != word and s_input_word == sorted(word):
             anagram_list.append(word)
 
@@ -42,9 +41,28 @@ def main( fProcess, rfunc):
         if input_word == 'q':break
         rfunc(fProcess(input_word.lower() , gen_dict , '2of4brif.txt'))
 
+def proc_1(iWord , wFunc , _file):
+    def getCounterInfo(_word):
+        from collections import Counter
+        return Counter(_word)
+
+    anagram_list = []
+    iWordInfo = getCounterInfo(iWord)
+    for dWord in wFunc(_file):
+        dWord = dWord.lower()
+        if iWord != dWord:
+            dWordInfo = getCounterInfo(dWord)
+            if iWordInfo == dWordInfo:
+                anagram_list.append(dWord)
+    return anagram_list
+
+
+
+
 
 if __name__ == '__main__':
-    main(process , result_func)
+    # main(process , result_func)
+    main(proc_1 , result_func)
 
 
 
