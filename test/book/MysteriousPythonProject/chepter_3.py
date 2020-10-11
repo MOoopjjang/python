@@ -57,6 +57,14 @@ def proc_1(iWord , wFunc , _file):
     return anagram_list
 
 
+def main_program():
+    """
+    1. 문장을 입력받는다.
+       - 입력글자수 제한을 둔다
+       - 글자수 초과시 재입력하도록 유도한다
+    2. 
+    """
+
 
 
 
