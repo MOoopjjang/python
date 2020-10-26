@@ -64,14 +64,14 @@ if __name__ == '__main__':
 
 	# 구독자
 	consumer_1 = Subscribe( condition , integers )
-	consumer_2 = Subscribe( condition , integers )
+	# consumer_2 = Subscribe( condition , integers )
 	consumer_1.start()
-	consumer_2.start()
+	# consumer_2.start()
 
 	# Join
 	publish.join()
 	consumer_1.join()
-	consumer_2.join()
+	# consumer_2.join()
 	
 
 
