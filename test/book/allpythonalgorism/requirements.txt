@@ -12,7 +12,7 @@ cffi==1.11.5
 chardet==3.0.4
 Click==7.0
 cotyledon==1.7.2
-cryptography==2.3.1
+cryptography==3.2
 cycler==0.10.0
 futurist==1.8.0
 helpers==0.2.0
