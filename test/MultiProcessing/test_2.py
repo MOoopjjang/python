@@ -70,7 +70,6 @@ def tst_3():
             self.args = args
             self.kwargs = kwargs
             self.count = 0
-            self.lock = None
             # self.rlock = threading.RLock()
 
         def setCondition(self , cv):
@@ -80,28 +79,43 @@ def tst_3():
             return self.cv
 
         def run(self):
-            self.cv.acquire()
             while True:
-                with self.cv:
-                    self.count +=1
-                    self.target(self.count)
+                self.cv.acquire()
+                while True:
+                    if self.args[0]:
+                        v = self.args[0].pop()
+                        self.target(v)
+                        break
                     print('wait>>>>')
                     self.cv.wait()
+                self.cv.release()
 
 
             # self.rlock.release()
-            self.cv.release()
+            # self.cv.release()
 
-    mt = MThread(target=rfunc, args=(1,))
-    mt.setCondition(threading.Condition())
+
+
+    condition = threading.Condition()
+    ins = [10,2,3,4,5,6,7]
+    mt = MThread(target=rfunc, args=(ins,))
+    mt.setCondition(condition)
     mt.start()
 
-    # while True:
-    #     time.sleep(2)
-    #     print('Notify >> ')
-    #     mt.getCondition().notify()
+    count = 0
+    while count < 10:
+        time.sleep(2)
+        print('Notify >> ')
+        condition.acquire()
+        condition.notify()
+        condition.release()
+        count +=1
+
+        if count%2 == 0:
+            for i in range(1 , 10):ins.append(i)
 
 
+    print('========= End ========')
 
 
 
