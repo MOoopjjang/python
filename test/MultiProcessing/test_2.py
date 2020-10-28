@@ -98,8 +98,10 @@ def tst_3():
 
     condition = threading.Condition()
     ins = [10,2,3,4,5,6,7]
+    # ins = []
     mt = MThread(target=rfunc, args=(ins,))
     mt.setCondition(condition)
+    mt.setDaemon(True)
     mt.start()
 
     count = 0
