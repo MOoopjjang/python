@@ -4,7 +4,8 @@
 import threading
 from threading import Thread
 from queue import Queue
-from demo.mthreadpool.mpool import MPool
+# from demo.mthreadpool.mpool import MPool
+from demo.mthreadpool.mqueue_obj import MQueueObj
 
 '''
  - Custom Thread
@@ -17,26 +18,23 @@ class MThread(Thread):
         self._queue = _queue
         self._condition = _condition
 
-    def getQueueCount(self):
-        return len(self._queue)
-
-    def pushQueue(self, _pool):
-        self._queue.put(_pool)
-        return self
-
     def run(self):
         while True:
             self._condition.acquire()
             while True:
                 if self._queue.empty() == False:
                     # MPool 객체 반환 #
-                    pool = self._queue.get()
-                    pool.eFunc(pool.eData)
+                    job = self._queue.get()
+                    job.eFunc(job.eData)
                     print('queue count : {}'.format(self._queue.qsize()))
                     break
-                print('thread id: {} --> waiting'.format(threading.current_thread().ident))
+                # print('thread id: {} --> waiting'.format( id(self)))
+                print('thread id: {} --> waiting'.format( self.ident))
                 self._condition.wait()
             self._condition.release()
+
+    def getId(self):
+        return self.ident
 
 
 if __name__ == '__main__':
@@ -62,9 +60,9 @@ if __name__ == '__main__':
     while count < 10:
         time.sleep(2)
         if count % 2 == 0:
-            p = MPool(f1, f"xferlog - {count}")
+            p = MQueueObj(f1, f"xferlog - {count}")
             mt.pushQueue(p)
-            p = MPool(f2, {"name": f"xferlog{count}", "age": 30})
+            p = MQueueObj(f2, {"name": f"xferlog{count}", "age": 30})
             mt.pushQueue(p)
         count += 1
         c.acquire()

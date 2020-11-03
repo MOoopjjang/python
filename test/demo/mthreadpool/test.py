@@ -6,7 +6,14 @@
  - 유사하게 Java 버전도 존재
 """
 
+from demo.mthreadpool.mtpm import MThreadPoolManager
+
+
+def tst1():
+    manager = MThreadPoolManager()
+
+
 
 
 if __name__ == '__main__':
-    pass
+    tst1()
