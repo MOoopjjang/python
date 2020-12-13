@@ -110,6 +110,31 @@ def test_head():
 	print('ct : {}'.format(content_type))
 	# print('cl: '.format(content_length))
 
+
+def lssApplication_test():
+	import json
+
+	headers = {}
+	headers['X-TOKEN-VALUE'] = 'zinna1234'
+	headers['Content-Type'] = 'application/json'
+	URL = "http://localhost:8080/lss"
+	res = requests.get("http://localhost:8080/lss/prop/", headers = headers)
+	if res.status_code == 200:
+		print(f'{res.json()}')
+	else:
+		print('statuscode : {}'.format(res.status_code))
+
+	print('------------------- post es -----------------')
+	param = {}
+	param['field'] = 'isTest'
+	param['value'] = False
+	jsonParam = json.dumps(param)
+	res = requests.post(URL+'/prop/' , headers = headers , data=jsonParam)
+	if res.status_code == 200:
+		print(res.json())
+
+
+
 if __name__ == '__main__':
 	# test_1()
 	# test_get_headers()
@@ -120,5 +145,6 @@ if __name__ == '__main__':
 	# test_delete()
 
 	# test_put()
-	test_head()
+	# test_head()
+    lssApplication_test()
 

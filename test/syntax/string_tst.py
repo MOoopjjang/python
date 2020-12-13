@@ -10,41 +10,37 @@ string 테스트
 
 
 
-SAMPLE_1 = 'xferlog kknda iablc iadifladkfalkflkak123 :'
+SAMPLE_1 = 'xferlog kknda iablc iadifladkfalkflkak123 : '
 
 
 
 
 def tst1():
-	if SAMPLE_1.startswith('xferlog'):print('e')
-	else:print('ne')
-
-	print('-'*30)
-	if SAMPLE_1.endswith('123 :'):
-		print('e')
-	else:
-		print('ne')
-
-	print('-'*30)
-	print('upper : {}'.format(SAMPLE_1.upper()))
-	print('lower : {}'.format(SAMPLE_1.lower()))
-	print('-'*30)
-	r = SAMPLE_1.replace(' ','')
-	print('r : {}'.format(r))
-	print('-'*30)
-	print('{}'.format(SAMPLE_1[3:10]))
-	print('{}'.format(SAMPLE_1[3:10:2]))
-	print('-'*30)
-	LIST = list(SAMPLE_1)
-	print('list : {}'.format(LIST))
-	print('-'*30)
-	t = tuple(SAMPLE_1)
-	print('tuple : {}'.format(t))
-	print('-'*30)
-	print('find "iablc" : {}'.format(SAMPLE_1.find('iablc')))
-	print('-'*30)
-	f = list(filter(lambda x:x != ' ',SAMPLE_1))
-	print('f : {}'.format(f))
+    print('-'*20)
+    print(f'SAMLPLE_1{SAMPLE_1}')
+    print('-'*20)
+    f = SAMPLE_1.find("ia")
+    print(f'find {f}')
+    print('------------ reverse ------------')
+    print(f'{SAMPLE_1[::-1]}')
+    print('------------ startswith ------------')
+    print(f'start \"xferlog\" ==> {SAMPLE_1.startswith("xferlog")}')
+    print(f'start \"kknda\" ==> {SAMPLE_1.startswith("kknda")}')
+    print('------------ endswith ------------')
+    print(f'123 end ==> {SAMPLE_1.endswith("123 :")}')
+    print('------------ strip() ------------')
+    print(f'before len : {len(SAMPLE_1)}')
+    stripStr = SAMPLE_1.strip(' ')
+    print(f' {stripStr}')
+    print(f'after len : {len(stripStr)}')
+    print('------------ splic ------------')
+    print(f'{SAMPLE_1[2:5]}')
+    print('------------ join ------------')
+    ll = ['xferog','kknda','ccc','ddd']
+    joinLL = ','.join(ll)
+    print(f'{joinLL}')
+    lll = joinLL.split(",")
+    print(f'{lll}')
 
 
 
