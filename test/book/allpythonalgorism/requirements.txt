@@ -18,7 +18,7 @@ futurist==1.8.0
 helpers==0.2.0
 idna==2.7
 itsdangerous==1.1.0
-Jinja2==2.10
+Jinja2==2.10.1
 kiwisolver==1.0.1
 lxml==4.3.2
 MarkupSafe==1.1.0
