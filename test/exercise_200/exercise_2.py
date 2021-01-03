@@ -3,7 +3,7 @@
 
 
 from object_file_decorator import ObjectFileWriteDecorator
-from singleton_decorator import singleton
+from src.common.singleton_decorator import singleton
 
 
 @ObjectFileWriteDecorator( 'xferlog' , True )
