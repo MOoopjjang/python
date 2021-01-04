@@ -22,9 +22,8 @@ class AuthenticationManager:
 
     def __str__(self):
         mlist = []
-        cutil.getMemberInfo(mlist, self.__dict__)
+        cutil.getInstanceMemberInfo(mlist, self.__dict__)
         return '<>'.join(mlist)
-        # return cutil.getMemberInfo(self , "<>")
 
     def add(self, _email, _token):
         self._auth[_email] = AuthInfo(_email, _token)
@@ -35,6 +34,13 @@ class AuthenticationManager:
 
     def get(self, _email):
         return self._auth[_email]
+
+    def print(self):
+        i = 1
+        for k,v in  self._auth.items():
+            print(f'{i} {k} :: {v}')
+            i+=1
+
 
 
 if __name__ == '__main__':

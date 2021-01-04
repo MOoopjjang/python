@@ -1,28 +1,30 @@
 #!python3
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 
 
 from src.signin.user_request import UserRequest
-from src.signin.user_response import UserResponse
 from src.common.singleton_decorator import SingletonDecorator
-import src.common.common_util as cutil
+import src.common.httpheader_util as hhutil
 import src.common.defines as df
-import requests
-import json
+from src.common.network_manager import NetworkManager
+from src.common.authentication_manager import AuthenticationManager
 
 
-@SingletonDecorator(tag = "[SM]" , dp = True)
+@SingletonDecorator(tag="[SM]", dp=True)
 class SignManager:
-    def signup(self , email , password , username , _successFunc = None , _failFunc = None):
-        userRequest = UserRequest(email , password , username)
-        res = requests.post(df.SIGNIN_URI , data=userRequest.toJSON(), headers = cutil.getDefaultHeader())
-        responseData = res.json()
-        # print(f'result : {responseData}')
-        if(_successFunc != None and _failFunc != None):
-            if responseData['result'] == 'OK':
-                _successFunc(responseData['body'])
-            else:
-                _failFunc(responseData)
+    def signup(self, email, password, username):
+        userRequest = UserRequest(email, password, username)
+        NetworkManager().post(df.SIGNIN_URI
+                              , data=userRequest.toJSON()
+                              , headers=hhutil.getDefaultHeader()
+                              , _success=self._singupSuccess_
+                              , _failed=self._signupFailed_)
 
+    def _singupSuccess_(self, responseData=None):
+        print(f'responseData : {responseData}')
+        if responseData['result'] == 'OK':
+            body = responseData['body']
+            AuthenticationManager().add(body['email'], body['token'])
 
-
+    def _signupFailed_(self, res=None):
+        print(f'response status: {res.status_code}')

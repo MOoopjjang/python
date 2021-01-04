@@ -18,9 +18,9 @@ class AuthInfo:
 
     def __str__(self):
         mlist = []
-        cutil.getMemberInfo(mlist , self , '<>')
+        cutil.getInstanceMemberInfo(mlist , self.__dict__ )
         return '<>'.join(mlist)
-        # return cutil.getMemberInfo(self , '<>')
 
     def getEmail(self):return self._email
+
     def getToken(self):return self._token
