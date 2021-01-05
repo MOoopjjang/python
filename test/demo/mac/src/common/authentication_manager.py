@@ -25,8 +25,8 @@ class AuthenticationManager:
         cutil.getInstanceMemberInfo(mlist, self.__dict__)
         return '<>'.join(mlist)
 
-    def add(self, _email, _token):
-        self._auth[_email] = AuthInfo(_email, _token)
+    def add(self, _email, _token , _refreshToken):
+        self._auth[_email] = AuthInfo(_email, _token , _refreshToken)
 
     def remove(self, _email):
         if _email in self._auth:

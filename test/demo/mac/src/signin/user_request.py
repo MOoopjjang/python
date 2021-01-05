@@ -6,7 +6,7 @@ from src.common.domain.base_domain import BaseDomain
 
 
 class UserRequest(BaseDomain):
-    def __init__(self, email, password, username):
+    def __init__(self, email, password, username = None):
         self.email = email
         self.password = password
         self.username = username

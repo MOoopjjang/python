@@ -30,7 +30,7 @@ class NetworkManager:
         '''
         try:
             session = self._retry_session_()
-            res = session.get(uri=uri, headers=headers)
+            res = session.get(url=uri, headers=headers)
             if res.status_code == 200:
                 _success(res.json())
             else:

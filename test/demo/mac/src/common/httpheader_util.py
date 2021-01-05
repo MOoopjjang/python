@@ -15,4 +15,16 @@ def getDefaultHeader():
     }
 
 
-def getAuthHederInfo(_authInfo): pass
+def getAuthHederInfo(_email , _token , _refreshToken):
+
+    '''
+    MOoopApi 서버와 연동시 접근권한이 필요한 resource접근시 적용 header
+    '''
+    return {
+       'X-TOKEN-VALUE' : 'mooop1234'
+        ,'Content-Type' : 'application/json'
+        ,'grant_type' : 'refresh'
+        ,'X-USER-NAME' : _email
+        ,'X-REFRESH-AUTH-TOKEN' : _refreshToken
+        ,'X-AUTH-TOKEN' : _token
+    }

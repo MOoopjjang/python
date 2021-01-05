@@ -17,13 +17,17 @@ if __name__ == '__main__':
 
 
     while True:
-        v = menu(['signUp' , 'display'])
-        if v == '1':
+        v = menu(['signUp' , 'login' , 'refresh' , 'display'])
+        if v in ['1' ,'2']:
             email = input('email:')
             pwd = input('password:')
             username = input('username:')
-            SignManager().signup(email , pwd , username)
-        elif v == '2':
+            if v == '1':SignManager().signup(email , pwd , username)
+            else: SignManager().login(email ,pwd )
+        elif v == '3':
+            email = input('email:')
+            SignManager().refresh(email)
+        elif v == '4':
             AuthenticationManager().print()
         else:
             break
