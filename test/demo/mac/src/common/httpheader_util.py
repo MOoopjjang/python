@@ -25,6 +25,6 @@ def getAuthHederInfo(_email , _token , _refreshToken):
         ,'Content-Type' : 'application/json'
         ,'grant_type' : 'refresh'
         ,'X-USER-NAME' : _email
-        ,'X-REFRESH-AUTH-TOKEN' : _refreshToken
+        ,'X-REFRESH-TOKEN' : _refreshToken
         ,'X-AUTH-TOKEN' : _token
     }
