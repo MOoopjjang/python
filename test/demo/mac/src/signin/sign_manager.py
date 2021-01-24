@@ -71,3 +71,32 @@ class SignManager:
 
     def _refreshFailed_(self , res = None):
         print(f'response status: {res.status_code}')
+
+
+
+    def menu(self):
+        def smenu(menu_list):
+            print('********** sign menu **********')
+            for i, t in enumerate(menu_list, start=1):
+                print(f'{i} . {t}')
+            print('*******************************')
+            v = input('select:')
+            return v
+
+        while True:
+            v = smenu(['signUp', 'login', 'refresh', 'display'])
+            if v in ['1', '2']:
+                email = input('email:')
+                pwd = input('password:')
+                username = input('username:')
+                if v == '1':
+                    self.signup(email, pwd, username)
+                else:
+                    self.login(email, pwd)
+            elif v == '3':
+                email = input('email:')
+                self.refresh(email)
+            elif v == '4':
+                AuthenticationManager().print()
+            else:
+                break
