@@ -3,42 +3,30 @@
 
 
 
-import cotyledon
+def tst1():
+    print('tst1')
 
 
+    def args_tst(name , age = None ,  *args):
+        print(f'type:{type(args)} , len:{len(args)}')
+        print(f'name : {name}')
+        print(f'args : {args}')
+        for i,v in enumerate( args ):
+            print(f'{i} : {v}')
 
-class SubService( cotyledon.Service ):
-	def __init__( self , worker_id):
-		self._shutdown = threading.Event()
-		super( SubService , self).__init__(worker_id)
+    args_tst('kim', 10,'xferlog' , 'kknda')
+    args_tst('xferlog',1)
 
+    print('*'*20)
 
-	def run( self ):
-		while self._shutdown.is_set() != True:
-			print(' polling... {}'.format(datetime.datetime.now()))
-			subprocess.Popen(['open' , 'log.txt'])
-			time.sleep(60*3)
+    def kargw_tst(name = None , age = None , **kwargs):
+        print(f'name : {name} , age : {age}')
+        for k,v in kwargs.items():
+            print(f'{k}:{v}')
 
-	def terminate( self ):
-		self._shutdown.set()
-
-
-
-def tst_1():
-	"""
-	cotyledon + subprocess.Popen 테스트
-	"""
-	import subprocess
-	import time , datetime
-	import cotyledon
-	import threading
-
-	manager = cotyledon.ServiceManager()
-	manager.add(SubService , 2)
-	manager.run()
-
-
+    kargw_tst('kim' , 0 , price=20 , value=20)
+    kargw_tst( price=20 , value=20)
 
 
 if __name__ == '__main__':
-	tst_1()
+    tst1()
