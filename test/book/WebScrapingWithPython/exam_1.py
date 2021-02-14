@@ -8,6 +8,12 @@ import re
 
 TEST_URL = 'http://www.naver.com'
 
+def exam_0():
+    T_URL = 'http://www.pythonscraping.com/pages/page3.html'
+    html = urlopen(T_URL)
+    bs = BeautifulSoup(html , 'html.parser')
+    print(bs.find('img' , {'src':'../img/gifts/img1.jpg'}).parent.previous_sibling.get_text())
+
 
 def exam_1():
     try:
@@ -121,6 +127,7 @@ def exam_3():
 
 
 if __name__ == '__main__':
-    #    exam_1()
+    # exam_1()
     #exam_2()
-    exam_3()
+    # exam_3()
+    exam_0()
