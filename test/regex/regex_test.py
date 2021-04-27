@@ -210,11 +210,12 @@ def test2():
 	# rgx = re.compile('<(H\d)>.*?<\/\1>') #text18
 	# rgx = re.compile('[ ]+(\w+)[ ]+\1') #text19
 	# rgx = re.compile('.+(?=:)') #text20
-	rgx = re.compile('.+(:)') #text20
+	#rgx = re.compile('.+(:)') #text20
+	rgx = re.compile('[0-9]') #text20
 
 	mo = rgx.findall(text20)
 	# mo = rgx.search(text18)
-	if mo != None:print('{}'.format(mo))
+	if mo != None:print('>>{}'.format(mo))
 	# if mo != None:print('{}'.format(mo.group()))
 
 

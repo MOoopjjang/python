@@ -9,6 +9,14 @@ def tst2():
     if "xferlog" in ar:print("exist")
 
 
+def tst3():
+    ar = ['dlh1' , 'dlg2']
+    sAr = sorted(ar , reverse=False)
+    print(f'sAr : {sAr}')
+
+    print(f'=== {"dlg1" < "dlg2"}')
+
+
 
 def test():
     ''' loop 안에 multi 조건연산자 '''
@@ -16,8 +24,11 @@ def test():
     print('v : {}'.format(v))
 
 
+
+
 if __name__ == '__main__':
     # test()
-    tst2()
+    # tst2()
+    tst3()
 
 
