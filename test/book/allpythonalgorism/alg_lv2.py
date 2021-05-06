@@ -14,6 +14,47 @@ def group_anagrams():
     ]
     '''
 
+    def isContain(_output , _v):
+        cIndex = -1
+        if len(_output) == 0:
+            return cIndex
+
+        lv = list(_v)
+        lv.sort()
+        for  index , ar in enumerate(_output):
+            text = ar[0]
+            if len(text) != len(_v):continue
+
+            tl = list(text)
+            tl.sort()
+            if tl != lv:continue
+
+            cIndex = index
+            break
+
+        return cIndex
+
+    def in_group_anagrams(_ar):
+        output = []
+        for i , v in enumerate(_ar):
+            cIndex = isContain(output,v)
+            if cIndex == -1:
+                vv = []
+                vv.append(v)
+                output.append(vv)
+            else:
+                cAr = output[cIndex]
+                cAr.append(v)
+        return output
+
+
+    result = in_group_anagrams(["eat" , "tea" , "tan" , "ate", "nat","bat"])
+    print(f'>>>>>>>>>>> {result} <<<<<<<<<<<<<')
+
+
+
+
+
 
 def longest_palindromic_substring():
     '''
@@ -21,6 +62,7 @@ def longest_palindromic_substring():
     입력: "babad"
     출력: "bab"
     '''
+
 
 
 

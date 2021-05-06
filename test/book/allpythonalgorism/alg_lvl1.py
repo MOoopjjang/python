@@ -2,6 +2,33 @@
 # -*- coding:utf-8 -*-
 # https://www.onlybook.co.kr/entry/algorithm-interview-errata ( 정오표 )
 
+
+def two_sum():
+    '''
+    덧셈항여 타겟을 만들 수 있는 배열의 두 숫자 인덱스를 리턴하라.
+
+    입력 :
+        nums = [2,7,11,15] , target = 9
+    출력 :
+        [0,1]
+    '''
+    def m1(_nums , _target):
+        r = []
+        for i ,v in enumerate(_nums):
+            for ii , vv in enumerate(_nums[i+1:]):
+                if v+vv == _target:
+                    print(f'i : {i} , v:{v} - ii+1 : {ii+i+1} , vv : {vv}')
+                    r+=[i , ii+i+1]
+        print(f'r : {r}')
+
+
+    # m1([2,7,11,15] , 9)
+    m1([1,2,7,8,11,15] , 9)
+
+
+
+
+
 def reorder_data_in_log_files():
     '''
     로그를 재정렬 하라
@@ -83,4 +110,5 @@ def palindrome_tst():
 
 if __name__ == '__main__':
     #palindrome_tst()
-    reorder_data_in_log_files()
+    # reorder_data_in_log_files()
+    two_sum()
