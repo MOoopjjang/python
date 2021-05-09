@@ -3,6 +3,22 @@
 # https://www.onlybook.co.kr/entry/algorithm-interview-errata ( 정오표 )
 
 
+
+def array_partition_i():
+    '''
+    배열파티션 I
+
+    n개의 페어를 이용한 min(a,b)의 합으로 만둘수 있는 가능 큰수를 출력하라.
+
+    입력 : [1,4,3,2]
+    출력 : 4
+
+    설명 :
+      n은 2가 되며 , 최대 합은 4이다
+      min(1,2) + min(3,4) = 4
+    '''
+
+
 def two_sum():
     '''
     덧셈항여 타겟을 만들 수 있는 배열의 두 숫자 인덱스를 리턴하라.
