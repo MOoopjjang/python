@@ -18,6 +18,26 @@ def array_partition_i():
       min(1,2) + min(3,4) = 4
     '''
 
+    def in_array_partition_i(_n = 2 , _nums = None):
+        nnums = sorted(_nums , reverse=True)
+        print(f'_nums : {nnums}')
+        index = 0
+        count = 0
+        v = 0
+        while _n > count:
+            v += min(int(nnums[index]) , int(nnums[index+1]))
+            print(f'v : {v} , l : {int(nnums[index])} , r : {int(nnums[index+1])}')
+            index += 2
+            count += 1
+        return v
+
+    # result = in_array_partition_i(2 , [1,4,3,2])
+    result = in_array_partition_i(3 , [1,4,3,2,21,9,10,8])
+    print(f'result : {result}')
+
+
+
+
 
 def two_sum():
     '''
@@ -127,4 +147,5 @@ def palindrome_tst():
 if __name__ == '__main__':
     #palindrome_tst()
     # reorder_data_in_log_files()
-    two_sum()
+    # two_sum()
+    array_partition_i()
