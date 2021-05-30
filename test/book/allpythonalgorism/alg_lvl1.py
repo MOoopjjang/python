@@ -3,6 +3,18 @@
 # https://www.onlybook.co.kr/entry/algorithm-interview-errata ( 정오표 )
 
 
+def best_time_to_buy_and_sell_stock():
+    '''
+    한 번의 거래로 낼수 있는 최대 이익을 산출하라.
+
+    입력 : [7,1,5,3,6,4]
+    출력 : 5
+
+
+    설명 :
+     1 일때 사서 6일때 팔면 5의 이익을 얻는다.
+    '''
+
 
 def array_partition_i():
     '''

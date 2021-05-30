@@ -1,6 +1,20 @@
 #!python3
 # -*- coding:utf-8 -*-
 
+
+
+def product_of_array_except_self():
+    '''
+    배열을 입력받아 output[i]가 자신을 제외한 나머지 모든 요소의 곱셈 결과가 되도록 출력하라.
+
+    입력 : [1,2,3,4]
+    출력 : [24,12,8,6]
+    주의 : 나눗셈을 하지 않고 O(n)에 풀이하라.
+    '''
+    pass
+
+
+
 def group_anagrams():
     '''
     문자열 배열을 받아 애너그램 단위로 그룹핑하라.
@@ -63,19 +77,34 @@ def longest_palindromic_substring():
     출력: "bab"
     '''
 
-    tmp_ar = []
-    def in_left(_s , _e ,  org_ar, t_ar):
-        while _e>_s:
-            if org_ar[_s] != org_ar[_e]:
-                in_left()
-            else:
-                _s+=1
-                _e-=1
+    def isPalindrom(_s , _e , _ar):
+        while _e > _s:
+            print(f's : {_ar[_s]} , e : {_ar[_e]}')
+            if _ar[_s] != _ar[_e]:
+                return False
+            _e -= 1
+            _s += 1
+        return True
+
+    def left(_s , _e , _ar):
+        while isPalindrom(_s,_e,_ar) == False:
 
 
+    def right(_s , _e , _ar):pass
 
 
-    def in_right(_s , _e , t_ar):pass
+    ar = 'babad'
+    result = isPalindrom(0 , len(ar)-1 , ar)
+    print(f'result : {result}')
+
+    if result == False:
+        size = len(ar)
+        e = int(size/2)
+        s = 0
+        result = isPalindrom(s , e , ar)
+        print(f'result : {result}')
+
+
 
 
 
@@ -125,4 +154,5 @@ def three_sum():
 
 if __name__ == '__main__':
     # group_anagrams()
-    three_sum()
+    # three_sum()
+    longest_palindromic_substring()
