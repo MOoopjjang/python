@@ -14,6 +14,11 @@ def best_time_to_buy_and_sell_stock():
     설명 :
      1 일때 사서 6일때 팔면 5의 이익을 얻는다.
     '''
+    def in_proc(_ar):
+        sar = sorted(_ar , reverse=True)
+        dif = sar[0] - sar[len(sar)-1]
+        return dif
+    in_proc([7,1,5,3,6,4])
 
 
 def array_partition_i():
@@ -160,4 +165,5 @@ if __name__ == '__main__':
     #palindrome_tst()
     # reorder_data_in_log_files()
     # two_sum()
-    array_partition_i()
+    # array_partition_i()
+    best_time_to_buy_and_sell_stock()
