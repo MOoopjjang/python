@@ -1,0 +1,10 @@
+{
+  "list": [
+    {
+      "class":"bean.Person.Person"
+    },
+    {
+      "class": "bean.Job.Job"
+    }
+  ]
+}

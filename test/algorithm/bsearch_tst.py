@@ -2,7 +2,7 @@
 # -*- coding:utf-8 -*-
 
 '''
- - 이진 검색 테스트
+ - 이분 검색 테스트
  - 코드 refactoring 필요
 '''
 
@@ -28,8 +28,29 @@ def bsearch(_ar, v, _cnt):
             bsearch(_ar[:m], v, _cnt)
 
 
+def bsearch2(_ar , v , _cnt):
+    l = 0
+    r = ( l + _cnt)-1
+    while l <= r:
+        m =  int(( l + r )/2)
+
+        print(f'>>> m = {m}')
+        if v == _ar[m]:
+            return m
+
+        if v < _ar[m]:
+            r = m-1
+        else:
+            l = m+1
+
+    return None
+
+
+
 if __name__ == '__main__':
     iv = int(input('v :'))
 
-    ar = [i for i in range(100000)]
-    bsearch(ar, iv, 0)
+    ar = [i for i in range(20)]
+    # bsearch(ar, iv, 0)
+    result = bsearch2(ar, iv, len(ar))
+    print(f'result = {result}')
