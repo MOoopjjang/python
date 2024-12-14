@@ -45,7 +45,7 @@ selenium==3.141.0
 setproctitle==1.1.10
 six==1.11.0
 tenacity==5.0.2
-urllib3==1.23
+urllib3==1.26.5
 user-agent==0.1.9
 uWSGI==2.0.17.1
 weblib==0.1.30
